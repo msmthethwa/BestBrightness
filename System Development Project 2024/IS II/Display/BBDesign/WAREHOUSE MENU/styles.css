@@ -1,0 +1,357 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4; /* Optional: linear-gradient(120deg, #f6d365 0%, #fda085 100%); */
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(to bottom, #f5f5f5 0%, #d4e9e2 100%); /* White to soft green gradient */
+    padding: 20px;
+    position: relative;
+}
+
+/* Header Content */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f5f5; /* White background for the header-top */
+    padding-bottom: 20px; /* Space for the gradient */
+    border-bottom: 2px solid #000; /* Black border for definition */
+}
+
+#logo {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.company-name {
+    font-size: 2em;
+    color: #000; /* Black for the company name */
+    margin: 0;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.header-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.header-right a {
+    color: #000; /* Black for links */
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.header-right a img {
+    height: 24px; /* Adjust height as needed */
+    width: auto; /* Maintain aspect ratio */
+}
+
+.header-right a:hover {
+    text-decoration: underline;
+}
+
+/* Icons */
+.wishlist-icon, .cart-icon {
+    font-size: 1.5em;
+}
+
+.cart-icon {
+    position: relative;
+    margin-left: 20px;
+}
+
+.cart-icon img {
+    height: 24px; /* Resize icon */
+    width: auto; /* Maintain aspect ratio */
+}
+
+/* Gradient Section */
+.header-gradient {
+    background: linear-gradient(to bottom, #d4e9e2 0%, #b3c7b4 100%); /* Soft green gradient */
+    padding: 20px;
+}
+
+/* Search and Navigation */
+.search-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Space between search field and button */
+    margin-top: 20px; /* Space above search-nav */
+}
+
+#searchField {
+    flex: 1;
+    padding: 12px 20px;
+    border: 2px solid #ddd; /* Light border */
+    border-radius: 30px; /* Rounded edges */
+    font-size: 16px;
+    background: #fff; /* White background */
+    color: #333; /* Dark text for readability */
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+#searchField:focus {
+    border-color: #28a745; /* Green border on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.3); /* Glow effect on focus */
+}
+
+#searchButton {
+    padding: 12px 20px;
+    background: linear-gradient(145deg, #28a745, #218838); /* Green gradient background */
+    color: #fff; /* White text */
+    border: none;
+    border-radius: 30px; /* Rounded edges */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+    transition: background 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+#searchButton:hover {
+    background: linear-gradient(145deg, #218838, #28a745); /* Inverted gradient on hover */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background: transparent; /* Transparent background to blend with header */
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    display: block;
+    padding: 14px 20px;
+    color: #fff; /* White text */
+    text-decoration: none;
+    background: linear-gradient(145deg, #28a745, #218838); /* Green gradient background */
+    border-radius: 25px; /* Rounded edges */
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+    transition: background 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+nav ul li a:hover {
+    background: linear-gradient(145deg, #218838, #28a745); /* Inverted gradient on hover */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+}
+
+h2 {
+    color: #28a745;
+    border-bottom: 2px solid #28a745;
+    padding-bottom: 5px;
+}
+
+/* Product Gallery Styles */
+.product-gallery {
+    margin-bottom: 30px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.product-item {
+    background-color: white;
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product-item h3 {
+    color: #28a745;
+    margin: 10px 0;
+}
+
+.product-item p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Warehouse Operations Styles */
+.warehouse-options {
+    margin-top: 40px;
+}
+
+.warehouse-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.warehouse-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.warehouse-btn:hover {
+    background-color: #218838;
+}
+
+/* Record Product Page Styles */
+.record-product-form {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.record-product-form h2 {
+    color: #28a745;
+    border-bottom: 2px solid #28a745;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.record-product-form label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.record-product-form input,
+.record-product-form select,
+.record-product-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.record-product-form input:focus,
+.record-product-form select:focus,
+.record-product-form textarea:focus {
+    border-color: #28a745;
+    outline: none;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.3);
+}
+
+.record-product-form input[type="file"] {
+    border: 2px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+
+.record-product-form input[type="file"]::file-selector-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 8px 16px;
+    font-size: 16px;
+}
+
+.record-product-form input[type="file"]::file-selector-button:hover {
+    background-color: #218838;
+}
+
+.submit-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #218838;
+}
+
+/* Stock Levels */
+.stock-level {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* General styles for stock levels */
+.stock-level span {
+    font-weight: normal;
+}
+
+/* Specific styles for in-stock and low-stock messages */
+.stock-level.in-stock {
+    color: #28a745; /* Green color for sufficient stock */
+}
+
+.stock-level.in-stock span {
+    color: #28a745; /* Green color for 'In Stock:' text */
+}
+
+.stock-level.low-stock {
+    color: #dc3545; /* Red color for low stock */
+}
+
+.stock-level.low-stock span {
+    color: #dc3545; /* Red color for 'Low Stock:' text */
+}
+
+
+/* Footer Styles */
+footer {
+    background: linear-gradient(to bottom, #d4e9e2 0%, #b3c7b4 100%); 
+    color: #333;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}

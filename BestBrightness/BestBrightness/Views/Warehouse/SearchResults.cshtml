@@ -1,0 +1,130 @@
+﻿@using BestBrightness.ViewModels
+@model SearchViewModel
+
+<style>
+    /* Search Results Table Styles */
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #081b29; /* Dark background */
+        color: #fff; /* White font for the entire table */
+    }
+
+        .table th, .table td {
+            padding: 12px 15px;
+            border: 1px solid #00a6bc; /* Cyan border */
+            text-align: left;
+        }
+
+        .table th {
+            background-color: #00a6bc; /* Cyan header background */
+            color: #fff; /* White text in the header */
+        }
+
+        .table tr:nth-child(even) {
+            background-color: #0d2a3a; /* Slightly lighter dark background for even rows */
+        }
+
+        .table tr:hover {
+            background-color: #003f5c; /* Darker background on hover */
+        }
+
+    /* No results message */
+    .no-results {
+        font-style: italic;
+        color: #888; /* Gray color for no results message */
+    }
+
+</style>
+
+<h2>Search Results</h2>
+
+@if (Model.StockItemResults != null && Model.StockItemResults.Any())
+{
+    <h3>Pickups</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Stock ID</th>
+                <th>Product Name</th>
+                <th>Quantity Ordered</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var stockItem in Model.StockItemResults)
+            {
+                <tr>
+                    <td>@stockItem.StockItemId</td>
+                    <td>@stockItem.ProductName</td>
+                    <td>@stockItem.QuantityOrdered</td>
+                    <td>@stockItem.Status</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p class="no-results">Not found on pickup table.</p>
+}
+
+@if (Model.StockResults != null && Model.StockResults.Any())
+{
+    <h3>Stock</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Supplier</th>
+                <th>Category</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var stock in Model.StockResults)
+            {
+                <tr>
+                    <td>@stock.Name</td>
+                    <td>@stock.Quantity</td>
+                    <td>@stock.Supplier</td>
+                    <td>@stock.Category</td>
+                    <td>@stock.Description</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p class="no-results">Not found on stock table.</p>
+}
+
+@if (Model.SupplierResults != null && Model.SupplierResults.Any())
+{
+    <h3>Suppliers</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Contact Info</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var supplier in Model.SupplierResults)
+            {
+                <tr>
+                    <td>@supplier.Name</td>
+                    <td>@supplier.ContactInfo</td>
+                    <td>@supplier.Address</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p class="no-results">Not found on supplier table.</p>
+}

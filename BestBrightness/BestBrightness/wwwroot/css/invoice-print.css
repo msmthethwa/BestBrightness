@@ -1,0 +1,26 @@
+﻿/* Print Styles */
+@page {
+    margin: 20mm; /* Set page margins */
+}
+
+@media print {
+    /* Hide all header and navigation elements */
+    header, nav, .no-print {
+        display: none !important;
+    }
+
+    /* Ensure the invoice content is styled appropriately for print */
+    .invoice-container {
+        border: none; /* Remove border */
+        border-radius: 0; /* Remove border radius */
+        box-shadow: none; /* Remove shadow */
+        margin: 0; /* Remove margin */
+        padding: 0; /* Remove padding */
+    }
+
+    /* Ensure no additional spacing */
+    body {
+        margin: 0;
+        padding: 0;
+    }
+}

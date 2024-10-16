@@ -1,0 +1,87 @@
+﻿/* General Styles for Update Page */
+.update-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+    .update-container h2 {
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+/* Form Styles */
+.update-form {
+    display: flex;
+    flex-direction: column;
+}
+
+    .update-form .form-group {
+        margin-bottom: 20px;
+    }
+
+        .update-form .form-group label {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .update-form .form-group input,
+        .update-form .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: #fff;
+        }
+
+            .update-form .form-group input[type="file"] {
+                padding: 6px 12px;
+            }
+
+        .update-form .form-group span {
+            color: #dc3545;
+            font-size: 0.875em;
+        }
+
+    .update-form .btn-save {
+        background-color: #007bff;
+        border: none;
+        color: #fff;
+        padding: 10px 15px;
+        font-size: 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-align: center;
+    }
+
+        .update-form .btn-save:hover {
+            background-color: #0056b3;
+        }
+
+/* Notification Styles */
+.notification-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.notification-error {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}

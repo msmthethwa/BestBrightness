@@ -1,0 +1,74 @@
+﻿@model IEnumerable<BestBrightness.ViewModels.SalesBySalespersonViewModel>
+
+@{
+    ViewData["Title"] = "Sales";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var userRole = Context.Session.GetString("UserRole");
+}
+
+<link rel="stylesheet" href="~/css/AdminInventory.css">
+
+<div class="sales-container">
+    <h1>Sales</h1>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+
+    @if (!Model.Any())
+    {
+        <p>No sales recorded yet.</p>
+    }
+    else
+    {
+        @foreach (var salespersonGroup in Model)
+        {
+            <h3>Salesperson: @salespersonGroup.SalespersonId - @salespersonGroup.SalespersonName</h3>
+            <h4>Total Sales Price: @salespersonGroup.TotalSalesPrice.ToString("C")</h4>
+            @if (!salespersonGroup.Sales.Any())
+            {
+                <p>No sales recorded for this salesperson.</p>
+            }
+            else
+            {
+                <table class="sales-table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Total Price</th>
+                            <th>Sale Date</th>
+                            <th>Sale Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var sale in salespersonGroup.Sales)
+                        {
+                            <tr>
+                                <td>@sale.Products.FirstOrDefault(p => p.Id == sale.ProductId)?.ProductName</td>
+                                <td>@sale.Quantity</td>
+                                <td>@sale.TotalPrice.ToString("C")</td>
+                                <td>@sale.SaleDate.ToShortDateString()</td>
+                                <td>@sale.SaleDate.ToShortTimeString()</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+        }
+    }
+
+    @if (userRole == "Salesperson")
+    {
+        <a href="@Url.Action("RecordSale", "Sales")" class="btn btn-primary">Record Sale</a>
+    }
+</div>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Information</title>
+    <link rel="stylesheet" href="indexStyles.css">
+    
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Product Information</h1>
+        </header>
+        <main>
+            <section>
+                <h2>Add New Product</h2>
+                <div class="form-container">
+                    <form id="productForm">
+                        <label for="productName">Product Name:</label>
+                        <input type="text" id="productName" name="productName" required>
+
+                        <label for="productCategory">Category:</label>
+                        <input type="text" id="productCategory" name="productCategory" required>
+
+                        <label for="productPrice">Price:</label>
+                        <input type="number" id="productPrice" name="productPrice" step="0.01" required>
+
+                        <label for="productQuantity">Quantity:</label>
+                        <input type="number" id="productQuantity" name="productQuantity" required>
+
+                        <input type="submit" value="Add Product">
+                    </form>
+                </div>
+            </section>
+
+            <section>
+                <h2>Product List</h2>
+                <div class="product-container">
+                    <table id="productsTable">
+                        <thead>
+                            <tr>
+                                <th>Product Name</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Product rows will be dynamically added here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Handle form submission
+        document.getElementById('productForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const productName = document.getElementById('productName').value;
+            const productCategory = document.getElementById('productCategory').value;
+            const productPrice = parseFloat(document.getElementById('productPrice').value).toFixed(2);
+            const productQuantity = parseInt(document.getElementById('productQuantity').value);
+
+            const table = document.getElementById('productsTable').getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow();
+
+            newRow.insertCell(0).innerText = productName;
+            newRow.insertCell(1).innerText = productCategory;
+            newRow.insertCell(2).innerText = `$${productPrice}`;
+            newRow.insertCell(3).innerText = productQuantity;
+
+            const actionCell = newRow.insertCell(4);
+            const editButton = document.createElement('button');
+            editButton.innerText = 'Edit';
+            editButton.className = 'btn';
+            editButton.addEventListener('click', function() {
+                alert(`Editing product: ${productName}`);
+                // Replace alert with actual product editing functionality
+            });
+            actionCell.appendChild(editButton);
+
+            const deleteButton = document.createElement('button');
+            deleteButton.innerText = 'Delete';
+            deleteButton.className = 'btn';
+            deleteButton.addEventListener('click', function() {
+                if (confirm(`Are you sure you want to delete ${productName}?`)) {
+                    table.deleteRow(newRow.rowIndex - 1);
+                }
+            });
+            actionCell.appendChild(deleteButton);
+
+            document.getElementById('productForm').reset();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿@model BestBrightness.Models.StockItem
+@{
+    ViewData["Title"] = "Edit Stock Item";
+}
+
+<h1>Edit Stock Item</h1>
+
+<form asp-action="EditStock">
+    <div class="form-group">
+        <label asp-for="ProductName" class="control-label"></label>
+        <input asp-for="ProductName" class="form-control" />
+        <span asp-validation-for="ProductName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="QuantityOrdered" class="control-label"></label>
+        <input asp-for="QuantityOrdered" class="form-control" />
+        <span asp-validation-for="QuantityOrdered" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="UnitPrice" class="control-label"></label>
+        <input asp-for="UnitPrice" class="form-control" />
+        <span asp-validation-for="UnitPrice" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="hidden" asp-for="StockItemId" />
+        <input type="submit" value="Save" class="btn btn-primary" />
+        <a asp-action="Display" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>

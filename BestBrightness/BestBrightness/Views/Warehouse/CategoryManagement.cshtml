@@ -1,0 +1,104 @@
+﻿@model List<BestBrightness.Models.Category> 
+
+<h2>Manage Categories</h2>
+
+<form method="post" asp-action="AddCategory" asp-controller="Warehouse">
+    <label for="newCategory">New Category:</label>
+    <input type="text" name="NewCategory" required />
+    <button type="submit">Add Category</button>
+</form>
+
+<h3>Existing Categories</h3>
+<ul>
+    @foreach (var category in Model)
+    {
+        <li>@category.Name</li>
+    }
+</ul>
+
+<style>
+    /* Container Styles */
+    h2 {
+        text-align: center;
+        color: #0f4c75; /* Darker text color for the title */
+        margin-bottom: 20px; /* Space below the title */
+    }
+
+    /* Form Styles */
+    form {
+        max-width: 400px; /* Maximum width of the form */
+        margin: 0 auto; /* Center the form */
+        padding: 20px;
+        background-color: #f7f9fa; /* Light background */
+        border-radius: 10px; /* Rounded corners */
+        border: 1px solid #00a6bc; /* Cyan border */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 15px; /* Slightly larger font size */
+        color: #333; /* Dark text for labels */
+    }
+
+    input[type="text"] {
+        width: calc(100% - 20px); /* Full width minus padding */
+        padding: 12px; /* Increased padding for comfort */
+        margin-bottom: 20px; /* Space below the input */
+        border-radius: 5px; /* Rounded corners */
+        border: 1px solid #00a6bc; /* Cyan border */
+        background-color: #ffffff; /* White background */
+        color: #333; /* Dark text */
+        font-size: 14px; /* Standard font size */
+        transition: border-color 0.3s; /* Transition effect */
+    }
+
+        input[type="text"]:focus {
+            border-color: #007a8a; /* Darker cyan on focus */
+            outline: none; /* Remove default outline */
+        }
+
+    button {
+        padding: 12px 25px; /* Increased padding */
+        border: none;
+        border-radius: 5px;
+        color: #fff; /* White text */
+        background-color: #00a6bc; /* Cyan background */
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+
+        button:hover {
+            background-color: #007a8a; /* Darker cyan on hover */
+        }
+
+    /* Existing Categories List */
+    h3 {
+        margin-top: 40px; /* Space above the existing categories header */
+        color: #0f4c75; /* Darker text color */
+        text-align: center; /* Center align */
+    }
+
+    ul {
+        list-style-type: none; /* Remove bullets */
+        padding: 0; /* Remove padding */
+        margin: 0 auto; /* Center the list */
+        max-width: 400px; /* Maximum width of the list */
+    }
+
+    li {
+        padding: 10px;
+        border: 1px solid #00a6bc; /* Cyan border */
+        border-radius: 5px; /* Rounded corners */
+        background-color: #ffffff; /* White background for list items */
+        margin-bottom: 10px; /* Space between list items */
+        transition: background-color 0.3s; /* Transition effect */
+    }
+
+        li:hover {
+            background-color: #f1f1f1; /* Light grey on hover */
+        }
+
+</style>

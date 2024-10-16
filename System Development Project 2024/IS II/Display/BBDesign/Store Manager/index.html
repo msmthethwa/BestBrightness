@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Manager Menu</title>
+    <link rel="stylesheet" href="indexStyles.css">
+       
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Store Management System</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="manageEmployees.html">Manage Employees</a></li>
+                <li><a href="manageCustomers.html">Manage Customers</a></li>
+                <li><a href="userPrivileges.html">Assign Privileges</a></li>
+                <li><a href="stockRequests.html">Stock Requests</a></li>
+                <li><a href="receiveStock.html">Receive Stock</a></li>
+                <li><a href="financialReports.html">Financial Reports</a></li>
+                <li><a href="productInfo.html">Product Information</a></li>
+                <li><a href="restrictedAccess.html">Restricted Access</a></li>
+            </ul>
+        </nav>
+        <main>
+            <section id="content">
+                <h2>Welcome to the Store Management System</h2>
+                <p>
+                    This system offers a comprehensive set of tools to help you manage every aspect of your store. Use the menu above to navigate through the system's features:
+                </p>
+                <div class="info-list">
+                    <ul>
+                        <li>
+                            <strong>Manage Employees:</strong>
+                            Accept, update, view, and delete employee records.
+                        </li>
+                        <li>
+                            <strong>Manage Customers:</strong>
+                            Accept, view, update, and delete customer records.
+                        </li>
+                        <li>
+                            <strong>Assign Privileges:</strong>
+                            Assign relevant privileges to all system users.
+                        </li>
+                        <li>
+                            <strong>Stock Requests:</strong>
+                            Create, send, update, or cancel stock requests with records of changes.
+                        </li>
+                        <li>
+                            <strong>Receive Stock:</strong>
+                            Receive and record stock from the warehouse, generating and saving stock receipt slips.
+                        </li>
+                        <li>
+                            <strong>Financial Reports:</strong>
+                            Generate monthly and annual financial reports.
+                        </li>
+                        <li>
+                            <strong>Product Information:</strong>
+                            Record and update product information for timely access by online customers.
+                        </li>
+                        <li>
+                            <strong>Restricted Access:</strong>
+                            Restrict system access to registered and authorized users only.
+                        </li>
+                    </ul>
+                </div>
+                <p>
+                    The Store Management System is designed to be user-friendly and efficient.
+                </p>
+            </section>
+        </main>
+    </div>
+    <script>
+        // JavaScript to handle menu navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Define the menu links and their corresponding pages
+            const menuLinks = {
+                'manageEmployees': 'manageEmployees.html',
+                'manageCustomers': 'manageCustomers.html',
+                'userPrivileges': 'userPrivileges.html',
+                'stockRequests': 'stockRequests.html',
+                'receiveStock': 'receiveStock.html',
+                'financialReports': 'financialReports.html',
+                'productInfo': 'productInfo.html',
+                'restrictedAccess': 'restrictedAccess.html'
+            };
+
+            // Add event listeners to each menu item
+            Object.keys(menuLinks).forEach(function(linkId) {
+                document.getElementById(linkId).addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent the default link behavior
+                    window.location.href = menuLinks[linkId]; // Navigate to the corresponding page
+                });
+            });
+        });
+    </script>
+</body>
+</html>

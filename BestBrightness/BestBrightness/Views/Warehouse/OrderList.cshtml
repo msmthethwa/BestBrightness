@@ -1,0 +1,103 @@
+﻿@model IEnumerable<BestBrightness.Models.WarehouseOrder>
+
+@{
+    ViewBag.Title = "Order List";
+}
+<link href="~/css/WarehouseStyles.css" rel="stylesheet" type="text/css" />
+
+<h2>Order List</h2>
+<style>
+    /* Order Table Styles */
+    #orderTable {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #081b29; /* Dark background */
+        color: #fff; /* White font for the entire table */
+    }
+
+        #orderTable th, #orderTable td {
+            padding: 12px 15px;
+            border: 1px solid #00a6bc; /* Cyan border */
+            text-align: left;
+        }
+
+        #orderTable th {
+            background-color: #00a6bc; /* Cyan header background */
+            color: #fff; /* White text in the header */
+        }
+
+        #orderTable tr:nth-child(even) {
+            background-color: #0d2a3a; /* Slightly lighter dark background for even rows */
+        }
+
+        #orderTable tr:hover {
+            background-color: #003f5c; /* Darker background on hover */
+        }
+
+        /* Button Styles */
+        #orderTable a {
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 4px;
+            text-decoration: none; /* Remove underline from links */
+            color: #fff; /* White text for links */
+        }
+
+            #orderTable a:hover {
+                text-decoration: underline; /* Underline on hover */
+            }
+
+            /* Edit Link */
+            #orderTable a[href*="EditOrder"] {
+                background-color: #ffcc00; /* Yellow background */
+            }
+
+            /* Delete Link */
+            #orderTable a[href*="DeleteOrder"] {
+                background-color: #f44336; /* Red background */
+            }
+
+            #orderTable a[href*="EditOrder"]:hover {
+                background-color: #e6b800; /* Darker yellow on hover */
+            }
+
+            #orderTable a[href*="DeleteOrder"]:hover {
+                background-color: #d32f2f; /* Darker red on hover */
+            }
+</style>
+
+<table id="orderTable" class="table">
+    <thead>
+        <tr>
+            <th>Product ID</th>
+            <th>Quantity</th>
+            <th>Supplier ID</th>
+            <th>Order Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var order in Model)
+        {
+            <tr>
+                <td>@order.ProductId</td>
+                <td>@order.Quantity</td>
+                <td>@order.SupplierId</td>
+                <td>@order.OrderDate.ToShortDateString()</td>
+                <td>@order.Status</td>
+                <td>
+                    <a href="@Url.Action("EditOrder", new { id = order.Id })" class="btn btn-warning">Edit</a>
+                    <a href="@Url.Action("DeleteOrder", new { id = order.Id })" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    <script src="~/js/OrderList.js"></script>
+}
+

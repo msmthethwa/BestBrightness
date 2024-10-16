@@ -1,0 +1,47 @@
+﻿@model BestBrightness.Models.LoginViewModel
+@{
+    Layout = "_LayoutLoginPage";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="~/cl-icon/css/all.min.css">
+    <link rel="stylesheet" href="~/css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <form asp-action="Login" method="post" class="form">
+            <h1 class="title">Login</h1>
+            <div class="inp">
+                <input asp-for="Username" class="input" placeholder="Username" />
+                <i class="fa-solid fa-user"></i>
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="inp">
+                <input asp-for="Password" type="password" class="input" placeholder="Password" />
+                <i class="fa-solid fa-lock"></i>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <button type="submit" class="submit">Log In</button>
+            <p class="footer">Don't have an account? <a asp-controller="Account" asp-action="Register" class="link">Register here</a></p>
+        </form>
+        <div class="banner">
+            <h1 class="wel_text">Welcome!</h1><br>
+            <a href="#">
+                <img src="~/Images/welcome-icon.png" alt="Welcome Icon" class="welcome-icon">
+            </a>
+        </div>
+    </div>
+
+    @if (ViewData.ModelState.ContainsKey(string.Empty) && ViewData.ModelState[string.Empty].Errors.Count > 0)
+    {
+        <script>
+            alert('@ViewData.ModelState[string.Empty].Errors[0].ErrorMessage');
+        </script>
+    }
+</body>
+</html>

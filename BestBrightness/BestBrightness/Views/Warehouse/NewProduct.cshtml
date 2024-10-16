@@ -1,0 +1,201 @@
+﻿@{
+    ViewBag.Title = "New Product";
+}
+
+<link rel="stylesheet" type="text/css" href="~/css/NewProduct.css" />
+<style>
+    /* Form Container */
+    #newProductForm {
+        background-color: #f7f9fa; /* Light background */
+        color: #333; /* Dark text for readability */
+        padding: 30px;
+        border-radius: 10px;
+        border: 1px solid #00a6bc; /* Cyan border */
+        max-width: 600px;
+        margin: 40px auto; /* Margin for spacing */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+
+    /* Form Title */
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #0f4c75; /* Darker text color for the title */
+    }
+
+    /* Form Labels */
+    #newProductForm label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 15px; /* Slightly larger font size */
+        color: #333; /* Dark text for labels */
+    }
+
+    /* Form Inputs */
+    #newProductForm input[type="text"],
+    #newProductForm input[type="number"],
+    #newProductForm input[type="date"],
+    #newProductForm select,
+    #newProductForm input[type="file"] {
+        width: calc(100% - 20px);
+        padding: 12px; /* Increased padding for comfort */
+        margin-bottom: 20px; /* More space between fields */
+        border-radius: 5px;
+        border: 1px solid #00a6bc; /* Cyan border */
+        background-color: #ffffff; /* White background for inputs */
+        color: #333; /* Dark text */
+        font-size: 14px; /* Standard font size */
+        transition: border-color 0.3s; /* Transition effect */
+    }
+
+        #newProductForm input[type="text"]:focus,
+        #newProductForm input[type="number"]:focus,
+        #newProductForm input[type="date"]:focus,
+        #newProductForm select:focus {
+            border-color: #007a8a; /* Darker cyan on focus */
+            outline: none; /* Remove default outline */
+        }
+
+    /* Form Buttons */
+    #newProductForm button {
+        padding: 12px 25px; /* Increased padding */
+        border: none;
+        border-radius: 5px;
+        color: #fff; /* White text */
+        background-color: #00a6bc; /* Cyan background */
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+        margin-top: 10px; /* Margin for spacing */
+    }
+
+        #newProductForm button:hover {
+            background-color: #007a8a; /* Darker cyan on hover */
+        }
+
+    /* Add Another Product Button */
+    #addProductButton {
+        background-color: #0f4c75; /* Darker background for "Add Another Product" */
+        color: #fff; /* White text */
+        margin-right: 10px;
+    }
+
+</style>
+
+
+<h2>Record New Products</h2>
+
+<form id="newProductForm" method="post" enctype="multipart/form-data" asp-action="AddProducts" asp-controller="Warehouse">
+    <div id="productFields">
+        <div class="product">
+            <label for="name">Product Name:</label>
+            <input type="text" name="names" required />
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" name="quantities" required />
+
+            <label for="supplier">Supplier Name:</label>
+            <select name="suppliers" required>
+                <option value="" disabled selected>Select a supplier</option>
+                @foreach (var supplier in ViewBag.Suppliers)
+                {
+                    <option value="@supplier.Name">@supplier.Name</option>
+                }
+            </select>
+
+            <label for="receivedDate">Received Date:</label>
+            <input type="date" name="receivedDates" required />
+
+            <label for="description">Product Description:</label>
+            <textarea name="descriptions"></textarea>
+
+            <label for="price">Price:</label>
+            <input type="number" name="prices" step="0.01" />
+
+            <label for="category">Category:</label>
+            <select name="categories" required>
+                <option value="" disabled selected>Select a category</option>
+                @foreach (var category in ViewBag.Categories)
+                {
+                    <option value="@category.Name">@category.Name</option>
+                }
+            </select>
+
+            <label for="image">Upload Product Image:</label>
+            <input type="file" name="images" accept="image/*" required />
+
+            <button type="button" class="removeProductButton" style="display:none;">Remove Product</button>
+        </div>
+    </div>
+
+    <button type="button" id="addProductButton">Add Another Product</button>
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    document.getElementById('addProductButton').onclick = function () {
+        var productFields = document.getElementById('productFields');
+        var newProduct = document.createElement('div');
+        newProduct.className = 'product';
+
+        // Add HTML structure for a new product, including a "Remove Product" button
+        newProduct.innerHTML = `
+                <label for="name">Product Name:</label>
+                <input type="text" name="names" required />
+
+                <label for="quantity">Quantity:</label>
+                <input type="number" name="quantities" required />
+
+                <label for="supplier">Supplier Name:</label>
+                <select name="suppliers" required>
+                    <option value="" disabled selected>Select a supplier</option>
+    @foreach (var supplier in ViewBag.Suppliers)
+    {
+                                <option value="@supplier.Name">@supplier.Name</option>
+    }
+                </select>
+
+                <label for="receivedDate">Received Date:</label>
+                <input type="date" name="receivedDates" required />
+
+                <label for="description">Product Description:</label>
+                <textarea name="descriptions"></textarea>
+
+                <label for="price">Price:</label>
+                <input type="number" name="prices" step="0.01" />
+
+                <label for="category">Category:</label>
+                <select name="categories" required>
+                    <option value="" disabled selected>Select a category</option>
+    @foreach (var category in ViewBag.Categories)
+    {
+                                <option value="@category.Name">@category.Name</option>
+    }
+                </select>
+
+                <label for="image">Upload Product Image:</label>
+                <input type="file" name="images" accept="image/*" required />
+
+                <button type="button" class="removeProductButton">Remove Product</button>
+            `;
+
+        // Append the new product to the form
+        productFields.appendChild(newProduct);
+
+        // Add functionality to the "Remove Product" button
+        var removeButton = newProduct.querySelector('.removeProductButton');
+        removeButton.style.display = 'block'; // Show the button
+        removeButton.onclick = function () {
+            productFields.removeChild(newProduct); // Remove the product div
+        };
+    };
+
+    // Attach the remove functionality to the initial product's "Remove Product" button
+    var initialRemoveButton = document.querySelector('.removeProductButton');
+    initialRemoveButton.onclick = function () {
+        var productFields = document.getElementById('productFields');
+        var initialProduct = document.querySelector('.product');
+        productFields.removeChild(initialProduct);
+    };
+
+</script>

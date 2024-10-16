@@ -1,0 +1,465 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BestBrightness.bundle.scp.css",
+      "PackagePath": "staticwebassets\\BestBrightness.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\Images\\banner0.jpg",
+      "PackagePath": "staticwebassets\\Images\\banner0.jpg"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\Images\\banner1.jpg",
+      "PackagePath": "staticwebassets\\Images\\banner1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\Images\\banner2.jpg",
+      "PackagePath": "staticwebassets\\Images\\banner2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\Images\\banner3.jpg",
+      "PackagePath": "staticwebassets\\Images\\banner3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\Images\\banner4.jpg",
+      "PackagePath": "staticwebassets\\Images\\banner4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\Images\\cart.png",
+      "PackagePath": "staticwebassets\\Images\\cart.png"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\Images\\discovery-miles-icon.png",
+      "PackagePath": "staticwebassets\\Images\\discovery-miles-icon.png"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\Images\\ebucks-icon.png",
+      "PackagePath": "staticwebassets\\Images\\ebucks-icon.png"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\Images\\product1.jpg",
+      "PackagePath": "staticwebassets\\Images\\product1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\Images\\product2.jpg",
+      "PackagePath": "staticwebassets\\Images\\product2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\Images\\product3.jpg",
+      "PackagePath": "staticwebassets\\Images\\product3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\Images\\product4.jpg",
+      "PackagePath": "staticwebassets\\Images\\product4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\Images\\profile-pictures\\Logo-removebg-preview.png",
+      "PackagePath": "staticwebassets\\Images\\profile-pictures\\Logo-removebg-preview.png"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\Images\\profile-pictures\\image28.jpg",
+      "PackagePath": "staticwebassets\\Images\\profile-pictures\\image28.jpg"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\Images\\profile_pictures\\image8.jpg",
+      "PackagePath": "staticwebassets\\Images\\profile_pictures\\image8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\Images\\sale-tag.png",
+      "PackagePath": "staticwebassets\\Images\\sale-tag.png"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\Images\\search.png",
+      "PackagePath": "staticwebassets\\Images\\search.png"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\Images\\sold.png",
+      "PackagePath": "staticwebassets\\Images\\sold.png"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\Images\\welcome-icon.png",
+      "PackagePath": "staticwebassets\\Images\\welcome-icon.png"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\assets\\css\\style.css",
+      "PackagePath": "staticwebassets\\assets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\assets\\imgs\\user.png",
+      "PackagePath": "staticwebassets\\assets\\imgs\\user.png"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\assets\\js\\main.cs",
+      "PackagePath": "staticwebassets\\assets\\js\\main.cs"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\css\\AdminInventory.css",
+      "PackagePath": "staticwebassets\\css\\AdminInventory.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\css\\AdminProfile.css",
+      "PackagePath": "staticwebassets\\css\\AdminProfile.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\css\\AdminQuotation.css",
+      "PackagePath": "staticwebassets\\css\\AdminQuotation.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\css\\HomeProfile.css",
+      "PackagePath": "staticwebassets\\css\\HomeProfile.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\css\\HomeStyle.css",
+      "PackagePath": "staticwebassets\\css\\HomeStyle.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\css\\Order.css",
+      "PackagePath": "staticwebassets\\css\\Order.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\css\\OrderReview.css",
+      "PackagePath": "staticwebassets\\css\\OrderReview.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\css\\Payment.css",
+      "PackagePath": "staticwebassets\\css\\Payment.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\css\\PaymentSuccess.css",
+      "PackagePath": "staticwebassets\\css\\PaymentSuccess.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\css\\ProductStyle.css",
+      "PackagePath": "staticwebassets\\css\\ProductStyle.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\css\\QuotationRequest.css",
+      "PackagePath": "staticwebassets\\css\\QuotationRequest.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\css\\Sales.css",
+      "PackagePath": "staticwebassets\\css\\Sales.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\css\\UpdateStyle.css",
+      "PackagePath": "staticwebassets\\css\\UpdateStyle.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\css\\ViewCustomerOrdersItems.css",
+      "PackagePath": "staticwebassets\\css\\ViewCustomerOrdersItems.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\css\\cart.css",
+      "PackagePath": "staticwebassets\\css\\cart.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\css\\customerHomeStyles.css",
+      "PackagePath": "staticwebassets\\css\\customerHomeStyles.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\css\\customerStyles.css",
+      "PackagePath": "staticwebassets\\css\\customerStyles.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\css\\inventory.css",
+      "PackagePath": "staticwebassets\\css\\inventory.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\css\\invoice-print.css",
+      "PackagePath": "staticwebassets\\css\\invoice-print.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\css\\invoice.css",
+      "PackagePath": "staticwebassets\\css\\invoice.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\css\\profile.css",
+      "PackagePath": "staticwebassets\\css\\profile.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\css\\registerStyle.css",
+      "PackagePath": "staticwebassets\\css\\registerStyle.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\css\\report-print.css",
+      "PackagePath": "staticwebassets\\css\\report-print.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\css\\report.css",
+      "PackagePath": "staticwebassets\\css\\report.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\js\\ProductScripts.js",
+      "PackagePath": "staticwebassets\\js\\ProductScripts.js"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\js\\cart.js",
+      "PackagePath": "staticwebassets\\js\\cart.js"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\js\\customerScript.js",
+      "PackagePath": "staticwebassets\\js\\customerScript.js"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.BestBrightness.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.BestBrightness.props",
+      "PackagePath": "build\\BestBrightness.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.BestBrightness.props",
+      "PackagePath": "buildMultiTargeting\\BestBrightness.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.BestBrightness.props",
+      "PackagePath": "buildTransitive\\BestBrightness.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

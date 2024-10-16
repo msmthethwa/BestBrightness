@@ -1,0 +1,45 @@
+﻿@model IEnumerable<BestBrightness.Models.StockItem>
+@{
+    ViewData["Title"] = "Display";
+}
+
+<h1>Display</h1>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Stock ID</th>
+            <th>Product Name</th>
+            <th>Quantity Ordered</th>
+            <th>Price</th>
+            <th>Status</th> <!-- New Status Column -->
+            <th>Decline Reason</th> <!-- New Decline Reason Column -->
+            <th>Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var order in Model)
+        {
+            <tr>
+                <td>@order.StockItemId</td>
+                <td>@order.ProductName</td>
+                <td>@order.QuantityOrdered</td>
+                <td>@order.UnitPrice.ToString("C")</td> <!-- Format as currency -->
+                <td>@(order.Status ?? "Pending")</td> <!-- Display status, handle null -->
+                <td>
+                    @if (order.Status == "Declined")
+                    {
+                        @(order.DeclineReason ?? "No reason provided") <!-- Display reason or default -->
+                    }
+                    else
+                    {
+                        <span>N/A</span> <!-- Indicate not applicable for other statuses -->
+                    }
+                </td>
+                <td>
+                    <a href="@Url.Action("EditStock", "Admin", new { id = order.StockItemId })" class="btn btn-primary">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

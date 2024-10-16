@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Management - Best Brightness Shop</title>
+    <link rel="stylesheet" href="order-management.css">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <img src="images/logo.png" alt="Best Brightness Logo" id="logo">
+            <h1 class="company-name">Best Brightness</h1>
+            <div class="header-right">
+                <a href="#" id="logoutLink">Logout</a>
+                <a href="#" id="accountLink">My Account</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Order Management</h2>
+
+            <!-- Create/Update Order Form -->
+            <section class="form-section">
+                <h3>Create or Update Order</h3>
+                <form id="orderForm">
+                    <label for="orderAction">Action:</label>
+                    <select id="orderAction" name="orderAction">
+                        <option value="create">Create Order</option>
+                        <option value="update">Update Order</option>
+                        <option value="cancel">Cancel Order</option>
+                    </select>
+                    
+                    <label for="supplier">Supplier:</label>
+                    <input type="text" id="supplier" name="supplier" required>
+                    
+                    <label for="product">Product:</label>
+                    <input type="text" id="product" name="product" required>
+                    
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" required>
+                    
+                    <button type="submit" id="submitOrder">Submit</button>
+                </form>
+            </section>
+
+            <!-- Stock Removal Form -->
+            <section class="form-section">
+                <h3>Remove Stock</h3>
+                <form id="stockRemovalForm">
+                    <label for="removeProduct">Product:</label>
+                    <input type="text" id="removeProduct" name="removeProduct" required>
+                    
+                    <label for="removeQuantity">Quantity:</label>
+                    <input type="number" id="removeQuantity" name="removeQuantity" min="1" required>
+                    
+                    <button type="submit" id="removeStock">Remove Stock</button>
+                </form>
+            </section>
+
+            <!-- Recorded Changes -->
+            <section class="changes-log">
+                <h3>Recorded Changes</h3>
+                <ul>
+                    <li>
+                        <strong>Order ID:</strong> 12345 
+                        - <strong>Action:</strong> Created 
+                        - <strong>Supplier:</strong> GreenClean Supplies 
+                        - <strong>Product:</strong> UltraClean All-Purpose Cleaner 
+                        - <strong>Quantity:</strong> 100 units 
+                        - <strong>Date:</strong> August 20, 2024
+                    </li>
+                    <li>
+                        <strong>Order ID:</strong> 12346 
+                        - <strong>Action:</strong> Updated 
+                        - <strong>Supplier:</strong> EcoClean Partners 
+                        - <strong>Product:</strong> UltraClean Window Cleaner 
+                        - <strong>New Quantity:</strong> 50 units 
+                        - <strong>Date:</strong> August 19, 2024
+                    </li>
+                    <li>
+                        <strong>Order ID:</strong> 12347 
+                        - <strong>Action:</strong> Cancelled 
+                        - <strong>Supplier:</strong> GreenClean Supplies 
+                        - <strong>Product:</strong> UltraClean Bathroom Cleaner 
+                        - <strong>Quantity:</strong> 200 units 
+                        - <strong>Date:</strong> August 18, 2024
+                    </li>
+                    <li>
+                        <strong>Stock Removal:</strong> 
+                        - <strong>Product:</strong> UltraClean All-Purpose Cleaner 
+                        - <strong>Removed Quantity:</strong> 10 units 
+                        - <strong>Date:</strong> August 17, 2024
+                    </li>
+                    <li>
+                        <strong>Pickup Slip ID:</strong> 56789 
+                        - <strong>Action:</strong> Generated 
+                        - <strong>Product:</strong> UltraClean Floor Cleaner 
+                        - <strong>Quantity:</strong> 30 units 
+                        - <strong>Date:</strong> August 16, 2024
+                        - <button class="print-button" onclick="printPickupSlip(56789)">Print</button>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Best Brightness Shop. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function printPickupSlip(id) {
+            alert('Printing Pickup Slip ID: ' + id);
+            // Implement print functionality here
+        }
+    </script>
+</body>
+</html>

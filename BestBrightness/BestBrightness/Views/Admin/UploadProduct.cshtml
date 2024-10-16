@@ -1,0 +1,99 @@
+﻿@model BestBrightness.ViewModels.ProductUploadViewModel
+
+@{
+    ViewData["Title"] = "Upload Product";
+}
+
+<link rel="stylesheet" href="~/css/Sales.css">
+
+<h2>Upload Product</h2>
+
+@*if (TempData["ProductUploadMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["ProductUploadMessage"]
+    </div>
+}*@
+
+<form asp-action="UploadProduct" method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group">
+        <label for="StockItem">Select Stock From Warehouse</label>
+        <select asp-for="StockId" class="form-control" onchange="populateProductDetails(this)">
+            <option value="">-- Select Stock Item --</option>
+            @if (ViewBag.StockItems != null && ViewBag.StockItems.Count > 0)
+            {
+                @foreach (var item in ViewBag.StockItems)
+                {
+                    <option value="@item.Id" data-name="@item.Name" data-description="@item.Description" data-stock="@item.Quantity" data-price="@item.Price">@item.Name</option>
+                }
+            }
+            else
+            {
+                <option value="">No stock items available</option>
+            }
+        </select>
+    </div>
+
+
+    <!-- Form fields to be populated dynamically -->
+    <div class="form-group">
+        <label asp-for="ProductName">Product Name</label>
+        <input asp-for="ProductName" class="form-control" />
+        <span asp-validation-for="ProductName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ProductDescription">Product Description</label>
+        <textarea asp-for="ProductDescription" class="form-control" rows="5"></textarea>
+        <span asp-validation-for="ProductDescription" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="StockLevel">Stock Level</label>
+        <input asp-for="StockLevel" class="form-control" />
+        <span asp-validation-for="StockLevel" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Price">Price</label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Category"></label>
+        <select asp-for="Category" class="form-control">
+            <option value="">-- Select a Category --</option>
+            <option value="Anti-Bacterial">Anti-Bacterial</option>
+            <option value="Eco-Friendly">Eco-Friendly</option>
+            <option value="Concentrated">Concentrated</option>
+            <option value="Streak-Free">Streak-Free</option>
+            <option value="All-Purpose">All-Purpose</option>
+        </select>
+        <span asp-validation-for="Category" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="ProductImage">Product Image</label>
+        <input type="file" id="ProductImage" name="ProductImage" class="form-control" />
+        <span asp-validation-for="ProductImage" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Upload</button>
+</form>
+
+@section Scripts {
+    <script>
+        function populateProductDetails(selectElement) {
+            var selectedOption = selectElement.options[selectElement.selectedIndex];
+
+            // Populate fields with selected stock item details
+            document.getElementById('ProductName').value = selectedOption.getAttribute('data-name');
+            document.getElementById('ProductDescription').value = selectedOption.getAttribute('data-description');
+            document.getElementById('StockLevel').value = selectedOption.getAttribute('data-stock');
+            document.getElementById('Price').value = selectedOption.getAttribute('data-price');
+        }
+    </script>
+}

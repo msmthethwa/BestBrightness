@@ -1,0 +1,140 @@
+﻿@model BestBrightness.Models.Stock
+
+@{
+    ViewBag.Title = "Delete Stock";
+}
+
+<link href="~/css/WarehouseStyles.css" rel="stylesheet" type="text/css" />
+
+<div class="container">
+    <h2>Delete Stock</h2>
+    <form method="post" action="@Url.Action("RemoveStock", "Warehouse")">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="id" value="@Model.Id" />
+        <div class="alert alert-warning">
+            <h4 class="alert-heading">Are you sure you want to delete this stock item?</h4>
+            <p>Once deleted, this action cannot be undone.</p>
+        </div>
+
+        <div class="form-group">
+            <label>Product Name:</label>
+            <p>@Model.Name</p>
+        </div>
+        <div class="form-group">
+            <label>Quantity:</label>
+            <p>@Model.Quantity</p>
+        </div>
+        <div class="form-group">
+            <label>Supplier Name:</label>
+            <p>@Model.Supplier</p>
+        </div>
+        <div class="form-group">
+            <label>Received Date:</label>
+            <p>@Model.ReceivedDate.ToShortDateString()</p>
+        </div>
+        <div class="form-group">
+            <label>Product Image:</label>
+            <img src="data:image/jpeg;base64,@Model.ImageBase64" alt="Product Image" style="max-width: 200px;" />
+        </div>
+
+        <!-- New fields for Description, Price, and Category -->
+        <div class="form-group">
+            <label>Description:</label>
+            <p>@Model.Description</p>
+        </div>
+        <div class="form-group">
+            <label>Price:</label>
+            <p>@Model.Price</p>
+        </div>
+        <div class="form-group">
+            <label>Category:</label>
+            <p>@Model.Category</p>
+        </div>
+
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a href="@Url.Action("StockList", "Warehouse")" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+
+<style>
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .alert {
+        padding: 15px;
+        background-color: #ffdddd;
+        border-left: 6px solid #f44336;
+        margin-bottom: 20px;
+    }
+
+        .alert h4 {
+            margin-top: 0;
+            color: #f44336;
+        }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+        .form-group label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group p {
+            margin: 0;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .form-group img {
+            display: block;
+            margin: 10px 0;
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        margin-right: 10px;
+    }
+
+    .btn-danger {
+        background-color: #f44336;
+        color: #fff;
+        border: none;
+    }
+
+    .btn-secondary {
+        background-color: #ccc;
+        color: #333;
+        border: none;
+    }
+
+    .btn:hover {
+        opacity: 0.9;
+    }
+
+</style>

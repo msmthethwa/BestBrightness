@@ -1,0 +1,135 @@
+﻿@model BestBrightness.Models.QuotationRequestViewModel
+
+@{
+    ViewData["Title"] = "Request Quotation - Best Brightness Shop";
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Best Brightness Shop - Your go-to place for top quality products!">
+    <title>@ViewData["Title"]</title>
+
+    <link rel="stylesheet" href="~/css/QuotationRequest.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="~/js/CustomerScript.js" defer></script>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="gradient"></div>
+
+    <header>
+        <div class="header-top">
+            <a href="@Url.Action("Index", "CustomerHome")">
+                <img src="~/images/welcome-icon.png" alt="Best Brightness Logo" id="logo">
+            </a>
+            <h1 class="company-name">Best Brightness Shop</h1>
+            <div class="header-right">
+                <a href="@Url.Action("QuotationRequest", "Customer")" id="quotationsLink">Quotations</a>
+                <a href="@Url.Action("Order", "Customer")" id="ordersLink">Orders</a>
+                <a href="@Url.Action("Profile", "Customer")" id="accountLink">Profile</a>
+                <form method="post" action="@Url.Action("Logout", "CustomerAccount")" style="margin-left: 1rem; font-weight: 600;">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" style="background: transparent; border: none; color: red; font-weight: 1000; cursor: pointer;">
+                        Logout
+                    </button>
+                </form>
+                <a href="@Url.Action("Cart", "Cart")" id="cartLink" class="cart-icon"><img src="~/images/cart.png" alt="Cart"></a>
+            </div>
+        </div>
+
+        <div class="search-nav">
+            <form method="get" action="@Url.Action("Search", "CustomerHome")" class="search-container">
+                <input type="text" id="searchField" name="query" placeholder="Search for products..." aria-label="Search Products">
+                <button type="submit" id="searchButton"><img src="~/images/search.png" alt="Search Icon"></button>
+            </form>
+        </div>
+    </header>
+
+    <main>
+        <div class="profile-section">
+            <h2>Request a Quotation</h2>
+
+            @if (TempData["StatusMessage"] != null)
+            {
+                <div class="alert @TempData["StatusClass"]">
+                    @TempData["StatusMessage"]
+                </div>
+            }
+
+            <div class="profile-details">
+                <!-- Quotation Request Form -->
+                <form asp-action="SubmitQuotationRequest">
+                    <div class="form-group">
+                        <label asp-for="Name"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Email"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Phone"></label>
+                        <input asp-for="Phone" class="form-control" />
+                        <span asp-validation-for="Phone" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Address"></label>
+                        <input asp-for="Address" class="form-control" />
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="ProductDetails">Quotation Request</label>
+                        <textarea asp-for="ProductDetails" class="form-control"></textarea>
+                        <span asp-validation-for="ProductDetails" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Quantity"></label>
+                        <input asp-for="Quantity" class="form-control" />
+                        <span asp-validation-for="Quantity" class="text-danger"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit Request</button>
+                </form>
+
+                <!-- Display quotations -->
+                <div class="order-history">
+                    <h3>Previous Quotations</h3>
+                    @if (Model.Quotations.Count > 0)
+                    {
+                        <ul class="order-list">
+                            @foreach (var quotation in Model.Quotations)
+                            {
+                                <li>
+                                    <strong>Product Details:</strong> @quotation.ProductDetails<br>
+                                    <strong>Request Date:</strong> @quotation.RequestDate.ToString("MM/dd/yyyy")<br>
+                                    <strong>Feedback:</strong> @quotation.Feedback
+                                </li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <p>No previous quotations found.</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Best Brightness Shop. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,604 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "_LayoutWarehouseLogin";
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="~/css/WarehouseStyles.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .container-fluid {
+            display: flex;
+        }
+
+        .sidebar {
+            background-color: #2b2a33;
+            color: #fff;
+            min-width: 238px;
+            position: fixed;
+            left: -238px;
+            top: 0;
+            bottom: 0;
+            overflow: auto;
+            transition: left 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+            .sidebar.show {
+                left: 0;
+            }
+
+            .sidebar ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .sidebar a {
+                color: #fff;
+                text-decoration: none;
+                padding: 15px;
+                display: block;
+                transition: background-color 0.3s;
+            }
+
+                .sidebar a:hover {
+                    background-color: #00a6bc;
+                    color: #fff;
+                }
+
+        .main-content {
+            margin-left: 0;
+            flex: 1;
+            padding: 20px;
+            transition: margin-left 0.3s ease;
+        }
+
+            .main-content.sidebar-open {
+                margin-left: 238px;
+            }
+
+        .dashboard-header {
+            background-color: #dfdfdf;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .menu-toggle {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            width: 40px;
+            height: 40px;
+            background-color: #373193;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .menu-toggle i {
+                font-size: 20px;
+            }
+
+        .dashboard {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .dashboard-item {
+            flex: 1 1 calc(50% - 20px);
+            max-width: calc(50% - 20px);
+        }
+
+        .card {
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+            .card:hover {
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+                transform: translateY(-5px);
+            }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-footer {
+            padding: 10px 20px;
+            text-align: center;
+            border-top: 1px solid #00a6bc;
+        }
+
+            .card-footer a {
+                color: #00a6bc;
+                text-decoration: none;
+            }
+
+
+                .card-footer a:hover {
+                    color: #007a8a;
+                }
+
+        /* Card Specific Styles */
+
+        .manage-stock {
+            background-color: #0d2a3a;
+            color: #fff;
+        }
+
+        .create-orders {
+            background-color: #003f5c;
+            color: #fff;
+        }
+
+        .manage-pickups {
+            background-color: #081b29;
+            color: #fff;
+        }
+
+        .manage-suppliers {
+            background-color: #003f5c;
+            color: #fff;
+        }
+        /* Button Styles */
+
+        .btn-link {
+            padding: 8px 15px;
+            border-radius: 4px;
+            background-color: transparent;
+            color: #00a6bc;
+            border: 2px solid #00a6bc;
+        }
+
+            .btn-link:hover {
+                background-color: #00a6bc;
+                color: #fff;
+            }
+
+        /* Dropdown Styles */
+
+        .dropdown-btn {
+            background-color: #0f4c75;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            text-align: left;
+            outline: none;
+            transition: background-color 0.3s ease;
+        }
+
+            .dropdown-btn:hover {
+                background-color: #1b262c;
+            }
+
+        .dropdown-container {
+            display: none;
+            background-color: #3282b8;
+            padding-left: 20px;
+        }
+
+            .dropdown-container a {
+                color: #fff;
+                padding: 10px;
+                text-decoration: none;
+                display: block;
+            }
+
+                .dropdown-container a:hover {
+                    background-color: #bbe1fa;
+                    color: #0f4c75;
+                }
+
+        /* Logout Button */
+
+        .logout-link {
+            background-color: #dc3545;
+            font-weight: bold;
+            color: #fff;
+        }
+
+            .logout-link:hover {
+                background-color: #c82333;
+            }
+
+            .logout-link i {
+                margin-right:  8px;
+            }
+
+
+
+        /* Main Content Styles */
+        .main-content {
+            background-color: #081b29; /* Dark background */
+            color: #fff; /* White text */
+            padding: 20px;
+            min-height: 100vh; /* Ensure it covers the full viewport height */
+        }
+
+        /* Header Styles */
+        .dashboard-header {
+            background-color: #0d2a3a; /* Slightly lighter dark background */
+            padding: 15px;
+            border-bottom: 2px solid #00a6bc; /* Cyan border at the bottom */
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+            .dashboard-header h1 {
+                color: #fff; /* White text for the title */
+                margin: 0;
+                font-size: 24px; /* Adjust font size as needed */
+            }
+
+
+        .nav-link.active {
+            background-color: #0f4c75;
+            color: white;
+            font-weight: bold;
+        }
+
+        .nav-link {
+            color: #3282b8;
+            padding: 10px 20px;
+            display: block;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+            .nav-link:hover {
+                background-color: #1b262c;
+                color: #bbe1fa;
+            }
+
+        .chart {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+            .chart h3 {
+                margin-top: 0;
+                color: #333;
+                font-weight: 600;
+                font-size: 18px;
+                border-bottom: 1px solid #ccc;
+                padding-bottom: 10px;
+            }
+
+        #warehouseChart {
+            width: 100%;
+            height: 400px;
+            margin-top: 20px;
+        }
+
+        /* Search Container */
+        .search-container {
+            display: flex; /* Flex layout for input and button */
+            align-items: center; /* Vertically center items */
+        }
+
+        /* Search Input */
+        #searchInput {
+            width: 1000px; /* Set a fixed width */
+            padding: 10px; /* Comfortable padding */
+            font-size: 16px; /* Text size */
+            border: 1px solid #ccc; /* Light gray border */
+            border-radius: 4px; /* Slightly rounded corners */
+            margin-right: 10px; /* Space between input and button */
+            transition: border-color 0.3s ease; /* Smooth transition for border color */
+        }
+
+            /* Focus State for Input */
+            #searchInput:focus {
+                border-color: #007bff; /* Change border color on focus */
+                outline: none; /* Remove default outline */
+            }
+
+        /* Search Button */
+        #searchButton {
+            padding: 10px 20px; /* Comfortable padding */
+            font-size: 16px; /* Text size */
+            border: none; /* Remove default border */
+            border-radius: 4px; /* Slightly rounded corners */
+            background-color: #007bff; /* Primary color for button */
+            color: white; /* White text */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s ease; /* Smooth transition for background color */
+        }
+
+            /* Hover State for Button */
+            #searchButton:hover {
+                background-color: #0056b3; /* Darker blue on hover */
+            }
+
+    </style>
+</head>
+<body>
+    <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+    <div class="container-fluid">
+        <!-- Sidebar -->
+        <nav id="sidebarMenu" class="sidebar">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/Warehouse/Dashboard">
+                            <i class="fas fa-home"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Warehouse/NewProduct">
+                            <i class="fas fa-plus-circle"></i> Add New Product
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="dropdown-btn">
+                            <i class="fas fa-list"></i> Stock Management
+                        </button>
+                        <div class="dropdown-container">
+                            <a href="/Warehouse/StockList">Manage Stock</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <button class="dropdown-btn">
+                            <i class="fas fa-shopping-cart"></i> Orders
+                        </button>
+                        <div class="dropdown-container">
+                            <a href="/Warehouse/CreateOrder">Create Order</a>
+                            <a href="/Warehouse/OrderList">Order List</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <button class="dropdown-btn">
+                            <i class="fas fa-truck"></i> Pickups
+                        </button>
+                        <div class="dropdown-container">
+                            <a href="/Warehouse/PickupList">Manage Pickups</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <button class="dropdown-btn">
+                            <i class="fas fa-users"></i> Suppliers
+                        </button>
+                        <div class="dropdown-container">
+                            <a href="/Warehouse/SupplierList">Supplier Management</a>
+                            <a href="/Warehouse/CreateSupplier">Create Supplier</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Warehouse/CategoryManagement">
+                            <i class="fas fa-tags"></i> Manage Categories
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link logout-link" href="#" onclick="logout()">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+
+        <main class="main-content">
+            <div class="dashboard-header">
+                <h1>Warehouse Manager Dashboard</h1>
+                <div class="search-container">
+                    <form asp-action="SearchResults" method="post">
+                        <input type="text" id="searchInput" name="searchTerm" placeholder="Search pickups, suppliers, stock..." />
+                        <button type="submit" id="searchButton" class="btn btn-primary">Search</button>
+                    </form>
+                </div>
+            </div>
+       
+
+             
+            <!-- Cards Section -->
+            <div class="dashboard">
+                <div class="dashboard-item">
+                    <div class="card manage-stock">
+                        <div class="card-body">
+                            <h3>Total Stock Available</h3>
+                            <p>The total stock in your warehouse is: <strong>@ViewBag.TotalStock</strong></p>
+
+                            @if (ViewBag.IsStockLow)
+                            {
+                                <p style="color: red; font-weight: bold;">
+                                    Warning: Your stock is below the threshold of @ViewBag.LowStockThreshold units.
+                                    Please consider ordering more.
+                                </p>
+                            }
+                            else
+                            {
+                                <p style="color: green; font-weight: bold;">
+                                    Stock levels are sufficient.
+                                </p>
+                            }
+                        </div>
+                        <div class="card-footer">
+                            <a href="/Warehouse/StockList" class="btn btn-link">Manage Stock</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-item">
+                    <div class="card create-orders">
+                        <div class="card-body">
+                            <h3>Create Orders</h3>
+                            <p>Place new orders for suppliers</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="/Warehouse/CreateOrder" class="btn btn-link">Create Order</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-item">
+                    <div class="card manage-pickups">
+                        <div class="card-body">
+                            <h3>Manage Pickups</h3>
+                            <p>Handle Pickup Requests</p>
+                            <div id="orderNotification" style="color: red; font-weight: bold;"></div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="/Warehouse/PickupList" class="btn btn-link">Go to Pickups</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-item">
+                    <div class="card manage-suppliers">
+                        <div class="card-body">
+                            <h3>Suppliers</h3>
+                            <p>View and manage suppliers</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="/Warehouse/SupplierList" class="btn btn-link">Manage Suppliers</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart">
+                    <h3>Inventory and Shipping Statistics</h3>
+                    <canvas id="warehouseChart"></canvas>
+                </div>
+                <div class="chart">
+                    <h3>Warehouse Overview</h3>
+                    <canvas id="warehousePieChart"></canvas>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+    <!-- Feather Icons Activation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Include Chart.js for graph -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('warehouseChart').getContext('2d');
+        const warehouseChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Inventory Levels',
+                    data: [1000, 1200, 1500, 1800, 2000, 2500],
+                    borderColor: '#3282b8', // Blue
+                    backgroundColor: 'rgba(50, 130, 184, 0.5)', // Semi-transparent blue
+                }, {
+                    label: 'Shipping Volumes',
+                    data: [500, 600, 700, 800, 900, 1000],
+                    borderColor: '#0f4c75', // Dark blue
+                    backgroundColor: 'rgba(15, 76, 117, 0.5)', // Semi-transparent dark blue
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+
+        const ctxPie = document.getElementById('warehousePieChart').getContext('2d');
+        const warehousePieChart = new Chart(ctxPie, {
+            type: 'pie',
+            data: {
+                labels: ['Stock', 'Orders', 'Pickups', 'Suppliers'],
+                datasets: [{
+                    data: [300, 150, 100, 50], // Example data, replace with your actual data
+                    backgroundColor: ['#3282b8', '#0f4c75', '#ffcc00', '#ff5733'],
+                    hoverBackgroundColor: ['#1f5a7a', '#0a3a4d', '#e6b800', '#e74c3c']
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+
+
+    </script>
+    <script>
+        const mobileScreen = window.matchMedia("(max-width: 990px)");
+
+        $(document).ready(function () {
+            // Toggle sidebar visibility
+            $(".menu-toggle").click(function () {
+                $(".sidebar").toggleClass("show");
+                $(".main-content").toggleClass("sidebar-open");
+            });
+
+            // Hide sidebar when clicking outside
+            $(document).click(function (event) {
+                if (!$(event.target).closest(".sidebar, .menu-toggle").length) {
+                    if ($(".sidebar").hasClass("show")) {
+                        $(".sidebar").removeClass("show");
+                        $(".main-content").removeClass("sidebar-open");
+                    }
+                }
+            });
+            // Dropdown functionality
+            $(".dropdown-btn").click(function () {
+                // Toggle the current dropdown container visibility
+                $(this).next(".dropdown-container").slideToggle();
+                // Change the arrow icon (optional)
+                $(this).toggleClass("active");
+            });
+        });
+
+        feather.replace();
+    </script>
+
+   
+    
+    <script>
+        function logout() {
+            fetch('/Warehouse/Logout', {
+                method: 'POST',
+                credentials: 'include'
+            })
+                .then(response => {
+                    if (response.ok) {
+                        window.location.href = '/Warehouse/Login';
+                    } else {
+                        alert('Logout failed. Please try again.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Logout failed. Please try again.');
+                });
+        }
+    </script>
+
+
+</body>
+</html>
+
+

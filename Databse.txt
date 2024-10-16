@@ -1,0 +1,406 @@
+CREATE TABLE [dbo].[CartItem](
+	[ProductId] [int] NOT NULL,
+	[ProductName] [nvarchar](255) NOT NULL,
+	[Price] [decimal](18, 2) NOT NULL,
+	[Quantity] [int] NOT NULL,
+	[TotalPrice] [decimal](18, 2) NOT NULL,
+	[Discount] [decimal](18, 2) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ProductId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+CREATE TABLE [dbo].[CartItems](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ProductId] [int] NOT NULL,
+	[ProductName] [nvarchar](255) NOT NULL,
+	[Price] [float] NOT NULL,
+	[Quantity] [int] NOT NULL,
+	[CartUserId] [nvarchar](255) NOT NULL,
+	[Total]  AS ([Price]*[Quantity]),
+	[CartId] [nvarchar](255) NULL,
+	[Discount] [float] NULL,
+	[ProductImage] [varbinary](max) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Carts](
+	[UserId] [nvarchar](255) NOT NULL,
+	[CustomerId] [int] NOT NULL,
+	[Discount] [decimal](18, 2) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[UserId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Categories](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](max) NOT NULL,
+ CONSTRAINT [PK_Categories] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Customers](
+	[CustomerId] [int] IDENTITY(1,1) NOT NULL,
+	[FirstName] [nvarchar](50) NOT NULL,
+	[LastName] [nvarchar](50) NOT NULL,
+	[Email] [nvarchar](255) NOT NULL,
+	[Password] [nvarchar](100) NOT NULL,
+	[RegistrationDate] [datetime] NOT NULL,
+	[Phone] [nvarchar](100) NULL,
+	[Address] [nvarchar](200) NULL,
+	[DateOfBirth] [datetime] NULL,
+	[Gender] [nvarchar](10) NULL,
+	[ProfilePicturePath] [nvarchar](200) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[CustomerId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[DamagedProducts](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ProductId] [int] NOT NULL,
+	[Quantity] [int] NOT NULL,
+	[LossAmount] [decimal](18, 2) NOT NULL,
+	[DateReported] [datetime] NOT NULL,
+	[DamageDate] [datetime] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[InventoryItem](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ProductName] [nvarchar](max) NOT NULL,
+	[StockLevel] [int] NOT NULL,
+	[Price] [decimal](18, 2) NOT NULL,
+ CONSTRAINT [PK_InventoryItem] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Invoices](
+	[InvoiceId] [int] IDENTITY(1,1) NOT NULL,
+	[InvoiceDate] [datetime2](7) NOT NULL,
+	[AmountPaid] [decimal](18, 2) NOT NULL,
+	[Change] [decimal](18, 2) NOT NULL,
+	[TotalAmount] [decimal](18, 2) NOT NULL,
+	[SalespersonEmail] [nvarchar](max) NOT NULL,
+	[SalespersonId] [int] NULL,
+	[SalespersonName] [nvarchar](max) NOT NULL,
+ CONSTRAINT [PK_Invoices] PRIMARY KEY CLUSTERED 
+(
+	[InvoiceId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Notifications](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Message] [nvarchar](max) NOT NULL,
+	[CreatedAt] [datetime2](7) NOT NULL,
+	[IsRead] [bit] NOT NULL,
+ CONSTRAINT [PK_Notifications] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[OrderItem](
+	[OrderItemId] [int] IDENTITY(1,1) NOT NULL,
+	[OrderId] [int] NOT NULL,
+	[ProductId] [int] NOT NULL,
+	[ProductName] [nvarchar](max) NOT NULL,
+	[Price] [float] NOT NULL,
+	[Quantity] [int] NOT NULL,
+ CONSTRAINT [PK_OrderItem] PRIMARY KEY CLUSTERED 
+(
+	[OrderItemId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Orders](
+	[OrderId] [int] IDENTITY(1,1) NOT NULL,
+	[OrderDate] [datetime2](7) NOT NULL,
+	[TotalAmount] [float] NOT NULL,
+	[CustomerId] [int] NOT NULL,
+	[ShippingAddress] [nvarchar](200) NOT NULL,
+	[Subtotal] [float] NOT NULL,
+	[Tax] [float] NOT NULL,
+	[Total] [float] NOT NULL,
+	[IsConfirmed] [bit] NULL,
+	[Feedback] [nvarchar](max) NULL,
+	[IsCanceled] [bit] NOT NULL,
+	[DeliveryDate] [datetime2](7) NULL,
+ CONSTRAINT [PK_Orders] PRIMARY KEY CLUSTERED 
+(
+	[OrderId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Payments](
+	[PaymentId] [int] IDENTITY(1,1) NOT NULL,
+	[CustomerId] [int] NOT NULL,
+	[OrderId] [int] NOT NULL,
+	[CardName] [nvarchar](50) NOT NULL,
+	[CardNumber] [nvarchar](16) NOT NULL,
+	[ExpiryDate] [nvarchar](5) NOT NULL,
+	[CVV] [nvarchar](3) NOT NULL,
+	[BillingAddress] [nvarchar](max) NOT NULL,
+	[PaymentDate] [datetime2](7) NOT NULL,
+ CONSTRAINT [PK_Payments] PRIMARY KEY CLUSTERED 
+(
+	[PaymentId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Pickups](
+	[ProductId] [nvarchar](max) NOT NULL,
+	[Quantity] [int] NOT NULL,
+	[PickupDate] [datetime2](7) NOT NULL,
+	[Status] [nvarchar](max) NOT NULL,
+	[DeclineReason] [nvarchar](max) NOT NULL,
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PK_Pickups] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Products](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](100) NOT NULL,
+	[Description] [nvarchar](max) NULL,
+	[StockLevel] [int] NOT NULL,
+	[Price] [decimal](18, 2) NOT NULL,
+	[LastUpdatedDate] [datetime] NOT NULL,
+	[LastUpdatedBy] [nvarchar](100) NULL,
+	[SalespersonId] [nvarchar](max) NOT NULL,
+	[Category] [nvarchar](max) NOT NULL,
+	[Rating] [decimal](18, 2) NOT NULL,
+	[ReviewCount] [int] NOT NULL,
+	[QuotationRequestId] [int] NULL,
+	[Discount] [decimal](5, 2) NULL,
+	[IsDamaged] [bit] NULL,
+	[IsMarkedAsDamaged] [bit] NULL,
+	[DamagedStockLevel] [int] NULL,
+	[UndamagedStockLevel] [int] NULL,
+	[LossAmount] [decimal](18, 2) NULL,
+	[ProductImage] [varbinary](max) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[QuotationRequests](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[FullName] [nvarchar](max) NOT NULL,
+	[Email] [nvarchar](max) NOT NULL,
+	[ProductId] [int] NOT NULL,
+	[Quantity] [int] NOT NULL,
+	[Message] [nvarchar](max) NOT NULL,
+ CONSTRAINT [PK_QuotationRequests] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+
+CREATE TABLE [dbo].[Quotations](
+	[QuotationId] [int] IDENTITY(1,1) NOT NULL,
+	[ProductDetails] [nvarchar](max) NOT NULL,
+	[Quantity] [int] NOT NULL,
+	[CustomerName] [nvarchar](100) NOT NULL,
+	[CustomerEmail] [nvarchar](100) NOT NULL,
+	[CustomerPhone] [nvarchar](20) NOT NULL,
+	[CustomerAddress] [nvarchar](200) NOT NULL,
+	[RequestDate] [datetime] NOT NULL,
+	[Feedback] [varchar](2000) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[QuotationId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Reviews](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ProductId] [int] NOT NULL,
+	[Content] [nvarchar](max) NOT NULL,
+	[DateSubmitted] [datetime2](7) NOT NULL,
+	[Rating] [decimal](18, 2) NOT NULL,
+ CONSTRAINT [PK_Reviews] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Sales](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ProductId] [int] NOT NULL,
+	[Quantity] [int] NOT NULL,
+	[PricePerUnit] [decimal](18, 2) NOT NULL,
+	[TotalPrice] [decimal](18, 2) NOT NULL,
+	[SaleDate] [datetime2](7) NOT NULL,
+	[SalespersonId] [nvarchar](max) NOT NULL,
+	[InvoiceId] [int] NULL,
+ CONSTRAINT [PK_Sales] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+
+CREATE TABLE [dbo].[StockItems](
+	[StockItemId] [int] IDENTITY(1,1) NOT NULL,
+	[ProductName] [nvarchar](max) NOT NULL,
+	[QuantityOrdered] [int] NOT NULL,
+	[UnitPrice] [decimal](18, 2) NOT NULL,
+	[DeclineReason] [nvarchar](255) NULL,
+	[Status] [nvarchar](50) NULL,
+ CONSTRAINT [PK_StockItems] PRIMARY KEY CLUSTERED 
+(
+	[StockItemId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Stocks](
+	[Name] [nvarchar](max) NOT NULL,
+	[OriginalQuantity] [int] NOT NULL,
+	[Quantity] [int] NOT NULL,
+	[Supplier] [nvarchar](max) NOT NULL,
+	[ReceivedDate] [datetime2](7) NOT NULL,
+	[ImageBase64] [nvarchar](max) NULL,
+	[Description] [nvarchar](max) NULL,
+	[Price] [decimal](18, 2) NULL,
+	[Category] [nvarchar](max) NULL,
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PK_Stocks] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Suppliers](
+	[Name] [nvarchar](max) NOT NULL,
+	[ContactInfo] [nvarchar](max) NOT NULL,
+	[Address] [nvarchar](max) NOT NULL,
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PK_Suppliers_Id] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Users](
+	[Username] [nvarchar](50) NOT NULL,
+	[Password] [nvarchar](255) NOT NULL,
+	[Role] [nvarchar](20) NOT NULL,
+	[FullName] [nvarchar](100) NOT NULL,
+	[CreatedAt] [datetime2](7) NOT NULL,
+	[SalespersonId] [nvarchar](max) NULL,
+	[ProfilePicturePath] [nvarchar](255) NULL,
+ CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED 
+(
+	[Username] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[WarehouseLoginViewModels](
+	[Id] [nvarchar](450) NOT NULL,
+	[Email] [nvarchar](450) NOT NULL,
+	[Password] [nvarchar](max) NOT NULL,
+ CONSTRAINT [PK_WarehouseLoginViewModels] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[WarehouseOrders](
+	[ProductId] [int] NULL,
+	[Quantity] [int] NOT NULL,
+	[Supplier] [nvarchar](max) NOT NULL,
+	[OrderDate] [datetime2](7) NOT NULL,
+	[Status] [nvarchar](max) NOT NULL,
+	[SupplierId] [int] NOT NULL,
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PK_WarehouseOrders] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[WarehouseProducts](
+	[Name] [nvarchar](max) NOT NULL,
+	[Quantity] [int] NOT NULL,
+	[Supplier] [nvarchar](max) NOT NULL,
+	[ReceivedDate] [datetime2](7) NOT NULL,
+	[ImageUrl] [nvarchar](max) NOT NULL,
+	[OriginalQuantity] [int] NOT NULL,
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PK_WarehouseProducts] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[WarehouseRegisterViewModels](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](max) NOT NULL,
+	[Email] [nvarchar](max) NOT NULL,
+	[Password] [nvarchar](max) NOT NULL,
+	[ConfirmPassword] [nvarchar](max) NULL,
+ CONSTRAINT [PK_WarehouseRegisterViewModels] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[WarehouseUsers](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](max) NOT NULL,
+	[Email] [nvarchar](max) NOT NULL,
+	[PasswordHash] [nvarchar](max) NOT NULL,
+	[IsAdmin] [bit] NOT NULL,
+ CONSTRAINT [PK_WarehouseUsers_primaryKey] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO

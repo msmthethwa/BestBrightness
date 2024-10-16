@@ -1,0 +1,126 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\BHEBHE28.05\\Desktop\\I T - 2\\INFORMATION SYSTEM II\\BBDesign\\BBDesign\\Sales\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\BHEBHE28.05\\Desktop\\I T - 2\\INFORMATION SYSTEM II\\BBDesign\\BBDesign\\Sales\\sales.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:sales.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\BHEBHE28.05\\Desktop\\I T - 2\\INFORMATION SYSTEM II\\BBDesign\\BBDesign\\Sales\\inventory.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:inventory.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\BHEBHE28.05\\Desktop\\I T - 2\\INFORMATION SYSTEM II\\BBDesign\\BBDesign\\Sales\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\BHEBHE28.05\\Desktop\\I T - 2\\INFORMATION SYSTEM II\\BBDesign\\BBDesign\\Sales\\styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\BHEBHE28.05\\Desktop\\I T - 2\\INFORMATION SYSTEM II\\BBDesign\\BBDesign\\Sales\\scripts.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:scripts.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\BHEBHE28.05\\Desktop\\I T - 2\\INFORMATION SYSTEM II\\BBDesign\\BBDesign\\Sales\\reports.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:reports.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "styles.css",
+              "DocumentMoniker": "C:\\Users\\BHEBHE28.05\\Desktop\\I T - 2\\INFORMATION SYSTEM II\\BBDesign\\BBDesign\\Sales\\styles.css",
+              "RelativeDocumentMoniker": "styles.css",
+              "ToolTip": "C:\\Users\\BHEBHE28.05\\Desktop\\I T - 2\\INFORMATION SYSTEM II\\BBDesign\\BBDesign\\Sales\\styles.css",
+              "RelativeToolTip": "styles.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-08-18T12:23:01.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "scripts.js",
+              "DocumentMoniker": "C:\\Users\\BHEBHE28.05\\Desktop\\I T - 2\\INFORMATION SYSTEM II\\BBDesign\\BBDesign\\Sales\\scripts.js",
+              "RelativeDocumentMoniker": "scripts.js",
+              "ToolTip": "C:\\Users\\BHEBHE28.05\\Desktop\\I T - 2\\INFORMATION SYSTEM II\\BBDesign\\BBDesign\\Sales\\scripts.js",
+              "RelativeToolTip": "scripts.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-08-18T12:23:00.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "sales.html",
+              "DocumentMoniker": "C:\\Users\\BHEBHE28.05\\Desktop\\I T - 2\\INFORMATION SYSTEM II\\BBDesign\\BBDesign\\Sales\\sales.html",
+              "RelativeDocumentMoniker": "sales.html",
+              "ToolTip": "C:\\Users\\BHEBHE28.05\\Desktop\\I T - 2\\INFORMATION SYSTEM II\\BBDesign\\BBDesign\\Sales\\sales.html",
+              "RelativeToolTip": "sales.html",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAABPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-08-18T12:22:58.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "reports.html",
+              "DocumentMoniker": "C:\\Users\\BHEBHE28.05\\Desktop\\I T - 2\\INFORMATION SYSTEM II\\BBDesign\\BBDesign\\Sales\\reports.html",
+              "RelativeDocumentMoniker": "reports.html",
+              "ToolTip": "C:\\Users\\BHEBHE28.05\\Desktop\\I T - 2\\INFORMATION SYSTEM II\\BBDesign\\BBDesign\\Sales\\reports.html",
+              "RelativeToolTip": "reports.html",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-08-18T12:22:57.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "inventory.html",
+              "DocumentMoniker": "C:\\Users\\BHEBHE28.05\\Desktop\\I T - 2\\INFORMATION SYSTEM II\\BBDesign\\BBDesign\\Sales\\inventory.html",
+              "RelativeDocumentMoniker": "inventory.html",
+              "ToolTip": "C:\\Users\\BHEBHE28.05\\Desktop\\I T - 2\\INFORMATION SYSTEM II\\BBDesign\\BBDesign\\Sales\\inventory.html",
+              "RelativeToolTip": "inventory.html",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-08-18T12:22:55.838Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\BHEBHE28.05\\Desktop\\I T - 2\\INFORMATION SYSTEM II\\BBDesign\\BBDesign\\Sales\\index.html",
+              "RelativeDocumentMoniker": "index.html",
+              "ToolTip": "C:\\Users\\BHEBHE28.05\\Desktop\\I T - 2\\INFORMATION SYSTEM II\\BBDesign\\BBDesign\\Sales\\index.html",
+              "RelativeToolTip": "index.html",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-08-18T12:22:52.248Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

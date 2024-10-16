@@ -1,0 +1,47 @@
+﻿@model BestBrightness.ViewModels.RegisterEmployeeViewModel
+
+@{
+    ViewData["Title"] = "Register Employee ";
+}
+
+<h2>Register Employee</h2>
+
+<div class="form-group">
+    <!-- Form to register the employee -->
+    <form asp-action="RegisterEmployee" method="post">
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            <label asp-for="Email" class="control-label"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="FirstNames" class="control-label"></label>
+            <input asp-for="FirstNames" class="form-control" />
+            <span asp-validation-for="FirstNames" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="LastName" class="control-label"></label>
+            <input asp-for="LastName" class="form-control" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="DefaultPassword" class="control-label"></label>
+            <input asp-for="DefaultPassword" class="form-control" readonly />
+            <span asp-validation-for="DefaultPassword" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="EmployeeId" class="control-label">Employee Id</label>
+            <input asp-for="EmployeeId" class="form-control" readonly />
+            <span asp-validation-for="EmployeeId" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+</div>

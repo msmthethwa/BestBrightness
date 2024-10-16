@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record Product</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <img src="images/logo.png" alt="Best Brightness Logo" id="logo">
+            <h1 class="company-name">Best Brightness</h1>
+            <div class="header-right">
+                <a href="#" id="logoutLink">Logout</a>
+                <a href="#" id="accountLink">My Account</a>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <section class="record-product-form">
+            <h2>Record New Product</h2>
+            <form action="/submit-product" method="POST" enctype="multipart/form-data">
+                <label for="productName">Product Name:</label>
+                <input type="text" id="productName" name="productName" required>
+
+                <label for="productCategory">Category:</label>
+                <select id="productCategory" name="productCategory" required>
+                    <option value="" disabled selected>Select a category</option>
+                    <option value="cleaning">Cleaning</option>
+                    <option value="household">Household</option>
+                    <option value="office">Office</option>
+                </select>
+
+                <label for="productPrice">Price:</label>
+                <input type="number" id="productPrice" name="productPrice" step="0.01" required>
+
+                <label for="productQuantity">Quantity:</label>
+                <input type="number" id="productQuantity" name="productQuantity" required>
+
+                <label for="productDescription">Description:</label>
+                <textarea id="productDescription" name="productDescription" rows="4" required></textarea>
+
+                <label for="productImage">Upload Image:</label>
+                <input type="file" id="productImage" name="productImage" accept="image/*">
+
+                <button type="submit" class="submit-btn">Record Product</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </footer>
+</body>
+</html>

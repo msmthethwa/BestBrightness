@@ -1,0 +1,105 @@
+﻿@model BestBrightness.ViewModels.CartViewModel
+
+@{
+    ViewData["Title"] = "Cart";
+}
+
+<link rel="stylesheet" href="~/css/Sales.css">
+
+<h2>Cart</h2>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Original Price</th>
+            <th>Discount (%)</th>
+            <th>Discounted Price</th>
+            <th>Quantity</th>
+            <th>Total Price</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Items)
+        {
+            var originalPrice = item.Price; // Assuming item.Price is the original price
+            var discountPercentage = item.Discount ?? 0;
+            var discountedPrice = originalPrice * (1 - discountPercentage / 100);
+            var totalPrice = discountedPrice * item.Quantity;
+
+            <tr>
+                <td>@item.ProductName</td>
+                <td>@originalPrice.ToString("C")</td>
+                <td>@discountPercentage.ToString("0.##")</td>
+                <td>@discountedPrice.ToString("C")</td>
+                <td>@item.Quantity</td>
+                <td>@totalPrice.ToString("C")</td>
+                <td>
+                    <form asp-action="RemoveFromCart" method="post">
+                        <input type="hidden" name="productId" value="@item.ProductId" />
+                        <button type="submit" class="btn btn-danger">Remove</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h4>Total Amount: @Model.Items.Sum(i => i.TotalPrice).ToString("C")</h4>
+
+<form id="recordSaleForm" asp-action="RecordCartSale" method="post">
+    <div class="form-group">
+        <label for="amountPaid">Amount Paid</label>
+        <input type="number" class="form-control" id="amountPaid" name="amountPaid" step="0.01" min="0" required />
+    </div>
+    <div class="form-group">
+        <label for="change">Change</label>
+        <input type="text" class="form-control" id="change" name="change" readonly />
+    </div>
+    <button type="submit" class="btn btn-primary">Record Sale</button>
+</form>
+
+<a asp-action="RecordSale" class="btn btn-secondary">Go to Record Sale</a>
+
+@section Scripts {
+    <script>
+        document.getElementById('amountPaid').addEventListener('input', function () {
+            // Capture the total amount as a float and ensure it's formatted for JavaScript.
+            var totalAmount = parseFloat('@Model.Items.Sum(i => i.TotalPrice)');
+
+            // Get the amount paid value entered by the user
+            var amountPaid = parseFloat(this.value) || 0;
+
+            // Calculate the change
+            var change = amountPaid - totalAmount;
+
+            // Set the value of the 'change' field
+            document.getElementById('change').value = change >= 0 ? change.toFixed(2) : '0.00';
+        });
+
+        document.getElementById('recordSaleForm').addEventListener('submit', function (e) {
+            var totalAmount = parseFloat('@Model.Items.Sum(i => i.TotalPrice)');
+            var amountPaid = parseFloat(document.getElementById('amountPaid').value) || 0;
+
+            if (amountPaid < totalAmount) {
+                e.preventDefault(); // Prevent form submission
+                alert("Amount paid is less than the total amount. Please enter the correct amount.");
+            }
+        });
+    </script>
+}

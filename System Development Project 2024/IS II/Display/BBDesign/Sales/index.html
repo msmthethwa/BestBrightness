@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warehouse Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <img src="logo.png" alt="Best Brightness Logo" id="logo">
+                <h1 class="company-name">Best Brightness</h1>
+                <div class="header-right">
+                    <a href="#" id="logoutLink">Logout</a>
+                    <a href="#" id="ordersLink">Orders</a>
+                    <a href="#" id="accountLink">My Account</a>
+                    <a href="wishlist.html" id="wishlistLink" class="wishlist-icon">❤</a>
+                    <a href="cart.html" id="cartLink" class="cart-icon"><img src="cart-icon.png" alt="Cart Icon"></a>
+                </div>
+            </div>
+            
+            <div class="search-nav">
+                <input type="text" id="searchField" placeholder="Search for products...">
+                <button id="searchButton">Search</button>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-btn">Home</a></li>
+                    <li><a href="sales.html" class="nav-btn">Sales</a></li>
+                    <li><a href="inventory.html" class="nav-btn">Inventory</a></li>
+                    <li><a href="reports.html" class="nav-btn">Reports</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Hero Section Pane -->
+        <section id="hero" class="pane">
+            <div class="hero-content">
+                <h2>Streamline Your Warehouse Operations</h2>
+                <p>Effortlessly manage inventory, track sales, and generate detailed reports with our comprehensive system.</p>
+                <a href="inventory.html" class="cta-btn">Get Started</a>
+            </div>
+        </section>
+
+        <!-- Features Section Pane -->
+        <section id="features" class="pane">
+            <h2>Why Choose Our System?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <img src="product1.jpg" alt="Inventory Management">
+                    <h3>Advanced Inventory Management</h3>
+                    <p>Keep track of your stock levels, receive low stock alerts, and manage your inventory with ease.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="product2.jpg" alt="Sales Tracking">
+                    <h3>Sales Tracking</h3>
+                    <p>Record sales transactions, monitor trends, and gain insights into your sales performance.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="product3.jpg" alt="Reporting">
+                    <h3>Comprehensive Reporting</h3>
+                    <p>Generate detailed reports to analyze your warehouse's performance and make informed decisions.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="product4.jpg" alt="Sales Tracking">
+                    <h3>Sales Tracking</h3>
+                    <p>Record and manage your sales activities effectively.</p>
+                </div>
+            </div>
+        </section>
+
+      <!-- Additional Functionalities -->
+<section id="additional-functions" class="pane">
+    <h2>System Functionalities</h2>
+    <div class="info-cards">
+        <div class="info-card">
+            <img src="image1.jpeg" alt="Quotation Requests Image">
+            <h3>Quotation Requests</h3>
+            <p>Accept and view quotation requests from suppliers.</p>
+            <button onclick="showQuotationForm()">View Quotations</button>
+        </div>
+        <div class="info-card">
+            <img src="image2.jpeg" alt="Purchase Orders Image">
+            <h3>Purchase Orders</h3>
+            <p>Process and store purchase orders.</p>
+            <button onclick="showPurchaseOrderForm()">Manage Orders</button>
+        </div>
+        <div class="info-card">
+            <img src="image3.jpeg" alt="In-Store Transactions Image">
+            <h3>In-Store Transactions</h3>
+            <p>Record in-store purchases and print slips.</p>
+            <button onclick="showPurchaseTransactionForm()">Record Transaction</button>
+        </div>
+        <div class="info-card">
+            <img src="image4.jpeg" alt="Transaction History Image">
+            <h3>Transaction History</h3>
+            <p>View and print transaction history.</p>
+            <button onclick="viewTransactionHistory()">View History</button>
+        </div>
+        <div class="info-card">
+            <img src="image5.jpeg" alt="Stock Notifications Image">
+            <h3>Stock Notifications</h3>
+            <p>Get notifications for restock points.</p>
+            <button onclick="checkStockLevels()">Check Stock Levels</button>
+        </div>
+        <div class="info-card">
+            <img src="image6.jpeg" alt="Discount Management Image">
+            <h3>Discount Management</h3>
+            <p>Issue and record discounts.</p>
+            <button onclick="showDiscountForm()">Manage Discounts</button>
+        </div>
+        <div class="info-card">
+            <img src="image7.jpeg" alt="Report Generation Image">
+            <h3>Report Generation</h3>
+            <p>Generate reports on sales and stock.</p>
+            <button onclick="generateReports()">Generate Reports</button>
+        </div>
+    </div>
+</section>
+
+
+
+        <!-- Call to Action Pane -->
+        <section id="cta" class="pane">
+            <h2>Ready to Optimize Your Warehouse?</h2>
+            <p>Join thousands of businesses already using our system to streamline their operations and improve efficiency.</p>
+            <a href="contact.html" class="cta-btn">Contact Us</a>
+        </section>
+
+        <!-- Footer Pane -->
+        <footer class="pane">
+            <p>&copy; 2024 Warehouse Management System. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function showQuotationForm() {
+            // Demo of opening a quotation request form
+            document.body.innerHTML += `
+                <div class="form-section" id="quotation-form">
+                    <h2>Quotation Requests</h2>
+                    <form>
+                        <label for="supplier">Supplier Name:</label>
+                        <input type="text" id="supplier" name="supplier" required>
+                        <label for="details">Quotation Details:</label>
+                        <textarea id="details" name="details" rows="4" required></textarea>
+                        <button type="submit">Submit Quotation Request</button>
+                    </form>
+                </div>
+            `;
+        }
+
+        function showPurchaseOrderForm() {
+            // Demo of opening a purchase order form
+            document.body.innerHTML += `
+                <div class="form-section" id="purchase-order-form">
+                    <h2>Purchase Orders</h2>
+                    <form>
+                        <label for="order-number">Order Number:</label>
+                        <input type="text" id="order-number" name="order-number" required>
+                        <label for="supplier">Supplier Name:</label>
+                        <input type="text" id="supplier" name="supplier" required>
+                        <label for="items">Items:</label>
+                        <textarea id="items" name="items" rows="4" required></textarea>
+                        <button type="submit">Submit Purchase Order</button>
+                    </form>
+                </div>
+            `;
+        }
+
+        function showPurchaseTransactionForm() {
+            // Demo of opening a purchase transaction form
+            document.body.innerHTML += `
+                <div class="form-section" id="purchase-transaction-form">
+                    <h2>In-Store Transactions</h2>
+                    <form>
+                        <label for="transaction-id">Transaction ID:</label>
+                        <input type="text" id="transaction-id" name="transaction-id" required>
+                        <label for="amount">Amount:</label>
+                        <input type="number" id="amount" name="amount" required>
+                        <button type="submit">Record Transaction</button>
+                    </form>
+                </div>
+            `;
+        }
+
+        function viewTransactionHistory() {
+            // Demo of displaying transaction history
+            alert('Displaying transaction history... (demo)');
+        }
+
+        function checkStockLevels() {
+            // Demo of checking stock levels
+            alert('Checking stock levels... (demo)');
+        }
+
+        function showDiscountForm() {
+            // Demo of opening a discount management form
+            document.body.innerHTML += `
+                <div class="form-section" id="discount-form">
+                    <h2>Discount Management</h2>
+                    <form>
+                        <label for="discount-code">Discount Code:</label>
+                        <input type="text" id="discount-code" name="discount-code" required>
+                        <label for="discount-value">Discount Value:</label>
+                        <input type="number" id="discount-value" name="discount-value" required>
+                        <button type="submit">Apply Discount</button>
+                    </form>
+                </div>
+            `;
+        }
+
+        function generateReports() {
+            // Demo of generating reports
+            alert('Generating reports... (demo)');
+        }
+    </script>
+</body>
+</html>

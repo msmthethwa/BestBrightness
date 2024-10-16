@@ -1,0 +1,179 @@
+﻿@model BestBrightness.Models.Cart
+@{
+    ViewData["Title"] = "Cart - Best Brightness Shop";
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Best Brightness Shop - Your go-to place for top quality products!">
+    <title>@ViewData["Title"]</title>
+
+    <link rel="stylesheet" href="~/css/cart.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="~/js/CustomerScript.js" defer></script>
+    <script src="~/js/cart.js" defer></script>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="gradient"></div>
+
+    <header>
+        <div class="header-top">
+            <a href="@Url.Action("Index", "CustomerHome")">
+                <img src="~/images/welcome-icon.png" alt="Best Brightness Logo" id="logo">
+            </a>
+            <h1 class="company-name">Best Brightness Shop</h1>
+            <div class="header-right">
+                <a href="@Url.Action("QuotationRequest", "Customer")" id="quotationsLink">Quotations</a>
+                <a href="@Url.Action("Order", "Customer")" id="ordersLink">Orders</a>
+                <a href="@Url.Action("Profile", "Customer")" id="accountLink">Profile</a>
+                <form method="post" action="@Url.Action("Logout", "CustomerAccount")" style="margin-left: 1rem; font-weight: 600;">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" style="background: transparent; border: none; color: red; font-weight: 1000; cursor: pointer;">
+                        Logout
+                    </button>
+                </form>
+                <a href="@Url.Action("Cart", "Cart")" id="cartLink" class="cart-icon"><img src="~/images/cart.png" alt="Cart"></a>
+            </div>
+        </div>
+
+        <div class="search-nav">
+            <form method="get" action="@Url.Action("Search", "CustomerHome")" class="search-container">
+                <input type="text" id="searchField" name="query" placeholder="Search for products..." aria-label="Search Products">
+                <button type="submit" id="searchButton"><img src="~/images/search.png" alt="Search Icon"></button>
+            </form>
+        </div>
+    </header>
+
+    <main>
+        <div class="cart-overview section-background">
+            <h2>Your Shopping Cart</h2>
+            <div class="cart-items">
+                @if (Model.Items.Any())
+                {
+                    foreach (var item in Model.Items)
+                    {
+                        var originalPrice = item.Price / (1 - (item.Discount / 100));
+                        <div class="cart-item" data-item-id="@item.ProductId">
+                            <img src="data:image/png;base64,@Convert.ToBase64String(item.ProductImage)" alt="@item.ProductName">
+                            <div class="item-info">
+                                <h3>@item.ProductName</h3>
+                                <p>Original Price: R <span class="item-original-price">@originalPrice.ToString("0.00")</span></p>
+                                <p>Discounted Price: R <span class="item-discounted-price">@item.Price.ToString("0.00")</span></p>
+                                <p>Discount: @item.Discount%</p>
+                                <p>
+                                    Quantity:
+                                    <input type="number" value="@item.Quantity" min="1" class="quantity-input"
+                                           onchange="updateQuantity(@item.ProductId, this.value)">
+                                </p>
+                            </div>
+                            <div class="item-total">
+                                <p>Total: R <span class="total-price" id="totalPrice-@item.ProductId">@((item.Price * item.Quantity).ToString("F2"))</span></p>
+                                <button class="remove-btn" onclick="removeFromCart(@item.ProductId)">Remove</button>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p>Your cart is empty.</p>
+                }
+            </div>
+
+            <div class="cart-summary">
+                <h3>Cart Summary</h3>
+                <p>Subtotal: R <span id="subtotal">@Model.Subtotal.ToString("0.00")</span></p>
+                <p>Tax: R <span id="tax">@Model.Tax.ToString("0.00")</span></p>
+                <p>Total: R <span id="grandTotal">@Model.Total.ToString("0.00")</span></p>
+
+                <!-- Form to submit cart data -->
+                <form method="post" action="@Url.Action("OrderReview", "Order")">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="Subtotal" value="@Model.Subtotal" />
+                    <input type="hidden" name="Tax" value="@Model.Tax" />
+                    <input type="hidden" name="Total" value="@Model.Total" />
+                    @foreach (var item in Model.Items)
+                    {
+                        <input type="hidden" name="OrderCarts[@item.ProductId].ProductId" value="@item.ProductId" />
+                        <input type="hidden" name="OrderCarts[@item.ProductId].ProductName" value="@item.ProductName" />
+                        <input type="hidden" name="OrderCarts[@item.ProductId].Price" value="@item.Price" />
+                        <input type="hidden" name="OrderCarts[@item.ProductId].Quantity" value="@item.Quantity" />
+                        <input type="hidden" name="OrderCarts[@item.ProductId].ProductImage" value="@item.ProductImage" />
+                    }
+                    <button type="submit" class="checkout-btn">Proceed to Checkout</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Best Brightness Shop. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function updateQuantity(productId, quantity) {
+            // Fetch the available stock level for the product
+            fetch('@Url.Action("GetProductStockLevel", "Cart")', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': '@(ViewData["__RequestVerificationToken"])'
+                },
+                body: JSON.stringify({ productId: productId })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Check if the requested quantity exceeds available stock
+                        if (quantity > data.stockLevel) {
+                            alert('The requested quantity exceeds available stock.');
+                        } else {
+                            // Proceed with updating the quantity
+                            fetch('@Url.Action("UpdateQuantity", "Cart")', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'X-CSRF-TOKEN': '@(ViewData["__RequestVerificationToken"])'
+                                },
+                                body: JSON.stringify({ productId: productId, quantity: quantity })
+                            })
+                                .then(response => {
+                                    if (response.ok) {
+                                        window.location.reload(); // Refresh the page to update totals
+                                    }
+                                })
+                                .catch(error => console.error('Error updating quantity:', error));
+                        }
+                    } else {
+                        alert('Error fetching stock level.');
+                    }
+                })
+                .catch(error => console.error('Error fetching stock level:', error));
+        }
+
+        function removeFromCart(productId) {
+            fetch('@Url.Action("RemoveFromCart", "Cart")', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': '@(ViewData["__RequestVerificationToken"])' // Include CSRF Token
+                },
+                body: JSON.stringify({ productId: productId })
+            })
+                .then(response => {
+                    if (response.ok) {
+                        window.location.reload(); // Refresh the page to remove item
+                    } else {
+                        console.error('Error removing item:', response.statusText);
+                    }
+                })
+                .catch(error => console.error('Error removing item:', error));
+        }
+    </script>
+
+</body>
+</html>

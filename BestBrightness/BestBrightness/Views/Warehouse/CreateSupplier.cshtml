@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "Create Supplier";
+}
+<link href="~/css/WarehouseStyles.css" rel="stylesheet" type="text/css" />
+
+<div class="create-supplier-container">
+    <h2>Create Supplier</h2>
+
+    <form asp-action="CreateSupplier" method="post">
+        <div class="form-group">
+            <label for="name">Supplier Name:</label>
+            <input type="text" id="name" name="name" required class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="contactInfo">Contact Info:</label>
+            <input type="text" id="contactInfo" name="contactInfo" required class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required class="form-control" />
+        </div>
+        <button type="submit" class="btn-submit">Add Supplier</button>
+    </form>
+</div>
+
+<style>
+    /* Create Supplier Page Styles */
+    .create-supplier-container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #081b29; /* Dark background color */
+        border: 1px solid #00a6bc; /* Cyan border */
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+
+        .create-supplier-container h2 {
+            color: #00ffff; /* Cyan text */
+            border-bottom: 2px solid #00ffff; /* Cyan border */
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .create-supplier-container .form-group {
+            margin-bottom: 20px;
+        }
+
+        .create-supplier-container label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: #fff; /* White text for labels */
+        }
+
+        .create-supplier-container .form-control {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            background-color: #fff; /* White background for input fields */
+        }
+
+            .create-supplier-container .form-control:focus {
+                border-color: #00ffff; /* Cyan border on focus */
+                outline: none;
+                box-shadow: 0 0 5px rgba(0, 255, 255, 0.3); /* Cyan glow effect */
+            }
+
+        .create-supplier-container .btn-submit {
+            background-color: #00ffff; /* Cyan button */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+            .create-supplier-container .btn-submit:hover {
+                background-color: #00a6bc; /* Darker cyan on hover */
+            }
+
+</style>

@@ -1,0 +1,17 @@
+﻿@model DeclinePickupViewModel
+
+@{
+    ViewBag.Title = "Decline Pickup";
+}
+
+<h2>Decline Pickup</h2>
+
+@using (Html.BeginForm("DeclinePickup", "Warehouse", FormMethod.Post))
+{
+    @Html.Hidden("PickupId", Model.PickupId)
+    <div class="form-group">
+        @Html.Label("Reason for Decline")
+        @Html.TextArea("DeclineReason", null, new { @class = "form-control", rows = 5 })
+    </div>
+    <button type="submit" class="btn btn-primary">Submit Decline</button>
+}

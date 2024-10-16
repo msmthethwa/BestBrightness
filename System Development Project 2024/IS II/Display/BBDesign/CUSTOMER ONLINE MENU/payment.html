@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Best Brightness Shop</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-top">
+            <img src="logo.png" alt="Best Brightness Logo" id="logo">
+            <h1 class="company-name">Best Brightness</h1>
+            <div class="header-right">
+                <a href="quotation-request.html" id="quotationsLink">Quotations</a>
+                <a href="order.html" id="ordersLink">Orders</a>
+                <a href="#" id="accountLink">My Account</a>
+                <a href="#" id="logoutLink">Logout</a>
+                <a href="wishlist.html" id="wishlistLink" class="wishlist-icon">❤️</a>
+                <a href="cart.html" id="cartLink" class="cart-icon"><img src="cart-icon.png" alt="Cart Icon"></a>
+            </div>
+        </div>
+        
+        <div class="search-nav">
+            <input type="text" id="searchField" placeholder="Search for products...">
+            <button id="searchButton">Search</button>
+        </div>
+        <br>
+    </header>
+
+    <main>
+        <section class="payment-section">
+            <h2>Payment Information</h2>
+            <form action="payment-success.html" method="POST">
+                <div class="form-group">
+                    <label for="card-name">Name on Card:</label>
+                    <input type="text" id="card-name" name="card-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="card-number">Card Number:</label>
+                    <input type="text" id="card-number" name="card-number" required>
+                </div>
+                <div class="form-group">
+                    <label for="expiry-date">Expiry Date:</label>
+                    <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" required>
+                </div>
+                <div class="form-group">
+                    <label for="billing-address">Billing Address:</label>
+                    <textarea id="billing-address" name="billing-address" rows="3" required></textarea>
+                </div>
+                <div class="payment-actions">
+                    <button type="submit" class="pay-now-btn">Pay Now</button>
+                    <button type="button" class="cancel-btn" onclick="location.href='order.html'">Cancel</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Best Brightness Shop. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

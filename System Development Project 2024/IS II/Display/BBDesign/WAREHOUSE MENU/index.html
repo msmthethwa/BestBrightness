@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warehouse Menu - Best Brightness Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-top">
+            <img src="images/logo.png" alt="Best Brightness Logo" id="logo">
+            <h1 class="company-name">Best Brightness</h1>
+            <div class="header-right">
+                <a href="#" id="logoutLink">Logout</a>
+                <a href="#" id="ordersLink">Orders</a>
+                <a href="#" id="accountLink">My Account</a>
+                <a href="wishlist.html" id="wishlistLink" class="wishlist-icon">❤️</a>
+                <a href="cart.html" id="cartLink" class="cart-icon"><img src="images/cart-icon.png" alt="Cart Icon"></a>
+            </div>
+        </div>
+        
+        <div class="search-nav">
+            <input type="text" id="searchField" placeholder="Search for products...">
+            <button id="searchButton">Search</button>
+        </div>
+        <br>
+        <nav>
+            <ul>
+                <li><a href="record_product.html" id="recordProductLink">Record</a></li>&nbsp;
+                <li><a href="order-management.html">Order</a></li> &nbsp;
+                <li><a href="supplier-management.html" id="quotationsLink">Supplier</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="product-demo">
+            <h2>Available Cleaning Products</h2>
+            <div class="product-grid">
+                <div class="product-item" onclick="window.location.href='product-details.html';">
+                    <img src="images/product1.png" alt="Multipurpose Cleaner">
+                    <h3>JIK 500ml, Multi-Purpose, Bleach Cleaner, Spray,...</h3>
+                    <p class="price">ZAR 150.00</p>
+                    <p class="description">Multipurpose Cleaner with the disinfecting power of JIK Bleach. Kills 99.9 % of germsx</p>
+                    <p class="stock-level in-stock">In Stock: 30</p> <!-- Example of sufficient stock -->
+                </div>
+                <div class="product-item">
+                    <img src="images/product2.jpeg" alt="Heavy Duty Floor Cleaner">
+                    <h3>Heavy Duty Floor Cleaner</h3>
+                    <p class="price">ZAR 200.00</p>
+                    <p class="description">Designed for tough stains and grime on floors. Ideal for industrial and high-traffic areas.</p>
+                    <p class="stock-level low-stock">Low Stock: 5</p> <!-- Example of low stock -->
+                </div>
+                <div class="product-item">
+                    <img src="images/product3.jpeg" alt="Glass Cleaner">
+                    <h3>Glass Cleaner</h3>
+                    <p class="price">ZAR 120.00</p>
+                    <p class="description">Leaves windows and mirrors streak-free and shiny. Fast-drying formula for a spotless finish.</p>
+                    <p class="stock-level in-stock">In Stock: 20</p>
+                </div>
+                <div class="product-item">
+                    <img src="images/product4.jpeg" alt="Disinfectant Spray">
+                    <h3>Disinfectant Spray</h3>
+                    <p class="price">ZAR 180.00</p>
+                    <p class="description">Kills 99.9% of bacteria and viruses. Perfect for sanitizing surfaces and keeping your environment hygienic.</p>
+                    <p class="stock-level in-stock">In Stock: 12</p>
+                </div>
+                <div class="product-item">
+                    <img src="images/product5.jpeg" alt="Bathroom Cleaner">
+                    <h3>Bathroom Cleaner</h3>
+                    <p class="price">ZAR 160.00</p>
+                    <p class="description">Specially formulated to remove soap scum and grime from bathroom surfaces. Fresh fragrance and effective cleaning power.</p>
+                    <p class="stock-level low-stock">Low Stock: 2</p>
+                </div>
+                <div class="product-item">
+                    <img src="images/product6.jpeg" alt="All-Purpose Degreaser">
+                    <h3>All-Purpose Degreaser</h3>
+                    <p class="price">ZAR 140.00</p>
+                    <p class="description">Heavy-duty degreaser for removing grease and oil from various surfaces. Ideal for kitchens and workshop areas.</p>
+                    <p class="stock-level in-stock">In Stock: 50</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Best Brightness Shop. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

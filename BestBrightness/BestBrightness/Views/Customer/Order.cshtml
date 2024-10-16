@@ -1,0 +1,152 @@
+﻿@model IEnumerable<BestBrightness.Models.Order>
+@{
+    ViewData["Title"] = "Order History - Best Brightness Shop";
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Best Brightness Shop - Your go-to place for top quality products!">
+    <title>@ViewData["Title"]</title>
+
+    <link rel="stylesheet" href="~/css/Order.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="~/js/CustomerScript.js" defer></script>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="gradient"></div>
+
+    <header>
+        <div class="header-top">
+            <a href="@Url.Action("Index", "CustomerHome")">
+                <img src="~/images/welcome-icon.png" alt="Best Brightness Logo" id="logo">
+            </a>
+            <h1 class="company-name">Best Brightness Shop</h1>
+            <div class="header-right">
+                <a href="@Url.Action("QuotationRequest", "Customer")" id="quotationsLink">Quotations</a>
+                <a href="@Url.Action("Order", "Customer")" id="ordersLink">Orders</a>
+                <a href="@Url.Action("Profile", "Customer")" id="accountLink">Profile</a>
+                <form method="post" action="@Url.Action("Logout", "CustomerAccount")" style="margin-left: 1rem; font-weight: 600;">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" style="background: transparent; border: none; color: red; font-weight: 1000; cursor: pointer;">
+                        Logout
+                    </button>
+                </form>
+                <a href="@Url.Action("Cart", "Cart")" id="cartLink" class="cart-icon"><img src="~/images/cart.png" alt="Cart"></a>
+            </div>
+        </div>
+
+        <div class="search-nav">
+            <form method="get" action="@Url.Action("Search", "CustomerHome")" class="search-container">
+                <input type="text" id="searchField" name="query" placeholder="Search for products..." aria-label="Search Products">
+                <button type="submit" id="searchButton"><img src="~/images/search.png" alt="Search Icon"></button>
+            </form>
+        </div>
+    </header>
+
+    <main>
+        <div class="order-history section-background">
+            <h2>Order History</h2>
+
+            <div class="order-filters">
+                <form method="get" action="@Url.Action("Order", "Customer")">
+                    <label for="sortOrders">Sort By:</label>
+                    <select name="sortOrders" id="sortOrders">
+                        <option value="dateDesc">Date (Newest)</option>
+                        <option value="dateAsc">Date (Oldest)</option>
+                        <option value="totalDesc">Total (High to Low)</option>
+                        <option value="totalAsc">Total (Low to High)</option>
+                    </select>
+                    <button type="submit" class="filter-btn">Apply</button>
+                </form>
+            </div>
+
+            <div class="cart-items">
+                @if (Model != null && Model.Any())
+                {
+                    foreach (var order in Model)
+                    {
+                        <div class="order-summary @(order.IsCanceled ? "cancelled-order" : "")">
+                            <h3>Order ID: @order.OrderId</h3>
+                            <p><strong>Date:</strong> @order.OrderDate.ToShortDateString()</p>
+                            <p>
+                                <strong>Delivery Date:</strong> <!-- Displaying delivery date -->
+                                @if (order.DeliveryDate.HasValue)
+                                {
+                                    @order.DeliveryDate.Value.ToShortDateString()
+                                }
+                                else
+                                {
+                                    <span class="text-warning">Not Set</span>
+                                }
+                            </p>
+                            <p><strong>Shipping Address:</strong> @order.ShippingAddress</p>
+                            <p><strong>Subtotal:</strong> @order.Subtotal.ToString("C")</p>
+                            <p><strong>Tax:</strong> @order.Tax.ToString("C")</p>
+                            <p><strong>Total:</strong> @order.Total.ToString("C")</p>
+
+                            <h4>Order Items</h4>
+                            <ul class="order-items-list">
+                                @foreach (var item in order.OrderItems)
+                                {
+                                    <li class="order-item">
+                                        <span class="item-name">@item.ProductName</span> -
+                                        <span class="item-quantity">@item.Quantity</span> x
+                                        <span class="item-price">@item.Price.ToString("C")</span>
+                                    </li>
+                                }
+                            </ul>
+
+                            @if (!string.IsNullOrEmpty(order.Feedback))
+                            {
+                                <div class="order-feedback">
+                                    <h4>Customer Feedback</h4>
+                                    <p>@order.Feedback</p>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="order-feedback">
+                                    <h4>Customer Feedback</h4>
+                                    <p><em>No feedback provided.</em></p>
+                                </div>
+                            }
+
+                            @if (!order.IsCanceled)
+                            {
+                                <div class="order-actions">
+                                    <form method="post" action="@Url.Action("CancelOrder", "Customer")" onsubmit="return confirm('Are you sure you want to cancel this order?');">
+                                        @Html.AntiForgeryToken()
+                                        <input type="hidden" name="orderId" value="@order.OrderId" />
+                                        <button type="submit" class="btn-cancel">Cancel Order</button>
+                                    </form>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="order-cancelled">
+                                    <p style="color: red;">Order Cancelled</p>
+                                </div>
+                            }
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p>No orders found.</p>
+                }
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Best Brightness Shop. All rights reserved.</p>
+    </footer>
+
+    <script src="~/js/cart.js"></script>
+</body>
+</html>

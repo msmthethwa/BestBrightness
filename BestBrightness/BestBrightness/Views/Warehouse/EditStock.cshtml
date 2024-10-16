@@ -1,0 +1,125 @@
+﻿@model BestBrightness.Models.Stock
+
+@{
+    ViewData["Title"] = "Edit Stock";
+}
+
+<h2>Edit Stock</h2>
+
+<div class="edit-stock-container">
+    <form asp-action="EditStock" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="OriginalQuantity"></label>
+            <input asp-for="OriginalQuantity" class="form-control" />
+            <span asp-validation-for="OriginalQuantity" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Quantity"></label>
+            <input asp-for="Quantity" class="form-control" />
+            <span asp-validation-for="Quantity" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Supplier"></label>
+            <input asp-for="Supplier" class="form-control" />
+            <span asp-validation-for="Supplier" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ReceivedDate"></label>
+            <input asp-for="ReceivedDate" type="date" class="form-control" />
+            <span asp-validation-for="ReceivedDate" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ImageBase64" class="control-label"></label>
+            <input asp-for="ImageBase64" type="file" class="form-control" />
+            <span asp-validation-for="ImageBase64" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description"></label>
+            <textarea asp-for="Description" class="form-control"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Price"></label>
+            <input asp-for="Price" class="form-control" />
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Category"></label>
+            <input asp-for="Category" class="form-control" />
+            <span asp-validation-for="Category" class="text-danger"></span>
+        </div>
+
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a href="@Url.Action("StockList", "Warehouse")" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+
+
+<style>
+    /* Edit Stock Page Styles */
+    .edit-stock-container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #081b29; /* Dark background color */
+        border: 1px solid #00a6bc; /* Cyan border */
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+
+        .edit-stock-container h2 {
+            color: #00ffff; /* Cyan text */
+            border-bottom: 2px solid #00ffff; /* Cyan border */
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .edit-stock-container .form-group {
+            margin-bottom: 20px;
+        }
+
+        .edit-stock-container label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: #fff; /* White text for labels */
+        }
+
+        .edit-stock-container .form-control {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            background-color: #fff; /* White background for input fields */
+        }
+
+            .edit-stock-container .form-control:focus {
+                border-color: #00ffff; /* Cyan border on focus */
+                outline: none;
+                box-shadow: 0 0 5px rgba(0, 255, 255, 0.3); /* Cyan glow effect */
+            }
+
+        .edit-stock-container .btn-submit {
+            background-color: #00ffff; /* Cyan button */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+            .edit-stock-container .btn-submit:hover {
+                background-color: #00a6bc; /* Darker cyan on hover */
+            }
+</style>

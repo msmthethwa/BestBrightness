@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="~/css/WarehouseStyles.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Calibri, sans-serif; /* Set Calibri as the default font */
+            background-color: #081b29;
+        }
+
+        .logo img {
+            width: 100px; /* Set logo width */
+            height: 50px; /* Set logo height */
+            object-fit: contain; /* Maintain aspect ratio */
+        }
+    </style>
+</head>
+<body>
+    <header style="display: flex; justify-content: space-between; align-items: center; background-color: #081b29; padding: 10px; color: #fff;">
+        <div class="logo">
+            <img src="/Images/welcome-icon.png" alt="Company Logo">
+        </div>
+        <div class="admin-info">
+            @if (Context.Session.TryGetValue("loggedInUser", out var emailBytes))
+            {
+                var email = System.Text.Encoding.UTF8.GetString(emailBytes);
+                <span>Welcome, @ViewBag.UserName</span> <!-- Display user's name -->
+                
+            }
+            else
+            {
+                <span>Please log in.</span>
+            }
+        </div>
+    </header>
+
+    <main class="main-contentWare">
+        @RenderBody() <!-- Correctly closed and formatted RenderBody call -->
+    </main>
+
+    <footer>
+        @RenderSection("Scripts", required: false)
+    </footer>
+</body>
+</html>

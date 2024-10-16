@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supplier Management - Best Brightness Shop</title>
+    <link rel="stylesheet" href="supplier-management.css">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <img src="images/logo.png" alt="Best Brightness Logo" id="logo">
+            <h1 class="company-name">Best Brightness</h1>
+            <div class="header-right">
+                <a href="#" id="logoutLink">Logout</a>
+                <a href="#" id="accountLink">My Account</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Supplier Management</h2>
+            <div class="supplier-form">
+                <h3>Create New Supplier</h3>
+                <form id="supplierForm">
+                    <label for="supplierName">Supplier Name:</label>
+                    <input type="text" id="supplierName" name="supplierName" required>
+                    
+                    <label for="contactName">Contact Person:</label>
+                    <input type="text" id="contactName" name="contactName" required>
+                    
+                    <label for="contactEmail">Contact Email:</label>
+                    <input type="email" id="contactEmail" name="contactEmail" required>
+                    
+                    <label for="contactPhone">Contact Phone:</label>
+                    <input type="tel" id="contactPhone" name="contactPhone" required>
+                    
+                    <label for="address">Address:</label>
+                    <textarea id="address" name="address" required></textarea>
+                    
+                    <button type="submit" id="createSupplierBtn">Add Supplier</button>
+                </form>
+            </div>
+
+            <div class="supplier-list">
+                <h3>Supplier List</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Supplier Name</th>
+                            <th>Contact Person</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="supplierTableBody">
+                        <tr>
+                            <td>GreenClean Supplies</td>
+                            <td>John Doe</td>
+                            <td>john.doe@greenclean.com</td>
+                            <td>(123) 456-7890</td>
+                            <td>123 Greenway, Eco City</td>
+                            <td>
+                                <a href="edit-supplier.html?id=1" class="edit-link">Edit</a>
+                                <a href="delete-supplier.html?id=1" class="delete-link">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>EcoClean Partners</td>
+                            <td>Jane Smith</td>
+                            <td>jane.smith@ecoclean.com</td>
+                            <td>(987) 654-3210</td>
+                            <td>456 Eco Blvd, Green Town</td>
+                            <td>
+                                <a href="edit-supplier.html?id=2" class="edit-link">Edit</a>
+                                <a href="delete-supplier.html?id=2" class="delete-link">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>BioClean Inc.</td>
+                            <td>Emily White</td>
+                            <td>emily.white@bioclean.com</td>
+                            <td>(555) 123-4567</td>
+                            <td>789 Clean St, Fresh Valley</td>
+                            <td>
+                                <a href="edit-supplier.html?id=3" class="edit-link">Edit</a>
+                                <a href="delete-supplier.html?id=3" class="delete-link">Delete</a>
+                            </td>
+                        </tr>
+                        <!-- Add more rows as needed -->
+                    </tbody>                    
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Best Brightness Shop. All rights reserved. Supplier Management by Eco Supplies Ltd.</p>
+    </footer>
+</body>
+</html>

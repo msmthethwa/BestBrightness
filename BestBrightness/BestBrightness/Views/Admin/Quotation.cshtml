@@ -1,0 +1,84 @@
+﻿@model IEnumerable<BestBrightness.Models.Quotation>
+
+@{
+    ViewData["Title"] = "Quotation Requests - Best Brightness Shop";
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Best Brightness</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/AdminQuotation.css"> <!-- Custom CSS file -->
+</head>
+
+<header>
+    <div class="container">
+        <h1>Quotation Requests</h1>
+    </div>
+</header>
+
+<main class="container">
+    @if (Model != null && Model.Any())
+    {
+        <div class="table-responsive">
+            <table class="quotation-table table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        @* <th>Quotation ID</th> *@
+                        <th>Product Details</th>
+                        <th>Quantity</th>
+                        <th>Customer</th>
+                        <th>Date</th>
+                        <th>Feedback</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var quotation in Model)
+                    {
+                        <tr>
+                            @* <td>@quotation.QuotationId</td> *@
+                            <td>
+                                @quotation.ProductDetails @*.Substring(0, Math.Min(quotation.ProductDetails.Length, 30))...*@
+                            </td> <!-- Truncated product details -->
+                            <td>@quotation.Quantity</td>
+                            <td>
+                                <strong>@quotation.CustomerName</strong><br /> 
+                                <small>@quotation.CustomerEmail</small><br />
+                                <small>@quotation.CustomerPhone</small>
+                            </td> <!-- Combined customer name, email, and phone -->
+                            <td>@quotation.RequestDate.ToString("MM/dd/yyyy")</td>
+                            <td>
+                                @if (quotation.Feedback != null)
+                                {
+                                    <strong>
+                                        <span class="feedback-status">✔️ Provided</span> 
+                                    </strong><br />
+                                    @quotation.Feedback
+                                }
+                                else
+                                {
+                                    <form asp-action="UpdateFeedback" asp-controller="Admin" method="post">
+                                        <input type="hidden" name="QuotationId" value="@quotation.QuotationId" />
+                                        <textarea name="Feedback" rows="2" placeholder="Enter feedback"></textarea>
+                                        <button type="submit" class="btn btn-primary mt-2">Save</button>
+                                    </form>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <p class="no-data">No quotation requests found.</p>
+    }
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Best Brightness Shop. All rights reserved.</p>
+    </div>
+</footer>

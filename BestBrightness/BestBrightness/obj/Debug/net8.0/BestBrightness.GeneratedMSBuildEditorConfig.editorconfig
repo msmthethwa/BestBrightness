@@ -1,0 +1,339 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = BestBrightness
+build_property.RootNamespace = BestBrightness
+build_property.ProjectDir = C:\Users\MS Mthethwa\Desktop\MUT\Programming (Year 2)\Integrated Project\BestBrightness\BestBrightness\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\MS Mthethwa\Desktop\MUT\Programming (Year 2)\Integrated Project\BestBrightness\BestBrightness
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Admin/Admin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Admin/AdminPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW5QYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Admin/CreateStockOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlU3RvY2tPcmRlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Admin/Customer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3VzdG9tZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Admin/Display.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGlzcGxheS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Admin/EditEmployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdEVtcGxveWVlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Admin/EditSalesperson.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFNhbGVzcGVyc29uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Admin/EditStock.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFN0b2NrLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Admin/EmployeeDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRW1wbG95ZWVEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Admin/Quotation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUXVvdGF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Admin/RegisterEmployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVnaXN0ZXJFbXBsb3llZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Admin/RegisterSalesperson.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVnaXN0ZXJTYWxlc3BlcnNvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Admin/SalespersonDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2FsZXNwZXJzb25EZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Admin/UpdateProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXBkYXRlUHJvZHVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Admin/UpdateProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXBkYXRlUHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Admin/UploadProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXBsb2FkUHJvZHVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Admin/ViewCustomerOrdersItems.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVmlld0N1c3RvbWVyT3JkZXJzSXRlbXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Admin/ViewEmployees.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVmlld0VtcGxveWVlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Admin/ViewSalespersons.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVmlld1NhbGVzcGVyc29ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Cart/Cart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxDYXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/CustomerAccount/CustomerIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJBY2NvdW50XEN1c3RvbWVySW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/CustomerHome/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJIb21lXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Customer/Order.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcT3JkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Customer/Payment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcUGF5bWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Customer/PaymentSuccess.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcUGF5bWVudFN1Y2Nlc3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Customer/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcUHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Customer/QuotationRequest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcUXVvdGF0aW9uUmVxdWVzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Home/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Home/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9maWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Home/TermsService.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUZXJtc1NlcnZpY2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Inventory/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Inventory/UpdateStock.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5XFVwZGF0ZVN0b2NrLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Order/OrderReview.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcT3JkZXJSZXZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Product/ManageDamagedProducts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxNYW5hZ2VEYW1hZ2VkUHJvZHVjdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Product/Product.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxQcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Report/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Sales/Cart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNcQ2FydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Sales/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Sales/Invoice.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNcSW52b2ljZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Sales/RecordSale.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNcUmVjb3JkU2FsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Shared/_LayoutCustomer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRDdXN0b21lci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Shared/_LayoutLoginPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRMb2dpblBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Shared/_LayoutWarehouseLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRXYXJlaG91c2VMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Warehouse/CategoryManagement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZWhvdXNlXENhdGVnb3J5TWFuYWdlbWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Warehouse/CreateOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZWhvdXNlXENyZWF0ZU9yZGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Warehouse/CreateSupplier.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZWhvdXNlXENyZWF0ZVN1cHBsaWVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Warehouse/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZWhvdXNlXERhc2hib2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Warehouse/DeclinePickup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZWhvdXNlXERlY2xpbmVQaWNrdXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Warehouse/DeleteOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZWhvdXNlXERlbGV0ZU9yZGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Warehouse/DeleteStock.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZWhvdXNlXERlbGV0ZVN0b2NrLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Warehouse/DeleteSupplier.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZWhvdXNlXERlbGV0ZVN1cHBsaWVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Warehouse/EditOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZWhvdXNlXEVkaXRPcmRlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Warehouse/EditStock.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZWhvdXNlXEVkaXRTdG9jay5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Warehouse/EditSupplier.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZWhvdXNlXEVkaXRTdXBwbGllci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Warehouse/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZWhvdXNlXExvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Warehouse/NewProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZWhvdXNlXE5ld1Byb2R1Y3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Warehouse/OrderList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZWhvdXNlXE9yZGVyTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Warehouse/PickupDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZWhvdXNlXFBpY2t1cERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Warehouse/PickupList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZWhvdXNlXFBpY2t1cExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Warehouse/PickupSlip.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZWhvdXNlXFBpY2t1cFNsaXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Warehouse/PrintDeliverySlip.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZWhvdXNlXFByaW50RGVsaXZlcnlTbGlwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Warehouse/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZWhvdXNlXFJlZ2lzdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Warehouse/SearchResults.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZWhvdXNlXFNlYXJjaFJlc3VsdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Warehouse/StockList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZWhvdXNlXFN0b2NrTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Warehouse/SupplierDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZWhvdXNlXFN1cHBsaWVyRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Warehouse/SupplierList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZWhvdXNlXFN1cHBsaWVyTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Warehouse/UpdatePickup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZWhvdXNlXFVwZGF0ZVBpY2t1cC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Warehouse/UpdateStock.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZWhvdXNlXFVwZGF0ZVN0b2NrLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MS Mthethwa/Desktop/MUT/Programming (Year 2)/Integrated Project/BestBrightness/BestBrightness/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-p05p42jwgt

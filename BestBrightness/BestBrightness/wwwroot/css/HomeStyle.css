@@ -1,0 +1,340 @@
+﻿/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+/* Full-Width Layout */
+body {
+    width: 100vw;
+    height: 100vh;
+    background: #081b29;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper {
+    width: 100%;
+    height: auto;
+    padding: 0;
+}
+
+/* Header */
+header nav {
+    background-color: #081b29;
+}
+
+.navbar-text {
+    color: #00ffff;
+}
+
+/* Banner Section */
+.banner {
+    width: 100%;
+    height: 350px; /* Adjusted height */
+    background: linear-gradient(45deg, #0ef, #c800ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.wel_text {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.para {
+    font-size: 1.25rem;
+    color: #fff;
+}
+
+/* Carousel Styles */
+.carousel-item img {
+    height: 400px; /* Height adjustment */
+    object-fit: cover; /* Ensures the image covers the container */
+    width: 100%;
+    transition: transform 0.5s ease-in-out; /* Smooth transition */
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background for text */
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(100%);
+}
+
+/* Card Section */
+#features .card {
+    transition: transform 0.3s;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid #00ffff;
+    padding: 20px;
+    color: white;
+}
+
+    #features .card:hover {
+        transform: translateY(-10px);
+    }
+
+#features .card-body i {
+    color: #007bff;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+/* Features Section Animation */
+#features .row {
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
+    animation-delay: 2.5s;
+}
+
+#features .col-lg-4 {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: zoomIn 1s ease forwards;
+}
+
+    #features .col-lg-4:nth-child(1) {
+        animation-delay: 2.5s;
+    }
+
+    #features .col-lg-4:nth-child(2) {
+        animation-delay: 2.8s;
+    }
+
+    #features .col-lg-4:nth-child(3) {
+        animation-delay: 3.1s;
+    }
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Buttons */
+.btn {
+    background: transparent;
+    border: 2px solid #00ffff;
+    color: #00ffff;
+    transition: all 0.3s ease;
+    padding: 8px 15px;
+}
+
+    .btn:hover {
+        background: linear-gradient(45deg, #0ef, #c800ff);
+        border-color: #c800ff;
+        color: white;
+    }
+
+/* Footer */
+footer {
+    background-color: #081b29;
+    color: #fff;
+    padding: 20px 0;
+}
+
+    footer a {
+        color: #00ffff;
+    }
+
+        footer a:hover {
+            color: #c800ff;
+        }
+
+/* Testimonial styles */
+#testimonials {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+}
+
+.testimonial {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+    .testimonial p {
+        font-style: italic;
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+
+    .testimonial cite {
+        font-size: 1rem;
+    }
+
+/* Specific styles for sales pages */
+.sales-container {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 20px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+    .sales-container h1 {
+        color: #343a40;
+        border-bottom: 2px solid #6c757d;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+
+/* Table styles specific to sales */
+.sales-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+    .sales-table th, .sales-table td {
+        border: 1px solid #dee2e6;
+        padding: 8px;
+        text-align: left;
+    }
+
+    .sales-table th {
+        background-color: #f1f1f1;
+    }
+
+    .sales-table tr:nth-child(even) {
+        background-color: #00ffff;
+    }
+
+/* Form styles specific to sales */
+.sales-form .form-group {
+    margin-bottom: 15px;
+}
+
+    .sales-form .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+.sales-form .form-control {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+.sales-form .text-danger {
+    color: #dc3545;
+    font-size: 0.875em;
+}
+
+/* Profile Container */
+.profile-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+    .profile-container h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-group input {
+    margin-bottom: 10px;
+}
+
+.notification {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.notification-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+.notification-error {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+#why-shop {
+    background-color: #f2f2f2; /* Light grey background as in the screenshot */
+    color: #333; /* Darker text color */
+}
+
+    #why-shop h2 {
+        color: #111; /* Deep grey for section title */
+    }
+
+    #why-shop .col-md-4 i {
+        color: #ff6600; /* Orange color for icons, as seen in the screenshot */
+    }
+
+    #why-shop h4 {
+        color: #444; /* Dark grey for headers (e.g., "Fast Delivery", "Customer Support") */
+    }
+
+    #why-shop p {
+        color: #666; /* Slightly lighter grey for the description text */
+    }
+
+    #why-shop .col-md-4 i {
+        color: #ff6600; /* Orange icons for consistency with your screenshot */
+    }

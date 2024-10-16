@@ -1,0 +1,307 @@
+﻿@model BestBrightness.Models.AdminViewModel
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<div class="container">
+    <!-- =============== Navigation ================ -->
+    <div class="navigation">
+        <ul>
+            <li>
+                <a asp-controller="Home" asp-action="Index">
+                    <span class="icon">
+                        <img src="~/Images/welcome-icon.png" alt="Welcome Icon" class="welcome-icon" style="width: 30px; height: auto">
+                    </span>
+                    <span class="title">Best Brightness</span>
+                </a>
+            </li>
+
+            <li>
+                <a asp-controller="Admin" asp-action="Admin">
+                    <span class="icon">
+                        <ion-icon name="speedometer-outline"></ion-icon>
+                    </span>
+                    <span class="title">Dashboard</span>
+                </a>
+            </li>
+
+            <li>
+                <a asp-controller="Admin" asp-action="UploadProduct">
+                    <span class="icon">
+                        <ion-icon name="cloud-upload-outline"></ion-icon>
+                    </span>
+                    <span class="title">Upload</span>
+                </a>
+            </li>
+
+            <li>
+                <a asp-controller="Admin" asp-action="ViewCustomerOrdersItems">
+                    <span class="icon">
+                        <ion-icon name="cart-outline"></ion-icon>
+                    </span>
+                    <span class="title">Orders</span>
+                </a>
+            </li>
+            <li>
+                <a asp-controller="Admin" asp-action="ViewSalespersons">
+                    <span class="icon">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </span>
+                    <span class="title">Salespersons</span>
+                </a>
+            </li>
+            <li>
+                <a asp-controller="Admin" asp-action="ViewEmployees">
+                    <span class="icon">
+                        <ion-icon name="people-circle-outline"></ion-icon>
+                    </span>
+                    <span class="title">Employees</span>
+                </a>
+            </li>
+
+            <li>
+                <a asp-controller="Admin" asp-action="Quotation">
+                    <span class="icon">
+                        <ion-icon name="document-text-outline"></ion-icon>
+                    </span>
+                    <span class="title">Quotation</span>
+                </a>
+            </li>
+
+            <li>
+                <a asp-controller="Admin" asp-action="CreateStockOrder">
+                    <span class="icon">
+                        <ion-icon name="bag-add-outline"></ion-icon>
+                    </span>
+                    <span class="title">Stock Order</span>
+                </a>
+            </li>
+
+            <li>
+                <a asp-controller="Product" asp-action="ManageDamagedProducts">
+                    <span class="icon">
+                        <ion-icon name="alert-circle-outline"></ion-icon>
+                    </span>
+                    <span class="title">Damaged Products</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- ========================= Main ==================== -->
+    <div class="main">
+        <div class="topbar">
+            <div class="toggle" id="menu-toggle" data-state="full">
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
+
+            <div class="search">
+                <label>
+                    <input type="text" placeholder="Search here" id="searchInput" value="@Model.SearchQuery">
+                    <ion-icon name="search-outline"></ion-icon>
+                </label>
+            </div>
+
+            <a asp-controller="Admin" asp-action="UpdateProfile" id="cartLink" class="user">
+                <img src="@Url.Content(Model.ProfilePicturePath ?? "~/assets/imgs/user.png")" alt="User Image" style="width: 50px; height: auto; border-radius: 50%">
+            </a>
+        </div>
+
+        <!-- ======================= Cards ================== -->
+        <div class="cardBox">
+            <div class="card">
+                <div>
+                    <div class="numbers">@Model.OrdersWithoutDeliveryDateCount</div>
+                    <div class="cardName">Daily Orders</div>
+                </div>
+
+                <div class="iconBx">
+                    <ion-icon name="hourglass-outline"></ion-icon>
+                </div>
+            </div>
+
+            @{
+                var discountedProductCount = Model.Products.Count(p => p.Discount.HasValue && p.Discount.Value > 0);
+            }
+
+            <div class="card">
+                <div>
+                    <div class="numbers">@discountedProductCount</div>
+                    <div class="cardName">Sales</div>
+                </div>
+
+                <div class="iconBx">
+                    <ion-icon name="cart-outline"></ion-icon>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="numbers">@Model.QuotationsWithoutFeedbackCount</div>
+                    <div class="cardName">Quotations</div>
+                </div>
+
+                <div class="iconBx">
+                    <ion-icon name="chatbubble-outline"></ion-icon>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="numbers">R @Model.TotalEarnings.ToString("F2")</div>
+                    <div class="cardName">Earning</div>
+                </div>
+
+                <div class="iconBx">
+                    <ion-icon name="cash-outline"></ion-icon>
+                </div>
+            </div>
+        </div>
+
+        <!-- ======================= Product List ================== -->
+        <div class="details">
+            <div class="recentOrders">
+                <div class="cardHeader">
+                    <h2>Recent Products</h2>
+                    <a asp-controller="Admin" asp-action="AdminPage" class="btn">View All</a>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product Image</th>
+                            <th>Price</th>
+                            <th>Stock Level</th>
+                            <th>Discount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var product in Model.FilteredProducts)
+                        {
+                            <tr>
+                                <td>
+                                    @if (product.ProductImage != null)
+                                    {
+                                        <img src="data:image/png;base64,@Convert.ToBase64String(product.ProductImage)" alt="@product.Name" style="width: 50px; height: auto" />
+                                    }
+                                    else
+                                    {
+                                        <img src="~/Images/default-product.png" alt="Default Image" style="width: 50px; height: auto" />
+                                    }
+                                </td>
+                                <td>@product.Price.ToString("C")</td>
+                                <td style="color: @(product.StockLevel == 0 ? "red" : "inherit")">@product.StockLevel</td>
+                                <td style="background-color: @(product.Discount.HasValue ?
+                                    (product.Discount.Value == 0 ? "transparent" :
+                                    (product.Discount.Value <= 25 ? "yellow" :
+                                    (product.Discount.Value <= 60 ? "green" : "red"))) : "transparent")">
+                                    @(product.Discount.HasValue ? (product.Discount.Value == 0 ? "No Discount" : $"{product.Discount.Value}%") : "No Discount")
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ================= Damaged Products ================ -->
+
+            <div class="recentOrders">
+                <div class="cardHeader">
+                    <h2>Damaged Products</h2>
+                    <a asp-controller="Product" asp-action="ManageDamagedProducts" class="btn">View All</a>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Loss</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.DamagedProducts != null && Model.DamagedProducts.Any())
+                        {
+                            foreach (var damagedProduct in Model.DamagedProducts)
+                            {
+                                <tr>
+                                    <td>
+                                        @if (damagedProduct.ProductImage != null)
+                                        {
+                                            <img src="data:image/png;base64,@Convert.ToBase64String(damagedProduct.ProductImage)" alt="@damagedProduct.Name" style="width: 50px; height: auto" />
+                                        }
+                                        else
+                                        {
+                                            <img src="~/Images/default-product.png" alt="Default Image" style="width: 50px; height: auto" />
+                                        }
+                                    </td>
+                                    <td>@damagedProduct.DamagedStockLevel</td>
+                                    <td>@damagedProduct.LossAmount</td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="4">No damaged products to display.</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ================= New Customers ================ -->
+
+            <div class="recentCustomers">
+                <div class="cardHeader">
+                    <h2>Recent Customers</h2>
+                </div>
+                <table>
+                    @foreach (var customer in Model.FilteredCustomers)
+                    {
+                        <tr>
+                            <td width="60px">
+                                <div class="imgBx">
+                                    <img src="@Url.Content(customer.ProfilePicturePath ?? "~/assets/imgs/user.png")" alt="@customer.LastName" style="width: 50px; height: auto">
+                                </div>
+                            </td>
+                            <td>
+                                <h4>@customer.FirstName @customer.LastName <br> <span>@customer.Email</span></h4>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- =========== Scripts =========  -->
+@section Scripts {
+    <script src="@Url.Content("~/assets/js/main.js")"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            const navigation = document.querySelector('.navigation');
+            const main = document.querySelector('.main');
+
+            // Toggle the active state for the navigation and main sections
+            navigation.classList.toggle('active');
+            main.classList.toggle('active');
+
+            // Update the button's state
+            const isCompact = navigation.classList.contains('active');
+            this.setAttribute('data-state', isCompact ? 'compact' : 'full');
+        });
+
+        // Handle the search functionality
+        document.getElementById('searchInput').addEventListener('keypress', function (event) {
+            if (event.key === 'Enter') {
+                const searchQuery = this.value;
+                window.location.href = `@Url.Action("Admin", "Admin")?searchQuery=${encodeURIComponent(searchQuery)}`;
+            }
+        });
+    </script>
+}

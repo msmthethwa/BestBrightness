@@ -1,0 +1,366 @@
+﻿/* Basic Reset */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: auto; /* Allow default browser scrolling */
+}
+
+/* Header Styling */
+header {
+    background: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    padding: 1rem;
+    position: relative;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #00ffcc;
+}
+
+#logo {
+    height: 50px;
+}
+
+.company-name {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+    .header-right a {
+        color: #00ffcc;
+        text-decoration: none;
+        margin-left: 1rem;
+        font-weight: 600;
+    }
+
+        .header-right a:hover {
+            color: #ffffff;
+        }
+
+.wishlist-icon {
+    font-size: 1.5rem;
+}
+
+.cart-icon img {
+    height: 24px;
+}
+
+/* Search Nav Styling */
+.search-nav {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#searchField {
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 25px 0 0 25px;
+    font-size: 1rem;
+    outline: none;
+    width: 250px;
+}
+
+#searchButton {
+    background: #00ffcc;
+    border: none;
+    border-radius: 0 25px 25px 0;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+    #searchButton img {
+        height: 30px;
+    }
+
+    #searchButton:hover {
+        background: #00cc99;
+    }
+
+
+
+/* Ensure body takes full height */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: #ffffff;
+    background-color: #0c0c0c;
+    position: relative;
+    overflow: auto; /* Allow default browser scrolling */
+}
+
+/* Particles background */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+/* Gradient background */
+.gradient {
+    --size: 750px;
+    --speed: 50s;
+    --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
+    width: var(--size);
+    height: var(--size);
+    filter: blur(calc(var(--size) / 5));
+    background-image: linear-gradient(135deg, rgba(34,193,195,0.5) 0%, rgba(253,187,45,0.5) 100%);
+    animation: rotate var(--speed) var(--easing) alternate infinite;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes rotate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@media (min-width: 720px) {
+    .gradient {
+        --size: 500px;
+    }
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.6);
+    border-bottom: 2px solid #00ffcc;
+    /* Ensure header is not sticky, allowing it to scroll with the page */
+}
+
+/* Navigation styling */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+    nav ul li {
+        display: inline;
+        margin: 0 1rem;
+    }
+
+nav a {
+    color: #00ffcc;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s;
+    font-weight: 600;
+}
+
+    nav a:hover {
+        color: #ffffff;
+        transform: scale(1.05);
+    }
+
+/* Main content styling */
+main {
+    flex: 1;
+    padding: 0;
+    /* Allow scrolling within the main content area */
+}
+
+/* Products section */
+.products {
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+    .products h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+/* Grid layout for products */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+/* Product box styling */
+.product-box {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .product-box img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .product-box:hover {
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: 0 5px 20px rgba(0, 255, 204, 0.5);
+    }
+
+    .product-box h3 {
+        margin: 0 0 1rem;
+    }
+
+.price {
+    font-size: 1.2rem;
+    color: #00ffcc;
+    margin: 0.5rem 0;
+}
+
+.buy-button {
+    background: linear-gradient(135deg, #00ffcc, #00cc99);
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    font-weight: bold;
+}
+
+    .buy-button:hover {
+        background-color: #00cc99;
+        transform: scale(1.05);
+    }
+
+/* Section styling */
+section {
+    padding: 2rem 0;
+}
+
+/* Ratings styling */
+.ratings {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #ffcc00; /* Gold color for stars */
+    gap: 0.5rem; /* Spacing between elements */
+}
+
+    .ratings .rating-value {
+        font-weight: bold;
+        color: gold;
+    }
+
+    .ratings .star {
+        color: gold; /* Gold color for the star */
+    }
+
+.reviews {
+    margin-left: 1rem; /* Adds space between the star and reviews text */
+    color: #000380; /* Reviews text color */
+    font-weight: 600;
+}
+
+/* Reviews Hover Effect */
+.rating-reviews .reviews {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+    .rating-reviews .reviews:hover {
+        color: green;
+        text-decoration: underline;
+    }
+
+/* Banner Container */
+.banner-container {
+    text-align: center;
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Banner Slides */
+.banner-slide {
+    display: none;
+}
+
+    .banner-slide img {
+        
+        width: 80%;
+        height: 200px;
+    }
+
+/* Fade Animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/* Add dots for navigation (optional) */
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active-dot {
+    background-color: #00ffcc;
+}
+
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.7);
+}

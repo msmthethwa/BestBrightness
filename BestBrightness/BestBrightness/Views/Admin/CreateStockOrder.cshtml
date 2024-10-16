@@ -1,0 +1,105 @@
+﻿@model BestBrightness.ViewModels.StockOrderViewModel
+
+
+@{
+    ViewData["Title"] = "Create Stock Order";
+    var stockOrderItemsList = Model.StockOrderItems.ToList(); // Convert ICollection to List
+}
+
+<h2>Create Stock Order</h2>
+
+<a asp-controller="Admin" asp-action="Display" class="btn btn-primary me-2">Orders</a>
+<br>
+<br>
+<form asp-action="CreateStockOrder" method="post">
+    <table class="table table-striped table-bordered" id="stockOrderTable">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Quantity to Order</th>
+                <th>Unit Price</th>
+                <th></th> <!-- For remove button -->
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < stockOrderItemsList.Count; i++)
+            {
+                <tr>
+                    <td>
+                        <input type="text"
+                               name="StockOrderItems[@i].ProductName"
+                               value="@stockOrderItemsList[i].ProductName"
+                               class="form-control"
+                               placeholder="Enter product name" />
+                    </td>
+                    <td>
+                        <input type="number"
+                               name="StockOrderItems[@i].QuantityOrdered"
+                               min="1"
+                               value="@stockOrderItemsList[i].QuantityOrdered"
+                               class="form-control" />
+                    </td>
+                    <td>
+                        <input type="number"
+                               name="StockOrderItems[@i].UnitPrice"
+                               min="0"
+                               value="@stockOrderItemsList[i].UnitPrice"
+                               class="form-control"
+                               placeholder="Enter unit price" />
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger remove-row">Remove</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <button type="button" id="addRow" class="btn btn-secondary">Add Row</button>
+    <button type="submit" class="btn btn-primary" style="background-color: green;">Place Order</button>
+</form>
+
+@section Scripts {
+    <script>
+        // Function to dynamically add rows
+        document.getElementById('addRow').addEventListener('click', function () {
+            var table = document.getElementById('stockOrderTable').getElementsByTagName('tbody')[0];
+            var rowCount = table.rows.length;
+            var newRow = table.insertRow(rowCount);
+
+            // Insert new cells
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+            var cell4 = newRow.insertCell(3);
+
+            // Add input for Product Name
+            cell1.innerHTML = `<input type="text" name="StockOrderItems[${rowCount}].ProductName" class="form-control" placeholder="Enter product name" />`;
+
+            // Add input for Quantity Ordered
+            cell2.innerHTML = `<input type="number" name="StockOrderItems[${rowCount}].QuantityOrdered" min="1" class="form-control" />`;
+
+            // Add input for Unit Price
+            cell3.innerHTML = `<input type="number" name="StockOrderItems[${rowCount}].UnitPrice" min="0" class="form-control" placeholder="Enter unit price" />`;
+
+            // Add remove button
+            cell4.innerHTML = '<button type="button" class="btn btn-danger remove-row">Remove</button>';
+
+            // Add event listener to remove row
+            bindRemoveRowEvent();
+        });
+
+        // Function to remove row
+        function bindRemoveRowEvent() {
+            document.querySelectorAll('.remove-row').forEach(button => {
+                button.addEventListener('click', function () {
+                    var row = this.closest('tr');
+                    row.parentNode.removeChild(row);
+                });
+            });
+        }
+
+        // Initialize remove row buttons on page load
+        bindRemoveRowEvent();
+    </script>
+}

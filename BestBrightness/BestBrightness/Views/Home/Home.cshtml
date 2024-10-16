@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Best Brightness";
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="~/css/styleH.css"> 
+</head>
+<body>
+<div class="container">
+    <header class="header">
+            <a class="header__logo">Best Brightness</a>
+        <nav class="header__menu">
+            <ul class="header__menu__list">
+                    <li class="header__menu__item"><a class="header__menu__link" href="@Url.Action("Index", "CustomerHome")">Online</a></li>
+                <li class="header__menu__item"><a class="header__menu__link" href="@Url.Action("Index", "Sales")">culture</a></li>
+                <li class="header__menu__item"><a class="header__menu__link" href="#">news</a></li>
+                <li class="header__menu__item"><a class="header__menu__link" href="#">careers</a></li>
+                <li class="header__menu__item"><a class="header__menu__link" href="#">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="sliders-container">
+        <ul class="pagination">
+            <li class="pagination__item"><a class="pagination__button"></a></li>
+            <li class="pagination__item"><a class="pagination__button"></a></li>
+            <li class="pagination__item"><a class="pagination__button"></a></li>
+            <li class="pagination__item"><a class="pagination__button"></a></li>
+        </ul>
+    </main>
+    <footer class="footer">
+        <nav class="footer__menu">
+            <ul class="footer__menu__list">
+                <li class="footer__menu__item"><a class="footer__menu__link" href="#">facebook</a></li>
+                <li class="footer__menu__item"><a class="footer__menu__link" href="#">dribbble</a></li>
+                <li class="footer__menu__item"><a class="footer__menu__link" href="#">instagram</a></li>
+            </ul>
+        </nav>
+    </footer>
+</div>
+<script src='https://rawgit.com/lmgonzalves/momentum-slider/master/dist/momentum-slider.min.js'></script>
+<script src="~/js/scriptH.js"></script> 
+</body>
+</html>

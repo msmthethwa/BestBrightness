@@ -1,0 +1,96 @@
+﻿@model IEnumerable<BestBrightness.Models.Supplier>
+@{
+    ViewBag.Title = "Supplier List";
+}
+<link href="~/css/WarehouseStyles.css" rel="stylesheet" type="text/css" />
+
+<h2>Supplier List</h2>
+
+<table id="supplierTable">
+    <thead>
+        <tr>
+            <th>Supplier ID</th>
+            <th>Name</th>
+            <th>Contact Info</th>
+            <th>Address</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var supplier in Model)
+        {
+            <tr>
+                <td>@supplier.Id</td>
+                <td>@supplier.Name</td>
+                <td>@supplier.ContactInfo</td>
+                <td>@supplier.Address</td>
+                <td>
+                    <a href="@Url.Action("EditSupplier", new { id = supplier.Id })" class="btn btn-warning">Edit</a>
+                    <a href="@Url.Action("DeleteSupplier", new { id = supplier.Id })" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
+<style>
+    /* Supplier Table Styles */
+    #supplierTable {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #081b29; /* Dark background */
+        color: #fff; /* White font for the entire table */
+        margin-top: 20px;
+    }
+
+        #supplierTable th, #supplierTable td {
+            padding: 12px 15px;
+            border: 1px solid #00a6bc; /* Cyan border */
+            text-align: left;
+        }
+
+        #supplierTable th {
+            background-color: #00a6bc; /* Cyan header background */
+            color: #fff; /* White text in the header */
+        }
+
+        #supplierTable tr:nth-child(even) {
+            background-color: #0d2a3a; /* Slightly lighter dark background for even rows */
+        }
+
+        #supplierTable tr:hover {
+            background-color: #003f5c; /* Darker background on hover */
+        }
+
+        /* Button Styles */
+        #supplierTable button {
+            padding: 8px 16px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 4px;
+            color: white;
+        }
+
+            #supplierTable button[onclick^="editSupplier"] {
+                background-color: #ffeb3b; /* Yellow background for Edit button */
+                color: black; /* Black text */
+            }
+
+            #supplierTable button[onclick^="deleteSupplier"] {
+                background-color: #f44336; /* Red background for Delete button */
+                color: white;
+            }
+
+            #supplierTable button[onclick^="editSupplier"]:hover {
+                background-color: #e6b800; /* Darker yellow on hover */
+            }
+
+            #supplierTable button[onclick^="deleteSupplier"]:hover {
+                background-color: #e74c3c; /* Darker red on hover */
+            }
+</style>
+

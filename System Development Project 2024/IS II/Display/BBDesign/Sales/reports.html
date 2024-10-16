@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports Menu - Warehouse Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Reports Menu</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-btn">Home</a></li>
+                    <li><a href="sales.html" class="nav-btn">Sales</a></li>
+                    <li><a href="inventory.html" class="nav-btn">Inventory</a></li>
+                    <li><a href="reports.html" class="nav-btn">Reports</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="generateReports">
+                <h2>Generate Reports</h2>
+                <form id="reportForm">
+                    <label for="reportType">Report Type:</label>
+                    <select id="reportType" name="reportType" required>
+                        <option value="totalSales">Total Sales</option>
+                        <option value="topSelling">Top-Selling Products</option>
+                        <option value="lowSelling">Low-Selling Products</option>
+                    </select>
+
+                    <label for="startDate">Start Date:</label>
+                    <input type="date" id="startDate" name="startDate" required>
+
+                    <label for="endDate">End Date:</label>
+                    <input type="date" id="endDate" name="endDate" required>
+
+                    <button type="submit">Generate Report</button>
+                </form>
+
+                <h3>Report Results</h3>
+                <div id="reportResults">
+                    <!-- Report results will be displayed here -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

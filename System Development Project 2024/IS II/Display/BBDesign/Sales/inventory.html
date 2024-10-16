@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Menu - Warehouse Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Inventory Menu</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-btn">Home</a></li>
+                    <li><a href="sales.html" class="nav-btn">Sales</a></li>
+                    <li><a href="inventory.html" class="nav-btn">Inventory</a></li>
+                    <li><a href="reports.html" class="nav-btn">Reports</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="inventoryManagement">
+                <h2>Manage Inventory</h2>
+                <form id="inventoryForm">
+                    <label for="itemName">Item Name:</label>
+                    <input type="text" id="itemName" name="itemName" required>
+
+                    <label for="itemQuantity">Quantity:</label>
+                    <input type="number" id="itemQuantity" name="itemQuantity" required>
+
+                    <label for="itemPrice">Price per Unit:</label>
+                    <input type="number" id="itemPrice" name="itemPrice" step="0.01" required>
+
+                    <button type="submit">Add Item</button>
+                </form>
+
+                <h3>Inventory Records</h3>
+                <div id="inventoryRecords">
+                    <!-- Inventory records will be displayed here -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

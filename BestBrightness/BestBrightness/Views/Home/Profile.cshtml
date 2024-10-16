@@ -1,0 +1,94 @@
+﻿@model BestBrightness.Models.Users
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Best Brightness</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/HomeProfile.css"> <!-- Custom CSS for Profile page -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"> <!-- FontAwesome for icons -->
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>@Model.FullName's Profile</h3>
+                    </div>
+                    <div class="card-body">
+                        <!-- Form for profile picture upload with icon button -->
+                        <div class="text-center mb-3">
+                            <form asp-action="UploadProfilePicture" method="post" enctype="multipart/form-data" class="d-inline-block">
+                                <div class="upload-container">
+                                    <img src="@Url.Content(Model.ProfilePicturePath  ?? "~/assets/imgs/user.png")" class="img-thumbnail" alt="Profile Picture" onclick="document.getElementById('ProfilePicture').click();" />
+                                    <label for="ProfilePicture" class="upload-icon" onclick="document.getElementById('ProfilePicture').click();">
+                                        <i class="fas fa-upload"></i>
+                                    </label>
+                                    <input type="file" id="ProfilePicture" name="ProfilePicture" accept="image/*" onchange="this.form.submit()" style="display: none;" />
+                                </div>
+                            </form>
+                        </div>
+
+                        <hr />
+
+                        <p><strong>Username:</strong> @Model.Username</p>
+                        <p><strong>Role:</strong> @Model.Role</p>
+                        <p><strong>Salesperson ID:</strong> @Model.SalespersonId</p>
+                        <p><strong>Account Created At:</strong> @Model.CreatedAt.ToString("dd MMM yyyy")</p>
+
+                        <!-- Change Password Section -->
+                        <h4>Change Password</h4>
+                        <form asp-action="ChangePassword" method="post" id="changePasswordForm">
+                            <div class="form-group">
+                                <label for="NewPassword">New Password</label>
+                                <input type="password" class="form-control" id="NewPassword" name="NewPassword" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="ConfirmPassword">Confirm Password</label>
+                                <input type="password" class="form-control" id="ConfirmPassword" name="ConfirmPassword" required />
+                            </div>
+                            <div id="error-message" class="alert alert-danger d-none" role="alert">
+                                New Password and Confirm Password do not match.
+                            </div>
+                            <button type="submit" class="btn btn-primary">Change Password</button>
+                        </form>
+
+                        <!-- Success and error messages -->
+                        @if (TempData["SuccessMessage"] != null)
+                        {
+                            <div class="alert alert-success mt-3">
+                                @TempData["SuccessMessage"]
+                            </div>
+                        }
+                        @if (TempData["ErrorMessage"] != null)
+                        {
+                            <div class="alert alert-danger mt-3">
+                                @TempData["ErrorMessage"]
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById("changePasswordForm").addEventListener("submit", function (event) {
+            var newPassword = document.getElementById("NewPassword").value;
+            var confirmPassword = document.getElementById("ConfirmPassword").value;
+            if (newPassword !== confirmPassword) {
+                event.preventDefault();
+                document.getElementById("error-message").classList.remove("d-none");
+            }
+        });
+    </script>
+</body>
+</html>

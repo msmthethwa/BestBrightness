@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign User Privileges</title>
+    <link rel="stylesheet" href="indexStyles.css">
+    <style>
+        
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Light grey background */
+    color: #333333; /* Darker text color */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #ffffff; /* White background for the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+header {
+    background-color: #333333; /* Dark gray background */
+    color: #ffffff; /* White text */
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    color: #333333; /* Dark gray text */
+    margin-bottom: 20px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #dddddd; /* Light gray border */
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #333333; /* Dark gray background */
+    color: #ffffff; /* White text */
+}
+
+tr:hover {
+    background-color: #f9f9f9; /* Very light gray background for table rows */
+}
+
+/* Button Styles */
+.btn {
+    padding: 10px 20px;
+    background-color: #333333; /* Dark gray background */
+    color: #ffffff; /* White text */
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #555555; /* Even darker gray on hover */
+}
+
+/* Form Container Styles */
+.form-container {
+    background-color: #ffffff; /* White background */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.form-container input[type="text"],
+.form-container select {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #dddddd; /* Light gray border */
+}
+
+.form-container input[type="submit"] {
+    background-color: #333333; /* Dark gray background */
+    color: #ffffff; /* White text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-container input[type="submit"]:hover {
+    background-color: #555555; /* Even darker gray on hover */
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Assign User Privileges</h1>
+        </header>
+        <main>
+            <section>
+                <h2>Assign Privileges to Users</h2>
+                <div class="form-container">
+                    <form id="privilegeForm">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required>
+
+                        <label for="role">Role:</label>
+                        <select id="role" name="role" required>
+                            <option value="Admin">Admin</option>
+                            <option value="Manager">Manager</option>
+                            <option value="Employee">Employee</option>
+                        </select>
+
+                        <input type="submit" value="Assign Role">
+                    </form>
+                </div>
+            </section>
+
+            <section>
+                <h2>User Privileges List</h2>
+                <table id="privilegeTable">
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Role</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Privilege rows will be dynamically added here -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('privilegeForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const role = document.getElementById('role').value;
+            
+            const table = document.getElementById('privilegeTable').getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow();
+            
+            newRow.insertCell(0).innerText = username;
+            newRow.insertCell(1).innerText = role;
+            
+            const actionCell = newRow.insertCell(2);
+            const deleteButton = document.createElement('button');
+            deleteButton.innerText = 'Remove';
+            deleteButton.className = 'btn';
+            deleteButton.addEventListener('click', function() {
+                table.deleteRow(newRow.rowIndex - 1);
+            });
+            actionCell.appendChild(deleteButton);
+
+            document.getElementById('privilegeForm').reset();
+        });
+    </script>
+</body>
+</html>

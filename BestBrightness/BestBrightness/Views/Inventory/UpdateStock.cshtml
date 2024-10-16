@@ -1,0 +1,66 @@
+﻿@model BestBrightness.ViewModels.InventoryViewModel
+
+@{
+    ViewData["Title"] = "Update Stock";
+}
+
+<link rel="stylesheet" href="~/css/AdminInventory.css">
+
+<div class="stock-update-container">
+    <h1>Update Stock for @Model.ProductName</h1>
+
+    <div class="product-image">
+        @if (Model.ProductImage != null && Model.ProductImage.Length > 0)
+        {
+            var base64Image = Convert.ToBase64String(Model.ProductImage);
+            var imgSrc = $"data:image/png;base64,{base64Image}";
+            <img src="@imgSrc" alt="Product Image" style="max-width: 150px; max-height: 150px;" />
+        }
+        else
+        {
+            <p>No Image Available</p>
+        }
+    </div>
+
+    <form asp-action="UpdateStock" method="post" class="update-stock-form">
+        <input type="hidden" asp-for="Id" />
+
+        @if (ViewData.ModelState.ContainsKey("SalespersonId") && ViewData.ModelState["SalespersonId"].Errors.Count > 0)
+        {
+            <div class="alert alert-danger">
+                @foreach (var error in ViewData.ModelState["SalespersonId"].Errors)
+                {
+                    <p>@error.ErrorMessage</p>
+                }
+            </div>
+        }
+
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label asp-for="StockLevel">Stock Level</label>
+                            <input asp-for="StockLevel" class="form-control" />
+                            <span asp-validation-for="StockLevel" class="text-danger"></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label asp-for="SalespersonId">Salesperson ID</label>
+                            <input asp-for="SalespersonId" class="form-control" />
+                            <span asp-validation-for="SalespersonId" class="text-danger"></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>

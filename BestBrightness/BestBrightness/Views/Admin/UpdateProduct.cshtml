@@ -1,0 +1,69 @@
+﻿@model BestBrightness.ViewModels.ProductUploadViewModel
+
+@{
+    ViewData["Title"] = "Update Product";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/UpdateStyle.css" />
+</head>
+<body>
+    <div class="update-container">
+        <h2>Update Product</h2>
+
+        @if (TempData["UpdateProductMessage"] != null)
+        {
+            <div class="notification-success">
+                @TempData["UpdateProductMessage"]
+            </div>
+        }
+
+        <form asp-action="UpdateProduct" method="post" enctype="multipart/form-data" class="update-form">
+            <input type="hidden" asp-for="Id" />
+
+            <div class="form-group">
+                <label asp-for="ProductName"></label>
+                <input asp-for="ProductName" />
+                <span asp-validation-for="ProductName"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ProductDescription"></label>
+                <textarea asp-for="ProductDescription"></textarea>
+                <span asp-validation-for="ProductDescription"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="StockLevel"></label>
+                <input asp-for="StockLevel" />
+                <span asp-validation-for="StockLevel"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Price"></label>
+                <input asp-for="Price" />
+                <span asp-validation-for="Price"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Category"></label>
+                <input asp-for="Category" />
+                <span asp-validation-for="Category"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ProductImage"></label>
+                <input type="file" asp-for="ProductImage" />
+                <span asp-validation-for="ProductImage"></span>
+            </div>
+
+            <button type="submit" class="btn-save">Save</button>
+        </form>
+    </div>
+</body>
+</html>

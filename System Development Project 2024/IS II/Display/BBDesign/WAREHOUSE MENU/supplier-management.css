@@ -1,0 +1,180 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4; /* Optional: linear-gradient(120deg, #f6d365 0%, #fda085 100%); */
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(to bottom, #f5f5f5 0%, #d4e9e2 100%); /* White to soft green gradient */
+    padding: 20px;
+    position: relative;
+}
+
+/* Header Content */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f5f5; /* White background for the header-top */
+    padding-bottom: 20px; /* Space for the gradient */
+    border-bottom: 2px solid #000; /* Black border for definition */
+}
+
+#logo {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.company-name {
+    font-size: 2em;
+    color: #000; /* Black for the company name */
+    margin: 0;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.header-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.header-right a {
+    color: #000; /* Black for links */
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.header-right a img {
+    height: 24px; /* Adjust height as needed */
+    width: auto; /* Maintain aspect ratio */
+}
+
+.header-right a:hover {
+    text-decoration: underline;
+}
+
+/* Gradient Section */
+.header-gradient {
+    background: linear-gradient(to bottom, #d4e9e2 0%, #b3c7b4 100%); /* Soft green gradient */
+    padding: 20px;
+}
+
+/* Footer Styles */
+footer {
+    background: linear-gradient(to bottom, #d4e9e2 0%, #b3c7b4 100%); 
+    color: #333;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Supplier Management Page Styles */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #28a745; /* Changed to green */
+    border-bottom: 2px solid #28a745; /* Changed to green */
+    padding-bottom: 10px;
+}
+
+.supplier-form,
+.supplier-list {
+    margin-bottom: 20px;
+}
+
+.supplier-form h3,
+.supplier-list h3 {
+    color: #28a745; /* Changed to green */
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745; /* Changed to green */
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #218838;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: #28a745; /* Changed to green */
+    color: #fff;
+}
+
+table td a {
+    color: #007bff; /* Blue color for actions */
+    text-decoration: none;
+}
+
+table td a:hover {
+    text-decoration: underline;
+}
+
+.edit-link,
+.delete-link {
+    color: #007bff; /* Blue color for actions */
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.edit-link:hover,
+.delete-link:hover {
+    text-decoration: underline;
+}
+
+.delete-link {
+    color: #dc3545; /* Red color for delete actions */
+}
+
+.delete-link:hover {
+    color: #c82333;
+}

@@ -1,0 +1,68 @@
+﻿@model BestBrightness.Models.RegisterViewModel
+@{
+    Layout = "_LayoutLoginPage";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="~/cl-icon/css/all.min.css">
+    <link rel="stylesheet" href="~/css/registerStyle.css">
+</head>
+<body>
+    <div class="wrapper">
+        <form asp-action="Register" method="post" class="form">
+            <div class="inp">
+                <input asp-for="FirstName" class="input" placeholder="First Name" />
+                <i class="fa-solid fa-user"></i>
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="inp">
+                <input asp-for="LastName" class="input" placeholder="Last Name" />
+                <i class="fa-solid fa-user"></i>
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="inp">
+                <input asp-for="Email" class="input" placeholder="Email" />
+                <i class="fa-solid fa-envelope"></i>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="inp">
+                <input asp-for="Password" type="password" class="input" placeholder="Password" />
+                <i class="fa-solid fa-lock"></i>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="inp">
+                <input asp-for="ConfirmPassword" type="password" class="input" placeholder="Confirm Password" />
+                <i class="fa-solid fa-lock"></i>
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <button type="submit" class="submit">Register</button>
+        </form>
+        <div class="banner">
+            <h1 class="wel_text">Register!</h1><br>
+            <a href="#">
+                <img src="~/Images/welcome-icon.png" alt="Welcome Icon" class="welcome-icon">
+            </a>
+        </div>
+    </div>
+
+    <div class="notes">
+        <p>Only administrators are allowed to register. If you are not an admin, please ask an administrator to register you.</p>
+    </div>
+
+    @if (ViewData.ModelState.ContainsKey(string.Empty) && ViewData.ModelState[string.Empty].Errors.Count > 0)
+    {
+        <script>
+            // Get the error message from the server
+            var errorMessage = '@ViewData.ModelState[string.Empty].Errors[0].ErrorMessage';
+
+            // Display the alert
+            alert(errorMessage);
+        </script>
+    }
+</body>
+</html>

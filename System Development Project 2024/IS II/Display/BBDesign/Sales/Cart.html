@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Best Brightness Shop</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-top">
+            <img src="logo.png" alt="Best Brightness Logo" id="logo">
+            <h1 class="company-name">Best Brightness</h1>
+            <div class="header-right">
+                <a href="#" id="logoutLink">Logout</a>
+                <a href="#" id="ordersLink">Orders</a>
+                <a href="#" id="accountLink">My Account</a>
+                <a href="wishlist.html" id="wishlistLink" class="wishlist-icon">❤️</a> <!-- Heart icon for wishlist -->
+                <a href="cart.html" id="cartLink" class="cart-icon"><img src="cart-icon.png" alt="Cart Icon"></a> <!-- Cart icon only -->
+            </div>
+        </div>
+        
+        <div class="search-nav">
+            <input type="text" id="searchField" placeholder="Search for products...">
+            <button id="searchButton">Search</button>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html" id="homeLink">Home</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="quotation-request.html" id="quotationsLink">Quotations</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="cart-overview section-background">
+            <h2>Your Shopping Cart</h2>
+            <div class="cart-items">
+                <div class="cart-item">
+                    <img src="product1.jpeg" alt="Multipurpose Cleaner">
+                    <div class="item-info">
+                        <h3>Multipurpose Cleaner</h3>
+                        <p>Price: ZAR 150.00</p>
+                        <p>Quantity: <input type="number" value="2" min="1"></p>
+                    </div>
+                    <div class="item-total">
+                        <p>Total: ZAR 300.00</p>
+                        <button class="remove-btn">Remove</button>
+                    </div>
+                </div>
+
+                <div class="cart-item">
+                    <img src="product3.jpeg" alt="Heavy Duty Floor Cleaner">
+                    <div class="item-info">
+                        <h3>Heavy Duty Floor Cleaner</h3>
+                        <p>Price: ZAR 200.00</p>
+                        <p>Quantity: <input type="number" value="1" min="1"></p>
+                    </div>
+                    <div class="item-total">
+                        <p>Total: ZAR 200.00</p>
+                        <button class="remove-btn">Remove</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cart-summary">
+                <h3>Cart Summary</h3>
+                <p>Subtotal: ZAR 500.00</p>
+                <p>Tax: ZAR 50.00</p>
+                <p>Total: ZAR 550.00</p>
+                <button class="checkout-btn" onclick="window.location.href='order-review.html';">Proceed to Checkout</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Best Brightness Shop. All rights reserved.</p>
+    </footer>
+
+    <script src="cart.js"></script>
+</body>
+
+</html>

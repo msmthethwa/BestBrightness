@@ -1,0 +1,83 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BEFCDE8D-9627-4146-82B5-C306DA9FD18A}|BestBrightness\\BestBrightness.csproj|c:\\users\\ms mthethwa\\desktop\\mut\\programming (year 2)\\integrated project\\bestbrightness\\bestbrightness\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{BEFCDE8D-9627-4146-82B5-C306DA9FD18A}|BestBrightness\\BestBrightness.csproj|solutionrelative:bestbrightness\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEFCDE8D-9627-4146-82B5-C306DA9FD18A}|BestBrightness\\BestBrightness.csproj|c:\\users\\ms mthethwa\\desktop\\mut\\programming (year 2)\\integrated project\\bestbrightness\\bestbrightness\\views\\admin\\admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BEFCDE8D-9627-4146-82B5-C306DA9FD18A}|BestBrightness\\BestBrightness.csproj|solutionrelative:bestbrightness\\views\\admin\\admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 342,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\appsettings.json",
+              "RelativeDocumentMoniker": "BestBrightness\\appsettings.json",
+              "ToolTip": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\appsettings.json",
+              "RelativeToolTip": "BestBrightness\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAACmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-02T07:24:59.372Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Admin.cshtml",
+              "DocumentMoniker": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\Views\\Admin\\Admin.cshtml",
+              "RelativeDocumentMoniker": "BestBrightness\\Views\\Admin\\Admin.cshtml",
+              "ToolTip": "C:\\Users\\MS Mthethwa\\Desktop\\MUT\\Programming (Year 2)\\Integrated Project\\BestBrightness\\BestBrightness\\Views\\Admin\\Admin.cshtml",
+              "RelativeToolTip": "BestBrightness\\Views\\Admin\\Admin.cshtml",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAAAGoAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-01T13:27:46.186Z"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 61,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+﻿@model BestBrightness.ViewModels.SaleViewModel
+
+@{
+    ViewData["Title"] = "Record Sale";
+}
+
+<link rel="stylesheet" href="~/css/Sales.css">
+
+<h2>Record Sale</h2>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+<div class="container">
+    <form asp-action="AddToCart" method="post" class="mb-4">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="ProductId" class="form-label">Product</label>
+                    <select asp-for="ProductId" asp-items="@(new SelectList(Model.Products, "Id", "ProductName"))" class="form-control">
+                        <option value="">Select a product</option>
+                    </select>
+                    <span asp-validation-for="ProductId" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Quantity" class="form-label">Quantity</label>
+                    <input asp-for="Quantity" class="form-control" type="number" min="1" id="quantity" oninput="updateTotalPrice()" />
+                    <span asp-validation-for="Quantity" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="SaleDate" class="form-label">Sale Date</label>
+            <input asp-for="SaleDate" class="form-control" type="date" />
+            <span asp-validation-for="SaleDate" class="text-danger"></span>
+        </div>
+
+        @if (User.IsInRole("Salesperson"))
+        {
+            <div class="form-group mb-3">
+                <label asp-for="SalespersonId" class="form-label">Salesperson ID</label>
+                <input asp-for="SalespersonId" class="form-control" readonly />
+                <span asp-validation-for="SalespersonId" class="text-danger"></span>
+            </div>
+        }
+
+        <div class="form-group mb-3">
+            <label>Price Per Item</label>
+            <input type="text" class="form-control" id="pricePerItem" readonly />
+        </div>
+
+        <div class="form-group mb-3">
+            <label>Discount (%)</label>
+            <input type="text" class="form-control" id="discount" readonly />
+        </div>
+
+        <div class="form-group mb-4">
+            <label>Total Price</label>
+            <input type="text" class="form-control" id="totalPrice" readonly />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add to Cart</button>
+    </form>
+
+    <hr />
+
+    <h3>Cart</h3>
+    @if (ViewData["CartItems"] != null && ((List<BestBrightness.ViewModels.CartItem>)ViewData["CartItems"]).Any())
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price Per Item</th>
+                    <th>Total Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in (List<BestBrightness.ViewModels.CartItem>)ViewData["CartItems"])
+                {
+                    <tr>
+                        <td>@item.ProductName</td>
+                        <td>@item.Quantity</td>
+                        <td>@item.Price.ToString("C")</td>
+                        <td>@item.TotalPrice.ToString("C")</td>
+                        <td>
+                            <form asp-action="RemoveFromCart" method="post" class="d-inline">
+                                <input type="hidden" name="productId" value="@item.ProductId" />
+                                <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <form asp-action="RecordCartSale" method="post">
+            <button type="submit" class="btn btn-success">Record Cart Sale</button>
+        </form>
+    }
+    else
+    {
+        <p>Your cart is empty.</p>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        // Update price per item, discount, total price, and check stock level on quantity change
+        document.getElementById('quantity').addEventListener('input', function () {
+            const quantity = parseInt(this.value) || 0;
+            const selectedProductId = document.querySelector('select[name="ProductId"]').value;
+
+            if (selectedProductId) {
+                fetch(`/Sales/GetProductStock/${selectedProductId}`)
+                    .then(response => response.json())
+                    .then(stock => {
+                        if (quantity > stock) {
+                            alert(`Insufficient stock! Available stock: ${stock}`);
+                        }
+                        updateTotalPrice();
+                    });
+            }
+        });
+
+        // Update total price based on quantity and discount
+        function updateTotalPrice() {
+            var quantity = parseInt(document.getElementById('quantity').value) || 0;
+            var pricePerItem = parseFloat(document.getElementById('pricePerItem').value) || 0;
+            var discount = parseFloat(document.getElementById('discount').value) || 0;
+
+            var totalPrice = quantity * pricePerItem;
+            var discountAmount = (totalPrice * (discount / 100));
+            var finalPrice = totalPrice - discountAmount;
+
+            document.getElementById('totalPrice').value = finalPrice.toFixed(2);
+        }
+
+        // Fetch product price and discount, then update UI
+        document.querySelector('select[name="ProductId"]').addEventListener('change', function () {
+            var selectedProductId = this.value;
+            if (selectedProductId) {
+                fetch(`/Sales/GetProductDetails/${selectedProductId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('pricePerItem').value = data.price.toFixed(2);
+                        document.getElementById('discount').value = data.discount.toFixed(2);
+                        updateTotalPrice();
+                    });
+            } else {
+                document.getElementById('pricePerItem').value = '';
+                document.getElementById('discount').value = '';
+                document.getElementById('totalPrice').value = '';
+            }
+        });
+    </script>
+}

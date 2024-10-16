@@ -1,0 +1,114 @@
+﻿@model IEnumerable<BestBrightness.Models.Stock>
+
+@{
+    ViewBag.Title = "Stock List";
+}
+
+<link href="~/css/WarehouseStyles.css" rel="stylesheet" type="text/css" />
+<style>
+    /* Stock Table Styles */
+    #stockTable {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #081b29; /* Dark background */
+        color: #fff; /* White font for the entire table */
+    }
+
+        #stockTable th, #stockTable td {
+            padding: 12px 15px;
+            border: 1px solid #00a6bc; /* Cyan border */
+            text-align: left;
+        }
+
+        #stockTable th {
+            background-color: #00a6bc; /* Cyan header background */
+            color: #fff; /* White text in the header */
+        }
+
+        #stockTable tr:nth-child(even) {
+            background-color: #0d2a3a; /* Slightly lighter dark background for even rows */
+        }
+
+        #stockTable tr:hover {
+            background-color: #003f5c; /* Darker background on hover */
+        }
+
+    /* Button Styles */
+    .btn {
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        border-radius: 4px;
+        margin-bottom: 20px; /* Add some space below the button */
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+    .btn-warning {
+        background-color: #ffc107;
+        color: black;
+    }
+
+        .btn-warning:hover {
+            background-color: #e0a800;
+        }
+
+    .btn-danger {
+        background-color: #dc3545;
+        color: white;
+    }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+</style>
+
+<h2>Stock List</h2>
+
+<a asp-action="PrintAllDeliverySlips" class="btn btn-primary">Print All Delivery Slips</a>
+
+<table id="stockTable" class="table">
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Supplier</th>
+            <th>Received Date</th>
+            <th>Description</th> 
+            <th>Price</th> 
+            <th>Category</th> 
+            <th>Image</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var stock in Model)
+        {
+            <tr>
+                <td>@stock.Name</td>
+                <td>@stock.Quantity</td>
+                <td>@stock.Supplier</td>
+                <td>@stock.ReceivedDate.ToShortDateString()</td>
+                <td>@stock.Description</td> 
+                <td>@stock.Price?.ToString("C")</td> 
+                <td>@stock.Category</td> 
+                <td>
+                    <img src="data:image/jpeg;base64,@stock.ImageBase64" alt="Product Image" style="max-width: 100px;" />
+                </td>
+                <td>
+                    <a asp-action="EditStock" asp-route-id="@stock.Id" class="btn btn-warning">Edit</a>
+                    <a asp-action="DeleteStock" asp-route-id="@stock.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

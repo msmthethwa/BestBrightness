@@ -1,0 +1,117 @@
+﻿@model BestBrightness.Models.Pickup
+
+<div class="pickup-details-container">
+    <h2>Pickup Details</h2>
+
+    <div>
+        <h4>Pickup</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ProductId)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ProductId)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Quantity)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.PickupDate)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.PickupDate)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Status)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Status)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="PickupList" class="back-link">Back to List</a>
+    </div>
+</div>
+<style>
+    /* Base styling for Pickup Details */
+    .pickup-details-container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #081b29; /* Dark background color */
+        border: 1px solid #00a6bc; /* Cyan border */
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+
+        /* Styling for headings and text */
+        .pickup-details-container h2 {
+            color: #00ffff; /* Cyan text */
+            border-bottom: 2px solid #00ffff; /* Cyan border */
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .pickup-details-container h4 {
+            color: #fff; /* White text */
+        }
+
+        /* Definition list styling */
+        .pickup-details-container .dl-horizontal dt {
+            font-weight: bold;
+            color: #fff; /* White text for labels */
+        }
+
+        .pickup-details-container .dl-horizontal dd {
+            margin-left: 0;
+            padding-left: 0;
+            color: #ddd; /* Light gray text for values */
+        }
+
+        /* Back to List link styling */
+        .pickup-details-container .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #00ffff; /* Cyan text */
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px solid #00ffff; /* Cyan border */
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+            .pickup-details-container .back-link:hover {
+                background-color: #00ffff; /* Cyan background */
+                color: #081b29; /* Dark text color */
+            }
+    .back-link {
+        display: inline-block;
+        margin-top: 20px;
+        color: #00ffff; /* Cyan text */
+        text-decoration: none;
+        font-weight: bold;
+        border: 2px solid #00ffff; /* Cyan border */
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        background-color: transparent; /* Transparent background */
+    }
+
+        .back-link:hover {
+            background-color: #00ffff; /* Cyan background */
+            color: #081b29; /* Dark text color for contrast */
+            text-decoration: none; /* No underline on hover */
+        }
+
+        .back-link:focus {
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 255, 255, 0.3); /* Cyan glow effect */
+        }
+
+</style>

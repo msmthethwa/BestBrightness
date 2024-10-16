@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order - Best Brightness Shop</title>
+    <link rel="stylesheet" href="order.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-top">
+            <img src="logo.png" alt="Best Brightness Logo" id="logo">
+            <h1 class="company-name">Best Brightness</h1>
+            <div class="header-right">
+                <a href="#" id="logoutLink">Logout</a>
+                <a href="#" id="ordersLink">Orders</a>
+                <a href="#" id="accountLink">My Account</a>
+                <a href="wishlist.html" id="wishlistLink" class="wishlist-icon">❤️</a> <!-- Heart icon for wishlist -->
+                <a href="cart.html" id="cartLink" class="cart-icon"><img src="cart-icon.png" alt="Cart Icon"></a> <!-- Cart icon only -->
+            </div>
+        </div>
+        
+        <div class="search-nav">
+            <input type="text" id="searchField" placeholder="Search for products...">
+            <button id="searchButton">Search</button>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html" id="homeLink">Home</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="quotation-request.html" id="quotationsLink">Quotations</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="order-summary section-background">
+            <h2>Your Order Summary</h2>
+            <table class="order-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Multipurpose Cleaner</td>
+                        <td>2</td>
+                        <td>ZAR 150.00</td>
+                        <td>ZAR 300.00</td>
+                    </tr>
+                    <tr>
+                        <td>Heavy Duty Floor Cleaner</td>
+                        <td>1</td>
+                        <td>ZAR 200.00</td>
+                        <td>ZAR 200.00</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3"><strong>Subtotal</strong></td>
+                        <td><strong>ZAR 500.00</strong></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><strong>Shipping</strong></td>
+                        <td>ZAR 50.00</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><strong>Total</strong></td>
+                        <td><strong>ZAR 550.00</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
+            <div class="order-actions">
+                <button class="confirm-order-btn" onclick="location.href='order-review.html'">Confirm Order</button>
+                <button class="cancel-order-btn">Cancel Order</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Best Brightness Shop. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

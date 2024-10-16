@@ -1,0 +1,17 @@
+﻿/* Print Styles */
+@media print {
+    .btn, .mt-4 {
+        display: none; /* Hide buttons and margins */
+    }
+
+    .container {
+        margin: 0;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+    }
+
+    @page {
+        margin: 20mm; /* Set page margins */
+    }
+}

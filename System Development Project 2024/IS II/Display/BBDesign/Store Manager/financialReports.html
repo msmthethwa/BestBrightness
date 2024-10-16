@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Reports</title>
+    <link rel="stylesheet" href="indexStyles.css">
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Light grey background */
+    color: #333333; /* Darker text color */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #ffffff; /* White background for the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+header {
+    background-color: #333333; /* Dark gray background */
+    color: #ffffff; /* White text */
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    color: #333333; /* Dark gray text */
+    margin-bottom: 20px;
+}
+
+/* Form Container Styles */
+.form-container, .report-container {
+    background-color: #ffffff; /* White background for containers */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.form-container input[type="date"],
+.form-container input[type="submit"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #dddddd; /* Light gray border */
+}
+
+.form-container input[type="submit"] {
+    background-color: #333333; /* Dark gray */
+    color: #ffffff; /* White text */
+    border: none;
+    cursor: pointer;
+}
+
+.form-container input[type="submit"]:hover {
+    background-color: #555555; /* Even darker gray on hover */
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #dddddd; /* Light gray border */
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #333333; /* Dark gray background */
+    color: #ffffff; /* White text */
+}
+
+tr:hover {
+    background-color: #f9f9f9; /* Very light gray background for table rows */
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Financial Reports</h1>
+        </header>
+        <main>
+            <section>
+                <h2>Generate Financial Report</h2>
+                <div class="form-container">
+                    <form id="reportForm">
+                        <label for="reportType">Report Type:</label>
+                        <select id="reportType" name="reportType" required>
+                            <option value="monthly">Monthly</option>
+                            <option value="annual">Annual</option>
+                        </select><br><br>
+
+                        <label for="startDate">Start Date:</label>
+                        <input type="date" id="startDate" name="startDate" required>
+
+                        <label for="endDate">End Date:</label>
+                        <input type="date" id="endDate" name="endDate" required>
+
+                        <input type="submit" value="Generate Report">
+                    </form>
+                </div>
+            </section>
+
+            <section>
+                <h2>Financial Reports List</h2>
+                <div class="report-container">
+                    <table id="reportsTable">
+                        <thead>
+                            <tr>
+                                <th>Report Type</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Generated On</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Report rows will be dynamically added here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Handle form submission
+        document.getElementById('reportForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const reportType = document.getElementById('reportType').value;
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value;
+            const generatedOn = new Date().toLocaleDateString();
+
+            const table = document.getElementById('reportsTable').getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow();
+
+            newRow.insertCell(0).innerText = reportType.charAt(0).toUpperCase() + reportType.slice(1);
+            newRow.insertCell(1).innerText = startDate;
+            newRow.insertCell(2).innerText = endDate;
+            newRow.insertCell(3).innerText = generatedOn;
+
+            const actionCell = newRow.insertCell(4);
+            const viewButton = document.createElement('button');
+            viewButton.innerText = 'View';
+            viewButton.className = 'btn';
+            viewButton.addEventListener('click', function() {
+                alert(`Viewing report for ${reportType} from ${startDate} to ${endDate}`);
+                // Replace alert with actual report viewing functionality
+            });
+            actionCell.appendChild(viewButton);
+
+            const downloadButton = document.createElement('button');
+            downloadButton.innerText = 'Download';
+            downloadButton.className = 'btn';
+            downloadButton.addEventListener('click', function() {
+                alert(`Downloading report for ${reportType} from ${startDate} to ${endDate}`);
+                // Replace alert with actual report download functionality
+            });
+            actionCell.appendChild(downloadButton);
+
+            document.getElementById('reportForm').reset();
+        });
+    </script>
+</body>
+</html>

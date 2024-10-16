@@ -1,0 +1,80 @@
+﻿@model BestBrightness.ViewModels.InvoiceViewModel
+
+@{
+    ViewData["Title"] = "Invoice";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/invoice.css"> <!-- General styles -->
+    <link rel="stylesheet" href="~/css/invoice-print.css" media="print"> <!-- Print-specific styles -->
+</head>
+<body>
+    <div class="invoice-container">
+        <div class="invoice-header">
+            <h2>Best Brightness Pongola Shop</h2>
+            <p>Shop 12, Pongola Shopping Centre</p>
+            <p>Jan Mielie St, Pongola, 2380</p>
+            <p>Email: info@bestbrightness.co.za</p>
+            <p>Phone: +27 34 345 6789</p>
+        </div>
+
+        <hr>
+
+        <div class="invoice-details">
+            <h3>Invoice Details</h3>
+            <p><strong>Invoice Date:</strong> @DateTime.Now.ToString("d MMM yyyy")</p>
+            <p><strong>Invoice Number:</strong> INV-@Model.InvoiceId</p>
+            <p><strong>Salesperson:</strong> @Model.SalespersonName (@Model.SalespersonEmail)</p>
+            <p><strong>Amount Paid:</strong> @Model.AmountPaid.ToString("C")</p>
+            <p><strong>Change:</strong> @Model.Change.ToString("C")</p>
+        </div>
+
+        <hr>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Items)
+                {
+                    <tr>
+                        <td>@item.ProductName</td>
+                        <td>@item.Price.ToString("C")</td>
+                        <td>@item.Quantity</td>
+                        <td>@item.TotalPrice.ToString("C")</td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3" class="text-right"><strong>Total Amount:</strong></td>
+                    <td><strong>@Model.Items.Sum(i => i.TotalPrice).ToString("C")</strong></td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div class="footer">
+            <p>Thank you for your purchase!</p>
+            <p>If you have any questions or need further assistance, please contact us.</p>
+            <p>Best Brightness Pongola Shop</p>
+        </div>
+
+        <!-- Buttons for interaction -->
+        <div class="no-print">
+            <a href="@Url.Action("Index", "Sales")" class="btn btn-secondary">Back to Sales</a>
+            <button class="btn" onclick="window.print()">Print Invoice</button>
+        </div>
+    </div>
+</body>
+</html>

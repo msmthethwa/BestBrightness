@@ -1,0 +1,281 @@
+﻿@model BestBrightness.ViewModels.ReportViewModel
+
+@{
+    ViewData["Title"] = "Reports";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Best Brightness</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/report.css"> <!-- Custom CSS file -->
+    <link rel="stylesheet" href="~/css/report-print.css" media="print">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js -->
+</head>
+<body>
+    
+    <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="report-title">Reports Overview</h1>
+            <div>
+                <a asp-action="DownloadReport" asp-route-reportType="@(ViewData["ReportType"].ToString())" asp-route-searchQuery="@(ViewData["SearchQuery"])" class="btn btn-primary">Download CSV</a>
+                <button class="btn btn-secondary" onclick="window.print()">Print Reports</button>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-md-6">
+                <h2>Sales Report</h2>
+                <canvas id="salesChart" width="400" height="200" class="mt-4"></canvas>
+                <div class="btn-group mt-3">
+                    <a asp-action="Index" asp-route-reportType="daily" class="btn btn-outline-primary @(ViewData["ReportType"].ToString() == "daily" ? "active" : "")">Daily Sales</a>
+                    <a asp-action="Index" asp-route-reportType="all" class="btn btn-outline-primary @(ViewData["ReportType"].ToString() == "all" ? "active" : "")">All Sales</a>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <h2>Inventory Report</h2>
+                <canvas id="productSalesChart" width="400" height="200" class="mt-4"></canvas>
+            </div>
+        </div>
+
+        @if (ViewData["ReportType"].ToString() == "all")
+        {
+            <div class="mt-3">
+                <form method="get" asp-action="Index">
+                    <div class="input-group">
+                        <input type="hidden" name="reportType" value="all" />
+                        <input type="text" name="searchQuery" class="form-control" placeholder="Search by Invoice ID..." value="@ViewData["SearchQuery"]" />
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-outline-secondary">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        }
+
+        @if (ViewData["ReportType"].ToString() == "daily")
+        {
+            <div class="sales-report">
+                @foreach (var salespersonGroup in Model.DailySalesReport.GroupBy(s => s.SalespersonId))
+                {
+                    var salespersonName = Model.DailySalesReport.First(s => s.SalespersonId == salespersonGroup.Key).SalespersonName;
+                    <h3>Salesperson: @salespersonName (@salespersonGroup.Key)</h3>
+                    <table class="table table-bordered table-hover mt-3">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Invoice ID</th>
+                                <th>Total Amount</th>
+                                <th>Amount Paid</th>
+                                <th>Change</th>
+                                <th>Invoice Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var sale in salespersonGroup)
+                            {
+                                <tr>
+                                    <td>@sale.InvoiceId</td>
+                                    <td>@sale.TotalAmount.ToString("C")</td>
+                                    <td>@sale.AmountPaid.ToString("C")</td>
+                                    <td>@sale.Change.ToString("C")</td>
+                                    <td>@sale.FormattedInvoiceDate</td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4" class="text-right"><strong>Total Sales for @salespersonName:</strong></td>
+                                <td><strong>@salespersonGroup.Sum(s => s.TotalAmount).ToString("C")</strong></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                }
+            </div>
+
+            <div class="total-sales mt-4">
+                <h3>Total Daily Sales</h3>
+                <table class="table table-bordered">
+                    <tfoot>
+                        <tr>
+                            <td colspan="4" class="text-right"><strong>Total Sales:</strong></td>
+                            <td><strong>@Model.DailySalesReport.Sum(s => s.TotalAmount).ToString("C")</strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        }
+        else if (ViewData["ReportType"].ToString() == "all")
+        {
+            <h2>All Sales Report</h2>
+            @if (Model.DailySalesReport.Any())
+            {
+                <table class="table table-bordered table-hover mt-3">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Invoice ID</th>
+                            <th>Total Amount</th>
+                            <th>Amount Paid</th>
+                            <th>Change</th>
+                            <th>Invoice Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var sale in Model.DailySalesReport)
+                        {
+                            <tr>
+                                <td>@sale.InvoiceId</td>
+                                <td>@sale.TotalAmount.ToString("C")</td>
+                                <td>@sale.AmountPaid.ToString("C")</td>
+                                <td>@sale.Change.ToString("C")</td>
+                                <td>@sale.FormattedInvoiceDate</td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4" class="text-right"><strong>Total Sales:</strong></td>
+                            <td><strong>@Model.DailySalesReport.Sum(s => s.TotalAmount).ToString("C")</strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            }
+            else
+            {
+                <p>No records found.</p>
+            }
+        }
+
+        <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Stock Level</th>
+                <th>Needs Restocking</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model.InventoryReport)
+
+            {
+                <tr>
+                    <td>@product.ProductName</td>
+                    <td>@product.StockLevel</td>
+                    <td>
+                        @if (product.NeedsRestocking)
+
+                        {
+                            <span class="text-danger">Low Stock - Restock Needed</span>
+                        }
+
+                        else
+
+                        {
+                            <span class="text-success">Sufficient Stock</span>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <script>
+        // Sales chart logic
+        const salesData = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.DailySalesReport.Select(s => s.TotalAmount).ToList()));
+        const labels = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.DailySalesReport.Select(s => s.InvoiceId).ToList()));
+
+        const salesCtx = document.getElementById('salesChart').getContext('2d');
+        const salesChart = new Chart(salesCtx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Total Amount',
+                    data: salesData,
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Amount ($)'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Invoice ID'
+                        }
+                    }
+                },
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Sales Amount per Invoice'
+                    }
+                }
+            }
+        });
+
+        // Product sales chart logic
+        const productSalesData = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.InventoryReport.Select(p => p.StockLevel).ToList()));
+        const productLabels = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.InventoryReport.Select(p => p.ProductName).ToList()));
+
+        const productCtx = document.getElementById('productSalesChart').getContext('2d');
+        const productSalesChart = new Chart(productCtx, {
+            type: 'bar',
+            data: {
+                labels: productLabels,
+                datasets: [{
+                    label: 'Stock Level',
+                    data: productSalesData,
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Stock Level'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Products'
+                        }
+                    }
+                },
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Product Sales Comparison'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

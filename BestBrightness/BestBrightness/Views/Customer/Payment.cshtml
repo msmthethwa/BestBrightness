@@ -1,0 +1,122 @@
+﻿@model BestBrightness.Models.PaymentViewModel
+
+@{
+    ViewData["Title"] = "Payment Information - Best Brightness Shop";
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Review your payment information before finalizing your purchase.">
+    <title>@ViewData["Title"]</title>
+
+    <link rel="stylesheet" href="~/css/Payment.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="~/js/CustomerScript.js" defer></script>
+
+    <script>
+        // Restrict card number to only 16 digits
+        function validateCardNumber(input) {
+            input.value = input.value.replace(/\D/g, '').slice(0, 16); // Allow only numbers, limit to 16 digits
+            if (input.value.length !== 16 && input.value.length > 0) {
+                document.getElementById("card-error").style.display = "block";
+            } else {
+                document.getElementById("card-error").style.display = "none";
+            }
+        }
+
+        // Restrict expiry date to MM/YY format (4 characters)
+        function validateExpiryDate(input) {
+            input.value = input.value.replace(/[^0-9/]/g, '').slice(0, 5); // Allow only digits and '/'
+            if (input.value.length === 2 && !input.value.includes('/')) {
+                input.value = input.value + '/';
+            }
+        }
+
+        // Restrict CVV to 3 digits
+        function validateCVV(input) {
+            input.value = input.value.replace(/\D/g, '').slice(0, 3); // Allow only numbers, limit to 3 digits
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <a href="@Url.Action("Index", "CustomerHome")">
+                <img src="~/images/welcome-icon.png" alt="Best Brightness Logo" id="logo">
+            </a>
+            <h1 class="company-name">Best Brightness Shop</h1>
+            <div class="header-right">
+                <a href="@Url.Action("QuotationRequest", "Customer")" id="quotationsLink">Quotations</a>
+                <a href="@Url.Action("Order", "Customer")" id="ordersLink">Orders</a>
+                <a href="@Url.Action("Profile", "Customer")" id="accountLink">Profile</a>
+                <form method="post" action="@Url.Action("Logout", "CustomerAccount")" style="margin-left: 1rem; font-weight: 600;">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" style="background: transparent; border: none; color: red; font-weight: 1000; cursor: pointer;">
+                        Logout
+                    </button>
+                </form>
+                <a href="@Url.Action("Cart", "Cart")" id="cartLink" class="cart-icon"><img src="~/images/cart.png" alt="Cart"></a>
+            </div>
+        </div>
+
+        <div class="search-nav">
+            <form method="get" action="@Url.Action("Search", "CustomerHome")" class="search-container">
+                <input type="text" id="searchField" name="query" placeholder="Search for products..." aria-label="Search Products">
+                <button type="submit" id="searchButton"><img src="~/images/search.png" alt="Search Icon"></button>
+            </form>
+        </div>
+    </header>
+
+    <main>
+        <div class="cart-overview section-background">
+            <h2>Payment Information</h2>
+            <div class="cart-items">
+                <form asp-action="SubmitPayment" method="POST">
+                    <div class="form-group">
+                        <label asp-for="CardName">Name on Card:</label>
+                        <input asp-for="CardName" class="form-control" required />
+                        <span asp-validation-for="CardName" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="CardNumber">Card Number:</label>
+                        <input asp-for="CardNumber" class="form-control" oninput="validateCardNumber(this)" required />
+                        <span id="card-error" class="text-danger" style="display: none;">Card number must be exactly 16 digits.</span>
+                        <span asp-validation-for="CardNumber" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="ExpiryDate">Expiry Date (MM/YY):</label>
+                        <input asp-for="ExpiryDate" class="form-control" oninput="validateExpiryDate(this)" placeholder="MM/YY" required />
+                        <span asp-validation-for="ExpiryDate" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="CVV">CVV:</label>
+                        <input asp-for="CVV" class="form-control" oninput="validateCVV(this)" required />
+                        <span asp-validation-for="CVV" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="BillingAddress">Billing Address:</label>
+                        <textarea asp-for="BillingAddress" class="form-control" readonly>@Model.BillingAddress</textarea>
+                    </div>
+
+                    <div class="payment-actions">
+                        <button type="submit" class="btn btn-primary">Pay Now</button>
+                        <button type="button" class="btn btn-secondary" onclick="location.href='@Url.Action("Cart", "Cart")'">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Best Brightness Shop. All rights reserved.</p>
+    </footer>
+</body>
+</html>

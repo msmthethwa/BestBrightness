@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Quotation - Best Brightness Shop</title>
+    <link rel="stylesheet" href="quotation.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-top">
+            <img src="logo.png" alt="Best Brightness Logo" id="logo">
+            <h1 class="company-name">Best Brightness</h1>
+            <div class="header-right">
+                <a href="quotation-request.html" id="quotationsLink">Quotations</a>
+                <a href="order.html" id="ordersLink">Orders</a>
+                <a href="#" id="accountLink">My Account</a>
+                <a href="#" id="logoutLink">Logout</a>
+                <a href="wishlist.html" id="wishlistLink" class="wishlist-icon">❤️</a>
+                <a href="cart.html" id="cartLink" class="cart-icon"><img src="cart-icon.png" alt="Cart Icon"></a>
+            </div>
+        </div>
+        
+        <div class="search-nav">
+            <input type="text" id="searchField" placeholder="Search for products...">
+            <button id="searchButton">Search</button>
+        </div>
+        <br>
+    </header>
+
+    <main>
+        <section class="quotation-request">
+            <h2>Request a Quotation</h2>
+            <p>Please fill out the form below to request a quotation for our products.</p>
+            <form action="submit-quotation.php" method="post">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="product">Product(s) Interested In:</label>
+                    <textarea id="product" name="product" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Estimated Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" required>
+                </div>
+                <div class="form-group">
+                    <label for="additional-info">Additional Information:</label>
+                    <textarea id="additional-info" name="additional-info" rows="4"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Request</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Best Brightness Shop. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

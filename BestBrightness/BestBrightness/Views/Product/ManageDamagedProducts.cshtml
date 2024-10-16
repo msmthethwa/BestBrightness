@@ -1,0 +1,62 @@
+﻿@model IEnumerable<BestBrightness.Models.Products>
+
+@{
+    ViewData["Title"] = "Manage Damaged Products";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Stock Level</th>
+            <th>Damaged Stock Level</th>
+            <th>Undamaged Stock Level</th>
+            <th>Loss Amount</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Is Damaged</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Id</td>
+                <td>@product.Name</td>
+                <td>@product.Description</td>
+                <td>@product.StockLevel</td>
+                <td>@product.DamagedStockLevel</td>
+                <td>@product.UndamagedStockLevel</td>
+                <td>@String.Format("{0:C}", product.LossAmount)</td>
+                <td>@String.Format("{0:C}", product.Price)</td>
+                <td>@(product.IsDamaged.HasValue && product.IsDamaged.Value ? "Yes" : "No")</td> <!-- Updated line -->
+                <td>
+                    <form asp-action="UpdateDamagedStockLevel" method="post" style="display:inline;">
+                        <input type="hidden" name="id" value="@product.Id" />
+                        <input type="number" name="damagedStockLevel" value="@product.DamagedStockLevel" min="0" class="form-control" style="width: 100px;" />
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </form>
+                    @if (!product.IsDamaged.HasValue || !product.IsDamaged.Value) 
+                    {
+                        <form asp-action="MarkAsDamaged" method="post" style="display:inline;">
+                            <input type="hidden" name="id" value="@product.Id" />
+                            <button type="submit" class="btn btn-warning">Mark as Damaged</button>
+                        </form>
+                    }
+                    else
+                    {
+                        <form asp-action="MarkAsUndamaged" method="post" style="display:inline;">
+                            <input type="hidden" name="id" value="@product.Id" />
+                            <button type="submit" class="btn btn-success">Mark as Undamaged</button>
+                        </form>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

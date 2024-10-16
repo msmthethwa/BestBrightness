@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receive Stock</title>
+    <link rel="stylesheet" href="indexStyles.css">
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8; /* Light grey background */
+    color: #2c2c2c; /* Darker text color */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #ffffff; /* White background for the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+header {
+    background-color: #333333; /* Dark gray background */
+    color: #ffffff; /* White text */
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    color: #333333; /* Dark gray text */
+    margin-bottom: 20px;
+}
+
+/* Form Container Styles */
+.form-container {
+    background-color: #ffffff; /* White background */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.form-container input[type="text"],
+.form-container select {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #dddddd; /* Light gray border */
+}
+
+.form-container input[type="submit"] {
+    background-color: #333333; /* Dark gray background */
+    color: #ffffff; /* White text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-container input[type="submit"]:hover {
+    background-color: #555555; /* Darker gray on hover */
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #dddddd; /* Light gray border */
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #333333; /* Dark gray background */
+    color: #ffffff; /* White text */
+}
+
+tr:hover {
+    background-color: #f9f9f9; /* Very light grey background for table rows */
+}
+
+/* Button Styles */
+.btn {
+    padding: 10px 20px;
+    background-color: #333333; /* Dark gray background */
+    color: #ffffff; /* White text */
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #555555; /* Darker gray on hover */
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Receive Stock</h1>
+        </header>
+        <main>
+            <section>
+                <h2>Receive New Stock</h2>
+                <div class="form-container">
+                    <form id="receiveStockForm">
+                        <label for="product">Product:</label>
+                        <select id="product" name="product" required>
+                            <!-- Options will be populated dynamically -->
+                        </select>
+
+                        <label for="quantity">Quantity:</label>
+                        <input type="text" id="quantity" name="quantity" required>
+
+                        <label for="supplier">Supplier:</label>
+                        <input type="text" id="supplier" name="supplier" required>
+
+                        <input type="submit" value="Receive Stock">
+                    </form>
+                </div>
+            </section>
+
+            <section>
+                <h2>Received Stock List</h2>
+                <table id="receivedStockTable">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Supplier</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Received stock rows will be dynamically added here -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Mock data for products (can be fetched from the server)
+        const products = [
+            'Cleaning Detergent',
+            'Plastic Bags',
+            'Toilet Paper',
+            'Cleaning Equipment'
+        ];
+
+        // Populate product select options
+        const productSelect = document.getElementById('product');
+        products.forEach(product => {
+            const option = document.createElement('option');
+            option.value = product;
+            option.text = product;
+            productSelect.appendChild(option);
+        });
+
+        // Handle form submission
+        document.getElementById('receiveStockForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const product = document.getElementById('product').value;
+            const quantity = document.getElementById('quantity').value;
+            const supplier = document.getElementById('supplier').value;
+            const date = new Date().toLocaleDateString();
+            
+            const table = document.getElementById('receivedStockTable').getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow();
+            
+            newRow.insertCell(0).innerText = product;
+            newRow.insertCell(1).innerText = quantity;
+            newRow.insertCell(2).innerText = supplier;
+            newRow.insertCell(3).innerText = date;
+            
+            const actionCell = newRow.insertCell(4);
+            const deleteButton = document.createElement('button');
+            deleteButton.innerText = 'Remove';
+            deleteButton.className = 'btn';
+            deleteButton.addEventListener('click', function() {
+                table.deleteRow(newRow.rowIndex - 1);
+            });
+            actionCell.appendChild(deleteButton);
+
+            document.getElementById('receiveStockForm').reset();
+        });
+    </script>
+</body>
+</html>

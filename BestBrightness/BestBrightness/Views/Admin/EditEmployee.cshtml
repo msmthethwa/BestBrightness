@@ -1,0 +1,49 @@
+﻿@model BestBrightness.ViewModels.RegisterEmployeeViewModel
+
+@{
+    ViewData["Title"] = "Edit Employee";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="EditEmployee" method="post">
+    <div class="form-group">
+        <label asp-for="FirstNames">First Name</label>
+        <input asp-for="FirstNames" class="form-control" />
+        <span asp-validation-for="FirstNames" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="LastName">Last Name</label>
+        <input asp-for="LastName" class="form-control" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email">Email</label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DefaultPassword">Password</label>
+        <input asp-for="DefaultPassword" class="form-control" />
+        <span asp-validation-for="DefaultPassword" class="text-danger"></span>
+    </div>
+
+    <input type="hidden" asp-for="EmployeeId" />
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+
+<div class="alert alert-success mt-3" role="alert" id="editSuccessMessage" style="display: none;">
+    Employee details updated successfully.
+</div>
+
+@section Scripts {
+    <script>
+        // Show success message on successful form submission
+        $('form').submit(function () {
+            $('#editSuccessMessage').show();
+        });
+    </script>
+}

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Pickup Slip</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            color: #0056b3;
+            margin-bottom: 20px;
+        }
+        p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        p strong {
+            color: #333;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pickup Slip</h1>
+        <p><strong>Pickup ID:</strong> @Model.Pickup.Id</p>
+        <p><strong>Product ID:</strong> @Model.Pickup.ProductId</p>
+        <p><strong>Product Name:</strong> @Model.Stock.Name</p>
+        <p><strong>Quantity:</strong> @Model.Pickup.Quantity</p>
+        <p><strong>Pickup Date:</strong> @Model.Pickup.PickupDate.ToString("yyyy-MM-dd")</p>
+        <p><strong>Status:</strong> @Model.Pickup.Status</p>
+        <!-- Add more details as needed -->
+    </div>
+</body>
+</html>

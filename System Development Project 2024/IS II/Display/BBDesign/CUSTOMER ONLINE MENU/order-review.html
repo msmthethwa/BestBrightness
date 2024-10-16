@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Review - Best Brightness Shop</title>
+    <link rel="stylesheet" href="order-review.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-top">
+            <img src="logo.png" alt="Best Brightness Logo" id="logo">
+            <h1 class="company-name">Best Brightness</h1>
+            <div class="header-right">
+                <a href="quotation-request.html" id="quotationsLink">Quotations</a>
+                <a href="order.html" id="ordersLink">Orders</a>
+                <a href="#" id="accountLink">My Account</a>
+                <a href="#" id="logoutLink">Logout</a>
+                <a href="wishlist.html" id="wishlistLink" class="wishlist-icon">❤️</a>
+                <a href="cart.html" id="cartLink" class="cart-icon"><img src="cart-icon.png" alt="Cart Icon"></a>
+            </div>
+        </div>
+        
+        <div class="search-nav">
+            <input type="text" id="searchField" placeholder="Search for products...">
+            <button id="searchButton">Search</button>
+        </div>
+        <br>
+    </header>
+
+    <main>
+        <section class="order-review section-background">
+            <h2>Order Review</h2>
+            <p>Please review your order details below:</p>
+
+            <table class="order-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Multipurpose Cleaner</td>
+                        <td>2</td>
+                        <td>ZAR 150.00</td>
+                        <td>ZAR 300.00</td>
+                    </tr>
+                    <tr>
+                        <td>Heavy Duty Floor Cleaner</td>
+                        <td>1</td>
+                        <td>ZAR 200.00</td>
+                        <td>ZAR 200.00</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3"><strong>Subtotal</strong></td>
+                        <td><strong>ZAR 500.00</strong></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><strong>Shipping</strong></td>
+                        <td>ZAR 50.00</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><strong>Total</strong></td>
+                        <td><strong>ZAR 550.00</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <div class="shipping-info">
+                <h3>Shipping Details</h3>
+                <p><strong>Shipping Method:</strong> Standard Shipping</p>
+                <p><strong>Estimated Delivery Time:</strong> 5-7 Business Days</p>
+                <p><strong>Shipping Address:</strong></p>
+                <p>50 West Street, Durban Central, Durban 4001</p>
+            </div>
+
+            <div class="review-actions">
+                <button class="proceed-to-payment-btn" onclick="location.href='payment.html'">Proceed to Payment</button>
+                <button class="edit-order-btn" onclick="location.href='order.html'">Edit Order</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Best Brightness Shop. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

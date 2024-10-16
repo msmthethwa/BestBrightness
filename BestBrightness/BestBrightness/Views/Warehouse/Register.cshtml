@@ -1,0 +1,169 @@
+﻿@model BestBrightness.Models.WarehouseRegisterViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #081b29;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .main-content {
+            display: flex;
+            width: 50%;
+            max-width: 700px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-section {
+            background-color: #017b8b;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px 0 0 10px;
+            color: white;
+            width: 40%;
+        }
+
+            .logo-section img {
+                width: 80px;
+                margin-bottom: 15px;
+            }
+
+            .logo-section p {
+                margin: 0;
+                text-align: center;
+                font-size: 18px;
+            }
+
+        .form-section {
+            padding: 40px 30px;
+            width: 60%;
+        }
+
+            .form-section h2 {
+                margin-bottom: 20px;
+                font-size: 24px;
+                color: #333;
+                text-align: center;
+            }
+
+            .form-section label {
+                font-size: 14px;
+                color: #555;
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            .form-section input {
+                width: calc(100% - 22px);
+                padding: 10px;
+                margin-bottom: 15px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                font-size: 14px;
+                box-sizing: border-box;
+                outline: none;
+                transition: border-color 0.3s ease;
+            }
+
+                .form-section input:focus {
+                    border-color: #017b8b;
+                }
+
+            .form-section button[type="submit"] {
+                width: 100%;
+                padding: 12px;
+                background-color: #017b8b;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+                transition: background-color 0.3s ease;
+            }
+
+                .form-section button[type="submit"]:hover {
+                    background-color: #016670;
+                }
+
+            .form-section p {
+                text-align: center;
+                font-size: 14px;
+                color: #666;
+            }
+
+            .form-section a {
+                color: #017b8b;
+                text-decoration: none;
+            }
+
+        .text-danger {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <div class="logo-section">
+            <img src="/Images/welcome-icon.png" alt="Company Logo"> <!-- Use your logo path -->
+            <p>Quality You Can Trust</p>
+        </div>
+        <div class="form-section">
+            <h2>Register</h2>
+
+
+            @using (Html.BeginForm("Register", "Warehouse", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Name)
+                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Email)
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password)
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.ConfirmPassword)
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+                </div>
+
+                <button type="submit" class="btn btn-primary">Register</button>
+            }
+
+            <p>Already have an account? <a href="@Url.Action("Login", "Warehouse")">Login Here</a></p>
+        </div>
+
+    </div>
+</body>
+</html>
+
